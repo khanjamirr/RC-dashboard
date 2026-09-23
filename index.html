@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F3F4F1; --card:#FFFFFF; --ink:#1A1D21; --ink2:#454B54; --muted:#767C86; --line:#E2E4DF; --line2:#EEEFEC; --hover:#F7F8F5;
+  --paper:#F3F4F1; --card:#FFFFFF; --ink:#1A1D21; --ink2:#454B54; --muted:#767C86; --line:#E5E6E2; --line2:#EFF0ED; --hover:#F7F8F5;
   --calls:#4B5BD6; --calls2:#E6E9FB; --talk:#15876A; --talk2:#DDF1EA; --short:#E3A13B; --short2:#FBEFD9; --bad:#D1483E; --bad2:#FBE3E0; --violet:#8A63D2; --grey:#A0A6AF;
   --font:"Manrope","Segoe UI Variable Text","Segoe UI","Helvetica Neue",Arial,system-ui,sans-serif;
   --r:12px;
@@ -24,17 +24,17 @@ b,strong{font-weight:700}
 
 /* ---------- header ---------- */
 .hdr{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.hrow{display:flex;align-items:center;gap:18px;padding:0 24px;max-width:1600px;margin:0 auto}
+.hrow{display:flex;align-items:center;gap:14px;padding:0 24px;max-width:1600px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:10px;padding:12px 0;flex:none}
 .brand svg{width:30px;height:30px;flex:none}
 .brand h1{margin:0;font-size:16px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
 .brand small{display:block;color:var(--muted);font-size:11.5px;font-weight:600}
 .tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;align-self:stretch}
 .tabs::-webkit-scrollbar{display:none}
-.tabs button{background:none;border:0;padding:0 11px;font-size:13.5px;font-weight:600;color:var(--muted);white-space:nowrap;position:relative;display:flex;align-items:center}
+.tabs button{background:none;border:0;padding:0 9px;font-size:13.5px;font-weight:600;color:var(--muted);white-space:nowrap;position:relative;display:flex;align-items:center}
 .tabs button:hover{color:var(--ink)}
 .tabs button.on{color:var(--ink)}
-.tabs button.on::after{content:"";position:absolute;left:11px;right:11px;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:var(--ink)}
+.tabs button.on::after{content:"";position:absolute;left:9px;right:9px;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:var(--ink)}
 .hact{display:flex;gap:8px;flex:none}
 .hbtn{border:1px solid var(--line);background:#fff;border-radius:9px;padding:6px 12px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:7px;color:var(--ink2)}
 .hbtn:hover{border-color:#C7CAC3;color:var(--ink)}
@@ -279,6 +279,68 @@ details.adv .form{margin-top:10px}
 @media(max-width:860px){.hdr{position:static}.hdr>.hrow:first-child{flex-wrap:wrap;gap:0 10px}.hdr>.hrow:first-child .brand{flex:1}.tabs{order:3;flex:0 0 100%;min-height:40px;border-top:1px solid var(--line2)}.hrow{padding-left:14px;padding-right:14px}.view{padding:16px 14px 60px}.brand small{display:none}.hbtn span.t{display:none}}
 @media print{.hdr,.cx{display:none}.card{break-inside:avoid}}
 
+/* ---------- v2.1: calmer surfaces, insights, more-detail, sorting ---------- */
+.hbtn.pri{background:var(--ink);border-color:var(--ink);color:#fff}
+.hbtn.pri:hover{background:#343942;color:#fff}
+.chipbtn .sub{font-weight:500;opacity:.7;font-size:12px}
+.chipbtn.on .sub{opacity:.75}
+.muted{color:var(--muted);font-weight:500}
+.card{border-color:var(--line);box-shadow:none}
+.ch{margin-bottom:14px}
+.ch h3{font-size:14.5px}
+.take{color:var(--muted);font-size:12.5px}
+.take b{color:var(--ink2)}
+.ib{border-color:transparent;background:transparent;color:var(--muted);height:26px;padding:0 7px}
+.ib:hover{background:#F1F2EF;border-color:transparent;color:var(--ink)}
+.grid{gap:16px;margin-bottom:16px}
+.phead{margin:6px 0 20px}
+.phead .lede{font-size:14px;color:var(--ink2)}
+ul.insights{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px;max-width:92ch}
+ul.insights li{position:relative;padding-left:18px;font-size:14px;color:var(--ink2);line-height:1.45}
+ul.insights li::before{content:"";position:absolute;left:2px;top:.52em;width:8px;height:8px;border-radius:50%;background:var(--calls)}
+ul.insights li.warn::before{background:var(--short)}
+ul.insights li.good::before{background:var(--talk)}
+ul.insights li b{color:var(--ink)}
+ul.insights button{background:none;border:0;padding:0;text-align:left;color:inherit;font:inherit;line-height:inherit}
+ul.insights button:hover{color:var(--ink)}
+ul.insights button em{font-style:normal;color:var(--muted);margin-left:2px}
+ul.insights button:hover em{color:var(--calls)}
+details.more-d{margin-top:22px}
+details.more-d>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--ink2);padding:10px 0;border-top:1px solid var(--line)}
+details.more-d>summary::-webkit-details-marker{display:none}
+details.more-d>summary::before{content:"+";display:grid;place-items:center;width:20px;height:20px;border-radius:6px;background:#ECEDEA;font-weight:800}
+details.more-d[open]>summary::before{content:"–"}
+details.more-d>summary small{color:var(--muted);font-weight:500;font-size:12px}
+details.more-d>summary:hover{color:var(--ink)}
+.more-b{padding-top:6px}
+ul.who2{list-style:none;margin:0;padding:0;display:grid}
+ul.who2 li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line2);flex-wrap:wrap}
+ul.who2 li:last-child{border-bottom:0}
+ul.who2 button{background:none;border:0;padding:0;font-weight:700;color:var(--ink);text-align:left}
+ul.who2 button:hover{color:var(--calls);text-decoration:underline}
+ul.who2 span{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+ul.who2 i{font-style:normal;font-size:11.5px;font-weight:600;background:var(--short2);color:#7A5410;border-radius:999px;padding:1px 8px;white-space:nowrap}
+.dt th.sortable:hover{background:#EFF0EC}
+.dt th.sortable:not(.sorted)::after{content:" ↕";opacity:0;color:var(--muted)}
+.dt th.sortable:not(.sorted):hover::after{opacity:1}
+.pickrow{display:flex;justify-content:space-between;width:100%;background:none;border:0;padding:7px 8px;border-radius:7px;font-size:13px;text-align:left}
+.pickrow:hover{background:var(--hover)}
+.pickrow.on{background:var(--ink);color:#fff}
+.pickrow.on .muted{color:#C9CCD1}
+.days{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--ink2)}
+.days>span{margin-right:6px}
+.dchk{position:relative;display:inline-flex!important;gap:0!important}
+.dchk input{position:absolute;opacity:0;width:1px;height:1px}
+.dchk span{border:1px solid var(--line);border-radius:8px;padding:5px 11px;font-weight:700;color:var(--muted);cursor:pointer;background:#fff}
+.dchk input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+.dchk input:focus-visible+span{outline:2px solid var(--calls);outline-offset:2px}
+.merged{background:#F7F8F5;border-radius:10px;padding:12px 14px;font-size:13.5px}
+.merged span{color:var(--muted);font-size:12.5px}
+.prof{margin-bottom:12px}
+@media(max-width:860px){.chipbtn .sub{display:none}}
+.wc .more5{margin:-2px 0 8px;font-size:12px;color:var(--muted)}
+.wc{display:flex;flex-direction:column}.wc a{margin-top:auto}
+
 </style>
 </head>
 <body>
@@ -286,7 +348,7 @@ details.adv .form{margin-top:10px}
   <div class="hrow">
     <div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1A1D21"/><rect x="7" y="15" width="3" height="8" rx="1.5" fill="#CDD3F5"/><rect x="12" y="10" width="3" height="13" rx="1.5" fill="#4B5BD6"/><rect x="17" y="7" width="3" height="16" rx="1.5" fill="#5BBE9C"/><rect x="22" y="12" width="3" height="11" rx="1.5" fill="#15876A"/></svg><div><h1>Business Insights</h1><small>by JK · <span id="brandVer"></span></small></div></div>
     <nav class="tabs" id="nav" aria-label="Pages"></nav>
-    <div class="hact"><button class="hbtn" id="dataBtn" aria-label="Your data"></button><button class="hbtn" data-settings aria-label="Settings"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span class="t">Settings</span></button></div>
+    <div class="hact"><button class="hbtn" id="dataBtn" aria-label="Your data files"></button><button class="hbtn pri" data-act="upload" aria-label="Add files"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><span class="t">Add files</span></button><button class="hbtn" data-settings aria-label="Settings"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span class="t">Settings</span></button></div>
   </div>
   <div class="fbar" id="fbar"></div>
 </header>
@@ -322,7 +384,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 </script>
 <script>
 /* ====== VERSION – bump this number every time the file is rebuilt ====== */
-const APP_VERSION = "2.0";
+const APP_VERSION = "2.1";
 const __AC__ = {"201":["NJ","Eastern"],"202":["DC","Eastern"],"203":["CT","Eastern"],"204":["Manitoba (non-US)","Central"],"205":["AL","Central"],"206":["WA","Pacific"],"207":["ME","Eastern"],"208":["ID","Mountain"],"209":["CA","Pacific"],"210":["TX","Central"],"212":["NY","Eastern"],"213":["CA","Pacific"],"214":["TX","Central"],"215":["PA","Eastern"],"216":["OH","Eastern"],"217":["IL","Central"],"218":["MN","Central"],"219":["IN","Eastern"],"220":["OH","Eastern"],"223":["PA","Eastern"],"224":["IL","Central"],"225":["LA","Central"],"226":["Ontario (non-US)","Eastern"],"227":["MD","Eastern"],"228":["MS","Central"],"229":["GA","Eastern"],"231":["MI","Eastern"],"234":["OH","Eastern"],"235":["MO","Central"],"236":["British Columbia (non-US)","Pacific"],"239":["FL","Eastern"],"240":["MD","Eastern"],"246":["Barbados (non-US)","Other"],"248":["MI","Eastern"],"249":["Ontario (non-US)","Eastern"],"250":["British Columbia (non-US)","Pacific"],"251":["AL","Central"],"252":["NC","Eastern"],"253":["WA","Pacific"],"254":["TX","Central"],"256":["AL","Central"],"257":["British Columbia (non-US)","Pacific"],"260":["IN","Eastern"],"262":["WI","Central"],"263":["Quebec (non-US)","Eastern"],"267":["PA","Eastern"],"269":["MI","Eastern"],"270":["KY","Eastern"],"272":["PA","Eastern"],"274":["WI","Central"],"276":["VA","Eastern"],"279":["CA","Pacific"],"281":["TX","Central"],"283":["OH","Eastern"],"289":["Ontario (non-US)","Eastern"],"301":["MD","Eastern"],"302":["DE","Eastern"],"303":["CO","Mountain"],"304":["WV","Eastern"],"305":["FL","Eastern"],"306":["Saskatchewan (non-US)","Central"],"307":["WY","Mountain"],"308":["NE","Central"],"309":["IL","Central"],"310":["CA","Pacific"],"312":["IL","Central"],"313":["MI","Eastern"],"314":["MO","Central"],"315":["NY","Eastern"],"316":["KS","Central"],"317":["IN","Eastern"],"318":["LA","Central"],"319":["IA","Central"],"320":["MN","Central"],"321":["FL","Eastern"],"323":["CA","Pacific"],"324":["FL","Eastern"],"325":["TX","Central"],"326":["OH","Eastern"],"327":["AR","Central"],"329":["NY","Eastern"],"330":["OH","Eastern"],"331":["IL","Central"],"332":["NY","Eastern"],"334":["AL","Central"],"336":["NC","Eastern"],"337":["LA","Central"],"339":["MA","Eastern"],"341":["CA","Pacific"],"343":["Ontario (non-US)","Eastern"],"346":["TX","Central"],"347":["NY","Eastern"],"350":["CA","Pacific"],"351":["MA","Eastern"],"352":["FL","Eastern"],"353":["WI","Central"],"354":["Quebec (non-US)","Eastern"],"360":["WA","Pacific"],"361":["TX","Central"],"363":["NY","Eastern"],"364":["KY","Eastern"],"365":["Ontario (non-US)","Eastern"],"367":["Quebec (non-US)","Eastern"],"368":["Alberta (non-US)","Mountain"],"369":["CA","Pacific"],"380":["OH","Eastern"],"382":["Ontario (non-US)","Eastern"],"385":["UT","Mountain"],"386":["FL","Eastern"],"401":["RI","Eastern"],"402":["NE","Central"],"403":["Alberta (non-US)","Mountain"],"404":["GA","Eastern"],"405":["OK","Central"],"406":["MT","Mountain"],"407":["FL","Eastern"],"408":["CA","Pacific"],"409":["TX","Central"],"410":["MD","Eastern"],"412":["PA","Eastern"],"413":["MA","Eastern"],"414":["WI","Central"],"415":["CA","Pacific"],"416":["Ontario (non-US)","Eastern"],"417":["MO","Central"],"418":["Quebec (non-US)","Eastern"],"419":["OH","Eastern"],"423":["TN","Eastern"],"424":["CA","Pacific"],"425":["WA","Pacific"],"428":["New Brunswick (non-US)","Other"],"430":["TX","Central"],"431":["Manitoba (non-US)","Central"],"432":["TX","Central"],"434":["VA","Eastern"],"435":["UT","Mountain"],"437":["Ontario (non-US)","Eastern"],"438":["Quebec (non-US)","Eastern"],"440":["OH","Eastern"],"441":["Bermuda (non-US)","Other"],"442":["CA","Pacific"],"443":["MD","Eastern"],"445":["PA","Eastern"],"447":["IL","Central"],"448":["FL","Eastern"],"450":["Quebec (non-US)","Eastern"],"458":["OR","Pacific"],"463":["IN","Eastern"],"464":["IL","Central"],"468":["Quebec (non-US)","Eastern"],"469":["TX","Central"],"470":["GA","Eastern"],"472":["NC","Eastern"],"474":["Saskatchewan (non-US)","Central"],"475":["CT","Eastern"],"478":["GA","Eastern"],"479":["AR","Central"],"480":["AZ","Mountain"],"484":["PA","Eastern"],"501":["AR","Central"],"502":["KY","Eastern"],"503":["OR","Pacific"],"504":["LA","Central"],"505":["NM","Mountain"],"506":["New Brunswick (non-US)","Other"],"507":["MN","Central"],"508":["MA","Eastern"],"509":["WA","Pacific"],"510":["CA","Pacific"],"512":["TX","Central"],"513":["OH","Eastern"],"514":["Quebec (non-US)","Eastern"],"515":["IA","Central"],"516":["NY","Eastern"],"517":["MI","Eastern"],"518":["NY","Eastern"],"519":["Ontario (non-US)","Eastern"],"520":["AZ","Mountain"],"530":["CA","Pacific"],"531":["NE","Central"],"534":["WI","Central"],"539":["OK","Central"],"540":["VA","Eastern"],"541":["OR","Pacific"],"548":["Ontario (non-US)","Eastern"],"551":["NJ","Eastern"],"557":["MO","Central"],"559":["CA","Pacific"],"561":["FL","Eastern"],"562":["CA","Pacific"],"563":["IA","Central"],"564":["WA","Pacific"],"567":["OH","Eastern"],"570":["PA","Eastern"],"571":["VA","Eastern"],"572":["OK","Central"],"573":["MO","Central"],"574":["IN","Eastern"],"575":["NM","Mountain"],"579":["Quebec (non-US)","Eastern"],"580":["OK","Central"],"581":["Quebec (non-US)","Eastern"],"582":["PA","Eastern"],"584":["Manitoba (non-US)","Central"],"585":["NY","Eastern"],"586":["MI","Eastern"],"587":["Alberta (non-US)","Mountain"],"600":["Canada (non-US)","Other"],"601":["MS","Central"],"602":["AZ","Mountain"],"603":["NH","Eastern"],"604":["British Columbia (non-US)","Pacific"],"605":["SD","Central"],"606":["KY","Eastern"],"607":["NY","Eastern"],"608":["WI","Central"],"609":["NJ","Eastern"],"610":["PA","Eastern"],"612":["MN","Central"],"613":["Ontario (non-US)","Eastern"],"614":["OH","Eastern"],"615":["TN","Central"],"616":["MI","Eastern"],"617":["MA","Eastern"],"618":["IL","Central"],"619":["CA","Pacific"],"620":["KS","Central"],"622":["Canada (non-US)","Other"],"623":["AZ","Mountain"],"626":["CA","Pacific"],"628":["CA","Pacific"],"629":["TN","Central"],"630":["IL","Central"],"631":["NY","Eastern"],"633":["Canada (non-US)","Other"],"636":["MO","Central"],"639":["Saskatchewan (non-US)","Central"],"640":["NJ","Eastern"],"641":["IA","Central"],"645":["FL","Eastern"],"646":["NY","Eastern"],"647":["Ontario (non-US)","Eastern"],"650":["CA","Pacific"],"651":["MN","Central"],"656":["FL","Eastern"],"657":["CA","Pacific"],"658":["Jamaica (non-US)","Other"],"659":["AL","Central"],"660":["MO","Central"],"661":["CA","Pacific"],"662":["MS","Central"],"667":["MD","Eastern"],"669":["CA","Pacific"],"670":["Northern Mariana Islands (non-US)","Other"],"671":["Guam (non-US)","Other"],"672":["British Columbia (non-US)","Pacific"],"678":["GA","Eastern"],"680":["NY","Eastern"],"681":["WV","Eastern"],"682":["TX","Central"],"683":["Ontario (non-US)","Eastern"],"686":["VA","Eastern"],"689":["FL","Central"],"701":["ND","Central"],"702":["NV","Pacific"],"703":["VA","Eastern"],"704":["NC","Eastern"],"705":["Ontario (non-US)","Eastern"],"706":["GA","Eastern"],"707":["CA","Pacific"],"708":["IL","Central"],"709":["Newfoundland and Labrador (non-US)","Other"],"712":["IA","Central"],"713":["TX","Central"],"714":["CA","Pacific"],"715":["WI","Central"],"716":["NY","Eastern"],"717":["PA","Eastern"],"718":["NY","Eastern"],"719":["CO","Mountain"],"720":["CO","Mountain"],"724":["PA","Eastern"],"725":["NV","Pacific"],"726":["TX","Central"],"727":["FL","Eastern"],"728":["FL","Eastern"],"730":["IL","Central"],"731":["TN","Central"],"732":["NJ","Eastern"],"734":["MI","Eastern"],"737":["TX","Central"],"738":["CA","Pacific"],"740":["OH","Eastern"],"742":["Ontario (non-US)","Eastern"],"743":["NC","Eastern"],"747":["CA","Pacific"],"748":["CO","Mountain"],"753":["Ontario (non-US)","Eastern"],"754":["FL","Eastern"],"757":["VA","Eastern"],"758":["Saint Lucia (non-US)","Other"],"760":["CA","Pacific"],"762":["GA","Eastern"],"763":["MN","Central"],"765":["IN","Eastern"],"769":["MS","Central"],"770":["GA","Eastern"],"771":["DC","Eastern"],"772":["FL","Eastern"],"773":["IL","Central"],"774":["MA","Eastern"],"775":["NV","Mountain"],"778":["British Columbia (non-US)","Pacific"],"779":["IL","Central"],"780":["Alberta (non-US)","Mountain"],"781":["MA","Eastern"],"782":["Nova Scotia/Prince Edward Island (non-US)","Other"],"785":["KS","Central"],"786":["FL","Eastern"],"787":["Puerto Rico (non-US)","Other"],"801":["UT","Mountain"],"802":["VT","Eastern"],"803":["SC","Eastern"],"804":["VA","Eastern"],"805":["CA","Pacific"],"806":["TX","Central"],"807":["Ontario (non-US)","Eastern"],"808":["HI","Hawaii"],"809":["Dominican Republic (non-US)","Other"],"810":["MI","Eastern"],"812":["IN","Eastern"],"813":["FL","Eastern"],"814":["PA","Eastern"],"815":["IL","Central"],"816":["MO","Central"],"817":["TX","Central"],"818":["CA","Pacific"],"819":["Quebec (non-US)","Eastern"],"820":["CA","Pacific"],"821":["SC","Eastern"],"825":["Alberta (non-US)","Mountain"],"826":["VA","Eastern"],"828":["NC","Eastern"],"829":["Dominican Republic (non-US)","Other"],"830":["TX","Central"],"831":["CA","Pacific"],"832":["TX","Central"],"835":["PA","Eastern"],"838":["NY","Eastern"],"839":["SC","Eastern"],"840":["CA","Pacific"],"843":["SC","Eastern"],"845":["NY","Eastern"],"847":["IL","Central"],"848":["NJ","Eastern"],"849":["Dominican Republic (non-US)","Other"],"850":["FL","Central"],"854":["SC","Eastern"],"856":["NJ","Eastern"],"857":["MA","Eastern"],"858":["CA","Pacific"],"859":["KY","Eastern"],"860":["CT","Eastern"],"862":["NJ","Eastern"],"863":["FL","Eastern"],"864":["SC","Eastern"],"865":["TN","Eastern"],"867":["Northwest Territories/Nunavut/Yukon (non-US)","Other"],"868":["Trinidad and Tobago (non-US)","Other"],"870":["AR","Central"],"872":["IL","Central"],"873":["Quebec (non-US)","Eastern"],"876":["Jamaica (non-US)","Other"],"878":["PA","Eastern"],"879":["Newfoundland and Labrador (non-US)","Other"],"901":["TN","Central"],"902":["Nova Scotia/Prince Edward Island (non-US)","Other"],"903":["TX","Central"],"904":["FL","Eastern"],"905":["Ontario (non-US)","Eastern"],"906":["MI","Eastern"],"907":["AK","Alaska"],"908":["NJ","Eastern"],"909":["CA","Pacific"],"910":["NC","Eastern"],"912":["GA","Eastern"],"913":["KS","Central"],"914":["NY","Eastern"],"915":["TX","Mountain"],"916":["CA","Pacific"],"917":["NY","Eastern"],"918":["OK","Central"],"919":["NC","Eastern"],"920":["WI","Central"],"925":["CA","Pacific"],"928":["AZ","Mountain"],"929":["NY","Eastern"],"930":["IN","Eastern"],"931":["TN","Central"],"934":["NY","Eastern"],"936":["TX","Central"],"937":["OH","Eastern"],"938":["AL","Central"],"939":["Puerto Rico (non-US)","Other"],"940":["TX","Central"],"941":["FL","Eastern"],"942":["Ontario (non-US)","Eastern"],"943":["GA","Eastern"],"945":["TX","Central"],"947":["MI","Eastern"],"948":["VA","Eastern"],"949":["CA","Pacific"],"951":["CA","Pacific"],"952":["MN","Central"],"954":["FL","Eastern"],"956":["TX","Central"],"959":["CT","Eastern"],"970":["CO","Mountain"],"971":["OR","Pacific"],"972":["TX","Central"],"973":["NJ","Eastern"],"975":["MO","Central"],"978":["MA","Eastern"],"979":["TX","Central"],"980":["NC","Eastern"],"983":["CO","Mountain"],"984":["NC","Eastern"],"985":["LA","Central"],"986":["ID","Mountain"],"989":["MI","Eastern"]};
 /* ============================================================
    CORE  –  data store, ingestion, analytics  (no DOM access)
@@ -352,7 +414,8 @@ const CFG_DEFAULT = {
   minSample: 30,                           // min dials for a hour-window ranking
   lateGrace: 60,                           // minutes after shift start = late
   earlyGrace: 60,                          // minutes before shift end = early leave
-  tzShift: 0                               // hours to add to source timestamps to get ET
+  tzShift: 0,                              // hours to add to source timestamps to get ET
+  workDays: 31                             // bitmask of working weekdays, bit 0 = Monday (31 = Mon–Fri)
 };
 let CFG = Object.assign({}, CFG_DEFAULT);
 let CFGVER = 0;
@@ -460,17 +523,14 @@ function applyKeep(keep){
   for(const f of ['t','len','rec','cand','did','dir','res','sess','src']) DB[f] = permute(DB[f], ord, DB[f].constructor);
   DB.n = ord.length;
 }
+function callKey(A,i){ return A.t[i]+'|'+A.rec[i]+'|'+A.dir[i]+'|'+A.cand[i]+'|'+A.did[i]+'|'+A.len[i]+'|'+A.res[i]; }
 function addChunk(ch, srcId){
-  const n0=DB.n; let add=ch.n;
-  let keepNew=null;
-  if(n0>0){ // de-duplicate against what we already hold
-    const seen=new Set();
-    for(let i=0;i<n0;i++) seen.add(DB.sess[i]+'|'+DB.t[i]+'|'+DB.rec[i]+'|'+DB.dir[i]+'|'+DB.cand[i]+'|'+DB.did[i]);
-    keepNew=[];
-    for(let i=0;i<ch.n;i++){ const key=ch.sess[i]+'|'+ch.t[i]+'|'+ch.rec[i]+'|'+ch.dir[i]+'|'+ch.cand[i]+'|'+ch.did[i]; if(!seen.has(key)){ seen.add(key); keepNew.push(i);} }
-    add=keepNew.length;
-  }
-  const pick = (a,C)=> keepNew? permute(a, Uint32Array.from(keepNew), C) : a;
+  const n0=DB.n; const seen=new Set();
+  for(let i=0;i<n0;i++) seen.add(callKey(DB,i));
+  const keepNew=[];
+  for(let i=0;i<ch.n;i++){ const key=callKey(ch,i); if(!seen.has(key)){ seen.add(key); keepNew.push(i);} }
+  const add=keepNew.length, ord=Uint32Array.from(keepNew);
+  const pick = (a,C)=> permute(a, ord, C);
   const srcArr = new Uint8Array(add).fill(srcId);
   DB.t=concat(DB.t,pick(ch.t,Uint32Array),Uint32Array); DB.len=concat(DB.len,pick(ch.len,Uint32Array),Uint32Array);
   DB.rec=concat(DB.rec,pick(ch.rec,Int32Array),Int32Array); DB.cand=concat(DB.cand,pick(ch.cand,Float64Array),Float64Array);
@@ -497,40 +557,54 @@ function deriveTime(){
   // working days = weekdays with real team activity (auto-detects holidays)
   const cnt=new Map();
   for(let i=0;i<n;i++) if(DB.dir[i]===0){ const d=DB.day[i]; cnt.set(d,(cnt.get(d)||0)+1); }
-  const wk=[]; for(const [d,c] of cnt) if(dowOf(d)<5) wk.push(c);
+  const wk=[]; for(const [d,c] of cnt) if(isWorkDow(dowOf(d))) wk.push(c);
   const med=median(wk); WORKDAY=new Set();
-  for(const [d,c] of cnt) if(dowOf(d)<5 && c>=0.25*med) WORKDAY.add(d);
+  for(const [d,c] of cnt) if(isWorkDow(dowOf(d)) && c>=0.25*med) WORKDAY.add(d);
   DB.ver++; CTX=null; MEMO_GLOBAL.clear();
 }
 const dowOf = d => (((d+3)%7)+7)%7;   // 0 = Monday
+const isWorkDow = w => ((CFG.workDays>>w)&1)===1;
+const workDows = () => [0,1,2,3,4,5,6].filter(isWorkDow);
 const isWork = d => WORKDAY.has(d);
 
+function nextSrcId(){ const used=new Set(SOURCES.map(s=>s.id)); for(let k=1;k<255;k++) if(!used.has(k)) return k; return 255; }
 function ingestFile(rows, filtersRows, name, kind, meta){
   const ch = parseCallRows(rows);
   if(!ch.n) throw new Error('No readable call rows found in "'+name+'".');
-  // replace an existing source of the same name (re-sync / re-upload)
+  // a synced file replaces its own earlier copy; an upload with a clashing name is kept as a new file and merged
   let src = SOURCES.find(s=>s.name===name);
-  if(src){ removeSourceRows(src.id); } else { src={id:++SRC_SEQ % 250, name, kind, rows:0}; SOURCES.push(src); }
+  if(src && kind==='sync'){ removeSourceRows(src.id); }
+  else { if(src){ const ext=(name.match(/\.[^.]+$/)||[''])[0], base=name.slice(0,name.length-ext.length); let k=2; while(SOURCES.some(s=>s.name===base+' ('+k+')'+ext)) k++; name=base+' ('+k+')'+ext; }
+         src={id:nextSrcId(), name, kind, rows:0}; SOURCES.push(src); }
   src.kind=kind; Object.assign(src, meta||{});
   const r = addChunk(ch, src.id);
-  src.rows = r.added; src.total = ch.n; src.skipped = r.skipped; src.addedAt = Date.now();
+  src.rows = r.added; src.total = ch.n; src.recs=[...new Set(ch.rec)]; src.skipped = r.skipped; src.addedAt = Date.now();
   let mn=Infinity,mx=-Infinity; for(let i=0;i<ch.n;i++){ const v=ch.t[i]; if(v<mn)mn=v; if(v>mx)mx=v; } src.minT=mn; src.maxT=mx;
   if(filtersRows){ for(let i=1;i<filtersRows.length;i++){ const u=filtersRows[i] && filtersRows[i][1]; if(u) ROSTER.add(String(u).trim()); }
     const fr=filtersRows[1]; if(fr) src.filterRange = [fr[6],fr[7]].filter(Boolean).join(' → '); }
+  let dropped=false;
+  if(!r.added && kind!=='sync'){ SOURCES.splice(SOURCES.indexOf(src),1); dropped=true; }
   sortByTime(); deriveTime();
-  return {added:r.added, skipped:r.skipped, bad:ch.bad, total:ch.n};
+  return {added:r.added, skipped:r.skipped, bad:ch.bad, total:ch.n, name, dropped};
 }
 function removeSource(id){
-  const i=SOURCES.findIndex(s=>s.id===id); if(i<0) return;
-  removeSourceRows(id); SOURCES.splice(i,1); deriveTime();
+  // rows first loaded from this file are kept when another loaded file covers the same time and recruiter,
+  // because that file's copies were merged away as duplicates when it was added
+  const i=SOURCES.findIndex(s=>s.id===id); if(i<0) return 0;
+  const others=SOURCES.filter(s=>s.id!==id).map(s=>({s,recs:s.recs?new Set(s.recs):null}));
+  let moved=0; const keep=[];
+  for(let k=0;k<DB.n;k++){ if(DB.src[k]!==id){ keep.push(k); continue; }
+    const t=DB.t[k], r=DB.rec[k]; const o=others.find(x=>t>=x.s.minT&&t<=x.s.maxT&&(!x.recs||x.recs.has(r)));
+    if(o){ DB.src[k]=o.s.id; o.s.rows++; keep.push(k); moved++; } }
+  applyKeep(keep); SOURCES.splice(i,1); deriveTime(); return moved;
 }
 function clearAll(){
   for(const f of ['t','len','rec','cand','did','dir','res','sess','src','day','sod']) DB[f]=new DB[f].constructor(0);
   DB.n=0; DB.minDay=DB.maxDay=0; SOURCES.length=0; ROSTER=new Set(); NAMES.length=0; NAME_ID.clear(); WORKDAY=new Set(); DB.ver++; CTX=null; MEMO_GLOBAL.clear();
 }
 function setCfg(patch){
-  const oldShift=CFG.tzShift; Object.assign(CFG,patch); CFGVER++; CTX=null;
-  if(CFG.tzShift!==oldShift && DB.n) deriveTime();
+  const oldShift=CFG.tzShift, oldDays=CFG.workDays; Object.assign(CFG,patch); if(!(CFG.workDays&127)) CFG.workDays=31; CFGVER++; CTX=null;
+  if((CFG.tzShift!==oldShift||CFG.workDays!==oldDays) && DB.n) deriveTime();
 }
 
 /* ---------- context (filtered row indexes) ---------- */
@@ -609,11 +683,11 @@ function recStats(ctx){ return memo(ctx,'rec',()=>{
     o.uniqueDialed=o.nums.size; let ur=0; for(const e of o.nums.values()) if(e[1]>0) ur++; o.uniqueReached=ur;
     o.uniqueRatio=div(o.uniqueDialed,o.dials); o.reachPerDay=div(ur,pd); o.talkPerDial=div(o.talk,o.dials);
     // attendance
-    o.absent=[]; o.windowDays=0; o.absentByDow=zeros(5); o.maxStreak=0; o.bridge=0; o.firstDay=presentArr[0]; o.lastDay2=presentArr[presentArr.length-1];
+    o.absent=[]; o.windowDays=0; o.absentByDow=zeros(7); o.maxStreak=0; o.bridge=0; o.firstDay=presentArr[0]; o.lastDay2=presentArr[presentArr.length-1];
     if(pd){
       const pset=new Set(presentArr); let streak=0;
       for(const d of wd){ if(d<o.firstDay||d>o.lastDay2) continue; o.windowDays++;
-        if(!pset.has(d)){ o.absent.push(d); o.absentByDow[dowOf(d)]++; streak++; if(streak>o.maxStreak) o.maxStreak=streak; const w=dowOf(d); if(w===0||w===4) o.bridge++; } else streak=0; }
+        if(!pset.has(d)){ o.absent.push(d); o.absentByDow[dowOf(d)]++; streak++; if(streak>o.maxStreak) o.maxStreak=streak; const w=dowOf(d), wl=workDows(); if(w===wl[0]||w===wl[wl.length-1]) o.bridge++; } else streak=0; }
     }
     o.absentPct=div(o.absent.length,o.windowDays);
     const worst=o.absentByDow.indexOf(Math.max(...o.absentByDow)); o.absentTopDow = o.absent.length>=2 && o.absentByDow[worst]>=2 ? worst : -1;
@@ -692,10 +766,10 @@ function haltPass(ctx){ return memo(ctx,'halt',()=>{
   const days=[...dayInfo.keys()].sort((a,b)=>a-b);
   const uns=halts.filter(h=>h.kind===1);
   const buckets=[{l:'10–15 min',a:600,b:900},{l:'15–30 min',a:900,b:1800},{l:'30–60 min',a:1800,b:3600},{l:'60+ min',a:3600,b:1e9}].map(x=>Object.assign(x,{n:0,min:0}));
-  const slotAll=zeros(48), slotUns=zeros(48), dowUns=zeros(5), dowLong=zeros(5), dowDays=zeros(5);
+  const slotAll=zeros(48), slotUns=zeros(48), dowUns=zeros(7), dowLong=zeros(7), dowDays=zeros(7);
   for(const h of halts){ slotAll[Math.min(47,Math.floor(h.start/1800))]++; }
-  for(const h of uns){ slotUns[Math.min(47,Math.floor(h.start/1800))]++; for(const b of buckets) if(h.len>=b.a&&h.len<b.b){b.n++;b.min+=h.len/60;} const w=dowOf(h.day); if(w<5){dowUns[w]++; if(h.len>=longS) dowLong[w]++;} }
-  for(const d of days){ const w=dowOf(d); if(w<5) dowDays[w]+=dayInfo.get(d).present; }
+  for(const h of uns){ slotUns[Math.min(47,Math.floor(h.start/1800))]++; for(const b of buckets) if(h.len>=b.a&&h.len<b.b){b.n++;b.min+=h.len/60;} const w=dowOf(h.day); {dowUns[w]++; if(h.len>=longS) dowLong[w]++;} }
+  for(const d of days){ const w=dowOf(d); dowDays[w]+=dayInfo.get(d).present; }
   // concurrency
   const avgAll=new Float64Array(SL), avgUns=new Float64Array(SL), avgPct=new Float64Array(SL); let dn=0; const moments=[], momentsAll=[];
   for(const d of days){ const ca=concAll.get(d), cu=concUns.get(d); let ra=0, ru=0; dn++;
@@ -843,7 +917,7 @@ function hourAdj(o, team, metric, K){ // shrunk hourly rate vs team
 function coachNotes(row, sc, tstat, metric){
   const notes=[]; const T=CFG, b=sc.bench, o=row;
   const ok=(t)=>notes.push({t:'good',x:t}), bad=(t)=>notes.push({t:'bad',x:t}), tip=(t)=>notes.push({t:'tip',x:t});
-  const dn=['Mon','Tue','Wed','Thu','Fri'];
+  const dn=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
   if(o.presentDays===0){ bad('No calls in the selected period.'); return notes; }
   if(o.absent.length){
     let s='Skipped '+o.absent.length+' of '+o.windowDays+' working days ('+Math.round(o.absentPct*100)+'%)';
@@ -1070,7 +1144,8 @@ const SVGI=p=>'<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="
 const IC={chart:SVGI('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'),table:SVGI('<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/>'),copy:SVGI('<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>'),dl:SVGI('<path d="M12 3v12M7 10l5 5 5-5M4 21h16"/>'),check:SVGI('<path d="M5 12l5 5L20 7"/>')};
 
 /* ---------- copy / export ---------- */
-function plain(v){ if(v==null) return ''; const s=String(v); if(s.indexOf('<')<0&&s.indexOf('&')<0) return s; const d=document.createElement('div'); d.innerHTML=s; return d.textContent.trim(); }
+const cellT=v=>v!=null&&typeof v==='object'?v.t:v;           // cells may be {t:text, v:sortValue}
+function plain(v){ v=cellT(v); if(v==null) return ''; const s=String(v); if(s.indexOf('<')<0&&s.indexOf('&')<0) return s; const d=document.createElement('div'); d.innerHTML=s; return d.textContent.trim(); }
 async function copyText(txt){
   try{ await navigator.clipboard.writeText(txt); return true; }
   catch(e){ const ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); let ok=false; try{ ok=document.execCommand('copy'); }catch(_){ } ta.remove(); return ok; }
@@ -1078,8 +1153,25 @@ async function copyText(txt){
 const tsvCell=v=>String(v==null?'':v).replace(/[\t\r\n]+/g,' ');
 function csvCell(v){ if(v==null) return ''; const s=String(v); return /[",\n]/.test(s)? '"'+s.replace(/"/g,'""')+'"' : s; }
 function download(name,text){ const blob=new Blob([text],{type:'text/csv'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),2000); }
-function matrixOf(id){ // -> {name, head:[], rows:[[]]} from a card dataset or a big table
-  const D=DATA[id]; if(D) return {name:D.name||id, head:D.cols.map(c=>typeof c==='string'?c:c.l), rows:D.rows.map(r=>r.map(plain))};
+/* turn any displayed cell into something sortable: times, dates, durations, numbers, text */
+function sortKey(v){
+  if(v!=null&&typeof v==='object') return v.v;
+  const s=plain(v).trim(); if(!s||s==='–'||s==='-') return null;
+  let m;
+  if((m=/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\b/i.exec(s))){ let h=+m[1]%12; if(/p/i.test(m[3])) h+=12; return h*60+(+m[2]||0); }
+  if((m=/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b(?:\s+(\d{1,2})\s+([A-Z][a-z]{2}))?/.exec(s))) return m[2]? MON.indexOf(m[3])*40+(+m[2]) : DOW.indexOf(m[1]);
+  if((m=/^(\d+)h\s*(\d+)m/.exec(s))) return +m[1]*3600+(+m[2])*60;
+  if((m=/^(\d+)m\s*(\d+)s/.exec(s))) return +m[1]*60+(+m[2]);
+  if((m=/^(\d+(?:\.\d+)?)\s*(s|min|m)$/.exec(s))) return +m[1]*(m[2]==='s'?1:60);
+  if(/^no change$/i.test(s)) return 0;
+  if((m=/^[-+−]?[\d,]*\.?\d+/.exec(s))){ const n=parseFloat(m[0].replace(/,/g,'').replace('−','-')); if(isFinite(n)) return n; }
+  return s.toLowerCase();
+}
+function sortRows(id,rows){ const S=ST.dsort[id]; if(!S) return rows; const j=S.j;
+  return rows.map((r,i)=>[r,sortKey(r[j]),i]).sort((a,b)=>{ const x=a[1],y=b[1]; if(x==null&&y==null) return a[2]-b[2]; if(x==null) return 1; if(y==null) return -1;
+    const c=(typeof x==='string'||typeof y==='string')?String(x).localeCompare(String(y)):x-y; return c? S.d*c : a[2]-b[2]; }).map(x=>x[0]); }
+function matrixOf(id){ // -> {name, head:[], rows:[[]]} in the order currently shown
+  const D=DATA[id]; if(D) return {name:D.name||id, head:D.cols.map(c=>typeof c==='string'?c:c.l), rows:sortRows(id,D.rows).map(r=>r.map(plain))};
   const T=TABLES[id]; if(T) return {name:T.name, head:T.cols.map(c=>c.l), rows:T.rows.map(r=>T.cols.map(c=>{ if(c.x) return plain(c.x(r)); if(c.f) return plain(c.f(r)); const v=r[c.k]; return typeof v==='number'?r1(v):plain(v); }))};
   return null;
 }
@@ -1087,26 +1179,27 @@ async function copyData(id,btn){
   const M=matrixOf(id); if(!M) return;
   const txt=[M.head.map(tsvCell).join('\t'),...M.rows.map(r=>r.map(tsvCell).join('\t'))].join('\n');
   const ok=await copyText(txt);
-  if(ok){ toast('Copied '+fmtInt(M.rows.length)+' rows – paste straight into Excel or Sheets.','ok'); if(btn){ const h=btn.innerHTML; btn.classList.add('done'); btn.innerHTML=IC.check+'Copied'; setTimeout(()=>{ btn.classList.remove('done'); btn.innerHTML=h; },1600); } }
-  else toast('Copy was blocked by the browser. Switch to the table view and select the cells instead.','err');
+  if(ok){ toast('Copied '+fmtInt(M.rows.length)+' rows – paste into Excel or Sheets.','ok'); if(btn){ const h=btn.innerHTML; btn.classList.add('done'); btn.innerHTML=IC.check+'Copied'; setTimeout(()=>{ btn.classList.remove('done'); btn.innerHTML=h; },1600); } }
+  else toast('Copy was blocked by the browser. Switch to the table and select the cells instead.','err');
 }
 function exportCsv(id){ const M=matrixOf(id); if(!M) return; download('business-insights-'+M.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.csv',[M.head.map(csvCell).join(','),...M.rows.map(r=>r.map(csvCell).join(','))].join('\n')); }
 
 /* ---------- card with chart/table toggle ---------- */
 const DATA={};
-function dataTable(d){
+function dataTable(d,id){
   const cols=d.cols.map(c=>typeof c==='string'?{l:c}:c);
   const isNum=cols.map((c,j)=>c.n!=null?c.n:d.rows.length&&d.rows.every(r=>{ const v=plain(r[j]); return v===''||v==='–'||/^[-+]?[\d,.]+\s*(%|s|m|min|h|pts)?$/.test(v)||/^[\d]+h \d+m$/.test(v); }));
-  return '<div class="tw"><table class="dt"><thead><tr>'+cols.map((c,j)=>'<th class="'+(isNum[j]?'n':'')+'">'+esc(c.l)+'</th>').join('')+'</tr></thead><tbody>'+
-    (d.rows.length?d.rows.map(r=>'<tr>'+r.map((v,j)=>'<td class="'+(isNum[j]?'n':'')+'">'+(typeof v==='number'?esc(fmtCell(v)):(v==null?'':String(v).indexOf('<')>=0?v:esc(v)))+'</td>').join('')+'</tr>').join(''):'<tr><td colspan="'+cols.length+'" style="text-align:center;color:var(--muted);padding:16px">No rows.</td></tr>')+'</tbody></table></div>';
+  const S=id&&ST.dsort[id], rows=id?sortRows(id,d.rows):d.rows;
+  return '<div class="tw"><table class="dt"><thead><tr>'+cols.map((c,j)=>{ const on=S&&S.j===j; return '<th class="'+(isNum[j]?'n ':'')+(id?'sortable ':'')+(on?'sorted '+(S.d<0?'desc':''):'')+'"'+(id?' data-dsort="'+id+'|'+j+'|'+(isNum[j]?1:0)+'" title="Sort by '+esc(c.l)+'"':'')+'>'+esc(c.l)+'</th>'; }).join('')+'</tr></thead><tbody>'+
+    (rows.length?rows.map(r=>'<tr>'+r.map((v0,j)=>{ const v=cellT(v0); return '<td class="'+(isNum[j]?'n':'')+'">'+(typeof v==='number'?esc(fmtCell(v)):(v==null?'':String(v).indexOf('<')>=0?v:esc(v)))+'</td>'; }).join('')+'</tr>').join(''):'<tr><td colspan="'+cols.length+'" style="text-align:center;color:var(--muted);padding:16px">No rows.</td></tr>')+'</tbody></table></div>';
 }
 function fmtCell(v){ return Number.isInteger(v)? fmtInt(v) : (Math.abs(v)<10? v.toFixed(2).replace(/0$/,'') : fmtInt(v)); }
 function card(o){
   const hasT=!!o.data; if(hasT) DATA[o.id]={name:o.title.replace(/<[^>]*>/g,''),cols:o.data.cols,rows:o.data.rows};
   const mode=hasT?(ST.view[o.id]||(ST.tables?'table':'chart')):'chart';
   let h='<section class="card '+(o.cls||'')+'" id="c-'+o.id+'"><header class="ch"><div class="ct"><h3>'+o.title+'</h3>'+(o.take?'<p class="take">'+o.take+'</p>':'')+'</div>';
-  if(hasT) h+='<div class="cx"><span class="seg xs" role="group" aria-label="View"><button data-view="'+o.id+'|chart" class="'+(mode==='chart'?'on':'')+'" aria-pressed="'+(mode==='chart')+'">Chart</button><button data-view="'+o.id+'|table" class="'+(mode==='table'?'on':'')+'" aria-pressed="'+(mode==='table')+'">Table</button></span><button class="ib" data-copy="'+o.id+'" '+tipA('Copy this data as a table (paste into Excel)')+'>'+IC.copy+'Copy</button></div>';
-  h+='</header><div class="cb">'+(o.pre||'')+(mode==='table'?dataTable(o.data):o.body)+'</div>'+(o.foot&&mode!=='table'?'<p class="foot">'+o.foot+'</p>':'')+'</section>';
+  if(hasT) h+='<div class="cx">'+(o.tableOnly?'':'<button class="ib" data-view="'+o.id+'|'+(mode==='table'?'chart':'table')+'" '+tipA(mode==='table'?'Show as chart':'Show as table – click any column to sort')+'>'+(mode==='table'?IC.chart+'Chart':IC.table+'Table')+'</button>')+'<button class="ib" data-copy="'+o.id+'" '+tipA('Copy as a table – paste into Excel')+'>'+IC.copy+'Copy</button></div>';
+  h+='</header><div class="cb">'+(mode==='table'||o.tableOnly?dataTable(o.data,o.id):o.body)+'</div>'+(o.foot&&mode!=='table'?'<p class="foot">'+o.foot+'</p>':'')+'</section>';
   return h;
 }
 
@@ -1146,12 +1239,15 @@ function delta(cur,prev,kind,good,unit,tip){
   return '<span class="dl '+cls+'" '+tipA(tip||('Compared with the previous '+(ST._prevN||'')+' working days'))+'>'+txt+'</span>';
 }
 const note=(t,k)=>'<div class="note '+(k||'')+'">'+t+'</div>';
-function pgHead(t,lede,extra){ return '<div class="phead"><div><h2>'+t+'</h2>'+(lede?'<p class="lede">'+lede+'</p>':'')+'</div>'+(extra||'')+'</div>'; }
+function pgHead(t,sum,ins,extra){
+  const list=(ins||[]).filter(Boolean).slice(0,3);
+  return '<div class="phead"><div><h2>'+t+'</h2>'+(sum?'<p class="lede">'+sum+'</p>':'')+(list.length?'<ul class="insights">'+list.map(x=>'<li class="'+(x.k||'info')+'">'+(x.tab||x.coach!=null?'<button '+(x.coach!=null?'data-coach="'+x.coach+'"':'data-tab="'+x.tab+'"')+'>':'<span>')+x.h+(x.tab||x.coach!=null?' <em>›</em></button>':'</span>')+'</li>').join('')+'</ul>':'')+'</div>'+(extra||'')+'</div>'; }
+function moreDetail(tab,html,n){ if(!html) return ''; const open=ST.moreOpen[tab]; return '<details class="more-d" data-moretab="'+tab+'" '+(open?'open':'')+'><summary><span>'+(open?'Hide':'Show')+' more detail</span><small>'+n+' more '+(n===1?'view':'views')+'</small></summary><div class="more-b">'+html+'</div></details>'; }
 
 /* ============================================================
    Shared page state and helpers
    ============================================================ */
-const ST={tab:'home',F:{from:null,to:null,recs:null,scope:'shift'},metric:'c',sort:{},q:{},limit:{},coach:null,minLoc:50,calAll:false,view:{},tables:false,preset:0};
+const ST={tab:'home',F:{from:null,to:null,recs:null,scope:'shift'},metric:'c',sort:{},dsort:{},q:{},limit:{},coach:null,minLoc:50,calAll:false,view:{},tables:false,preset:0,moreOpen:{}};
 const mName=id=>NAMES[id]||'?';
 const pick=T=>ST.metric==='q'?T.q:T.c;
 const mWord=()=>ST.metric==='q'?'Real conversation':'Picked up';
@@ -1165,8 +1261,14 @@ const bandHex=b=>b==='Strong'?COL.talk:b==='On track'?COL.calls:b==='Needs coach
 const MD=rows=>Math.min(3,Math.max(1,...rows.map(r=>r.presentDays)));
 const nameBtn=r=>'<button data-coach="'+r.id+'">'+esc(r.name)+'</button>';
 const firstName=n=>String(n).split(' ')[0];
-function scopeNote(ctx){ return ctx.F.scope==='shift'?'':note('<b>Showing every call, including weekends and after hours.</b> Turn on “Business hours” in the filter bar for the Mon–Fri '+fmtHour(CFG.shiftStart)+'–'+fmtHour(CFG.shiftEnd)+' ET view.','warn'); }
+const dcell=d=>({t:fmtDay(d),v:d});                      // sortable date cell
+const icell=(t,i)=>({t,v:i});                              // cell that keeps its natural order
+function daysLabel(){ const w=workDows(); if(!w.length) return '–'; let run=true; for(let i=1;i<w.length;i++) if(w[i]!==w[i-1]+1) run=false; return run&&w.length>2? DOW[w[0]]+'–'+DOW[w[w.length-1]] : w.map(i=>DOW[i]).join(', '); }
+const hoursLabel=()=>fmtHour(CFG.shiftStart)+'–'+fmtHour(CFG.shiftEnd);
+const names=(arr,n)=>{ n=n||3; const a=arr.slice(0,n).map(r=>'<b>'+esc(r.name)+'</b>'); return a.join(', ')+(arr.length>n?' and '+(arr.length-n)+' more':''); };
+function scopeNote(ctx){ return ctx.F.scope==='shift'?'':note('Showing <b>every call</b>, including non-working days and after hours. Turn on <b>Business hours</b> for '+daysLabel()+', '+hoursLabel()+' ET only.','warn'); }
 function hoursOf(ctx){ if(ctx.F.scope==='shift'){ const a=[]; for(let h=CFG.shiftStart;h<CFG.shiftEnd;h++) a.push(h); return a; } const T=timeStats(ctx); let lo=23,hi=0; for(let h=0;h<24;h++) if(T.H.n[h]>0){lo=Math.min(lo,h);hi=Math.max(hi,h);} const a=[]; for(let h=lo;h<=hi;h++) a.push(h); return a.length?a:[CFG.shiftStart]; }
+function dowsOf(ctx){ return ctx.F.scope==='shift'? workDows() : [0,1,2,3,4,5,6]; }
 const hLab=h=>fmtHour(h);
 const winLab=h=>fmtHour(h)+'–'+fmtHour(h+2);
 const shortHour=i=>fmtSod(i*1800).replace(':00','').replace(' AM','a').replace(' PM','p');
@@ -1177,93 +1279,82 @@ function trendWord(arr){ const v=arr.filter(isFinite); if(v.length<6) return nul
 const avatarColor=id=>[COL.calls,COL.talk,COL.violet,'#C0663B','#2E7CA8','#8A6D1F'][id%6];
 const initials=n=>String(n).split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0].toUpperCase()).join('');
 
-/* ---------- plain-language highlights ---------- */
-function homeInsights(ctx,S,T,H,I){
-  const out=[], add=(sev,title,text,tab)=>out.push({sev,title,text,tab});
-  const rows=S.rows.filter(r=>r.presentDays>=1&&!r.shared);
-  const reg=rows.filter(r=>r.regularSkipper), skip=rows.filter(r=>r.absent.length);
-  if(ctx.wdays.length>=3&&rows.length) add(reg.length?'high':skip.length?'med':'good',reg.length?reg.length+' recruiters often skip work':skip.length?skip.length+' recruiters missed a working day':'Everyone showed up',reg.length?'Missed 3+ days, or the same weekday again and again.':skip.length?'No repeat pattern yet.':'No missed working days in this period.','attendance');
-  const HD=sumArr([...H.map.values()].map(o=>o.days));
-  if(HD){ const per=H.totals.unsMin/HD, sh=(CFG.shiftEnd-CFG.shiftStart)*60; add(per>=60?'high':per>=30?'med':'good',Math.round(per)+' idle minutes per person a day',Math.round(per/sh*100)+'% of the shift with no calls, breaks excluded. Gaps start most around '+fmtSlot(H.peakSlot)+'.','halts'); }
-  if(T.total.n){ const conn=T.total.c, shortShare=T.dist.slice(0,4).reduce((a,b)=>a+b,0)/(conn||1); add('info',pct0(T.total.q/T.total.n)+' of calls become real conversations',pct0(shortShare)+' of picked-up calls end within 15 seconds – voicemail or a quick hang-up.','quality'); }
-  const hs=homog(T.H.n,T.H.q,CFG.shiftStart,CFG.shiftEnd);
-  add('info',hs.sig?'Time of day matters':'Time of day barely matters',hs.sig?'Real conversations are clearly more likely at some hours.':'Pick-up is about the same all day – focus on lists, not timing.','when');
-  const pad=rows.filter(r=>r.padBand==='High'); if(pad.length) add('high',pad.length+' recruiters may be padding call counts','Instant hang-ups, repeat dialling or very short calls well above the team.','quality');
-  const hol=rows.filter(r=>r.seg==='Volume, little talk'); if(hol.length) add('med',hol.length+' recruiters make many calls but talk little','Call count is fine, talk time is well under target.','recruiters');
-  if(I.sessions){ const u=I.unans/I.sessions; add(u>=.35?'high':u>=.2?'med':'good',pct0(u)+' of inbound calls went unanswered',pct0(I.cb.n?(I.cb.n-I.cb.ever)/I.cb.n:0)+' of those callers never got a call back.','inbound'); }
-  const o={high:0,med:1,info:2,good:3}; out.sort((a,b)=>o[a.sev]-o[b.sev]); return out.slice(0,6);
-}
 function whoCard(color,title,items,tab,tabText){
   return '<div class="wc"><h4><span>'+esc(title)+'</span>'+badge(String(items.length),items.length?(color==='red'?'red':'amber'):'teal')+'</h4>'+
-   (items.length?'<ul>'+items.slice(0,5).map(i=>'<li><button data-coach="'+i.id+'">'+esc(i.name)+'</button><span>'+esc(i.note||'')+'</span></li>').join('')+'</ul>':'<p class="ok">Nobody flagged</p>')+'<a data-tab="'+tab+'">'+esc(tabText)+' ›</a></div>';
+   (items.length?'<ul>'+items.slice(0,5).map(i=>'<li><button data-coach="'+i.id+'">'+esc(i.name)+'</button><span>'+esc(i.note||'')+'</span></li>').join('')+'</ul>'+(items.length>5?'<p class="more5">+'+(items.length-5)+' more</p>':''):'<p class="ok">Nobody flagged</p>')+'<a data-tab="'+tab+'">'+esc(tabText)+' ›</a></div>';
 }
 
 /* ============================================================
    OVERVIEW
    ============================================================ */
 function tabHome(ctx){
-  const T=timeStats(ctx),S=scorecard(ctx),H=S.halt,I=S.inbound,RE=reachStats(ctx),tot=T.total,act=S.rows.filter(r=>r.presentDays>=1),real=act.filter(r=>!r.shared);
+  const T=timeStats(ctx),S=scorecard(ctx),H=S.halt,I=S.inbound,tot=T.total,real=S.rows.filter(r=>r.presentDays>=1&&!r.shared);
   const P=prevCtx(ctx), PT=P&&timeStats(P), PR=P&&recStats(P), pd=perRecDay(recStats(ctx)), ppd=PR&&perRecDay(PR);
   const hrs=hoursOf(ctx), rank=hourRank(T,hrs), best=rank[0];
-  const onT=real.filter(r=>r.seg==='On target').length;
   const qRate=div(tot.q,tot.n), cRate=div(tot.c,tot.n), pqRate=PT?div(PT.total.q,PT.total.n):null;
-  const dqp=pqRate!=null?(qRate-pqRate)*100:null; const dq=dqp==null?'':Math.abs(dqp)<0.3?' (about the same as the previous '+ctx.wdays.length+' days)':' ('+(dqp>0?'up':'down')+' '+Math.abs(dqp).toFixed(1)+' pts on the previous '+ctx.wdays.length+' days)';
-  const lede='<b>'+fmtInt(real.length)+' recruiters</b> made <b>'+fmtInt(tot.n)+' calls</b> over '+ctx.wdays.length+' working days – about '+Math.round(pd.dials)+' each a day. <b>'+pct0(qRate)+'</b> became real conversations'+dq+'.'+(best?' Candidates answer most at <b>'+fmtHourRange(best.h)+'</b>.':'');
-  let h=pgHead('Overview',lede)+scopeNote(ctx);
+  const md=MD(real);
+  const regs=real.filter(r=>r.regularSkipper).sort((a,b)=>b.absent.length-a.absent.length);
+  const hol=real.filter(r=>r.presentDays>=md&&r.seg==='Volume, little talk').sort((a,b)=>b.dialsPerDay-a.dialsPerDay);
+  const idleAll=real.filter(r=>r.h.days>=md), idleCut=Math.max(30,quantile(idleAll.map(r=>r.unsMinPerDay),.75)); const idle=idleAll.filter(r=>r.unsMinPerDay>=idleCut).sort((a,b)=>b.unsMinPerDay-a.unsMinPerDay);
+  const pad=real.filter(r=>r.padBand==='High').sort((a,b)=>b.padScore-a.padScore);
+  // smart insights: most important first, at most three
+  const ins=[];
+  if(pqRate!=null&&Math.abs(qRate-pqRate)>=.01) ins.push({k:qRate>pqRate?'good':'warn',h:'Real conversations are <b>'+(qRate>pqRate?'up':'down')+' '+Math.abs((qRate-pqRate)*100).toFixed(1)+' pts</b> on the previous '+ctx.wdays.length+' days.',tab:'when'});
+  if(regs.length) ins.push({k:'warn',h:names(regs,2)+' '+(regs.length===1?'keeps':'keep')+' missing working days.',tab:'attendance'});
+  if(hol.length) ins.push({k:'warn',h:'<b>'+hol.length+'</b> '+(hol.length===1?'recruiter makes':'recruiters make')+' plenty of calls but talk little – start with '+names(hol,1)+'.',tab:'recruiters'});
+  if(pad.length) ins.push({k:'warn',h:names(pad,2)+' may be padding call counts.',tab:'quality'});
+  if(best) ins.push({k:'info',h:'Candidates answer most at <b>'+fmtHourRange(best.h)+'</b> ('+pct0(best.r)+' vs '+pct0(div(sumArr(pick(T.H)),tot.n))+' average).',tab:'when'});
+  if(I.sessions&&I.unans/I.sessions>=.2) ins.push({k:'warn',h:'<b>'+pct0(I.unans/I.sessions)+'</b> of inbound calls went unanswered.',tab:'inbound'});
+  if(!regs.length&&!hol.length&&!pad.length) ins.push({k:'good',h:'No attendance, talk-time or padding warnings in this period.'});
+  const sum='<b>'+fmtInt(real.length)+' recruiters</b> made <b>'+fmtInt(tot.n)+' calls</b> over '+ctx.wdays.length+' working days; <b>'+pct0(qRate)+'</b> became real conversations.';
+  let h=pgHead('Overview',sum,ins)+scopeNote(ctx);
   const dl=T.days, bd=d=>T.byDay.get(d);
   h+=kpis([
     {l:'Calls made',v:fmtInt(tot.n),s:Math.round(pd.dials)+' per recruiter a day',d:ppd?delta(pd.dials,ppd.dials,'rel',1):'',sp:dl.map(d=>bd(d).n),spc:COL.calls},
     {l:'Picked up',v:pct0(cRate),s:'as reported by RingCentral',d:PT?delta(cRate,div(PT.total.c,PT.total.n),'pts',1):'',sp:dl.map(d=>bd(d).c/bd(d).n),spc:COL.calls},
-    {l:'Real conversations',v:pct0(qRate),s:'calls lasting '+qLabel()+' or more',d:PT?delta(qRate,pqRate,'pts',1):'',sp:dl.map(d=>bd(d).q/bd(d).n),spc:COL.talk},
-    {l:'Talk time',v:fmtInt(tot.talk/3600)+' h',s:Math.round(pd.talk)+' min per recruiter a day',d:ppd?delta(pd.talk,ppd.talk,'rel',1):'',sp:dl.map(d=>bd(d).talk/3600),spc:COL.talk},
-    {l:'People reached',v:fmtInt(RE.reached),s:pct0(div(RE.reached,RE.unique))+' of numbers dialled'},
-    {l:'On target',v:onT+' <span style="font-size:15px;color:var(--muted);font-weight:700">of '+real.length+'</span>',s:'hit both call and talk targets',tone:onT/(real.length||1)>=.5?'good':''}
+    {l:'Real conversations',v:pct0(qRate),s:'lasting '+qLabel()+' or more',d:PT?delta(qRate,pqRate,'pts',1):'',sp:dl.map(d=>bd(d).q/bd(d).n),spc:COL.talk},
+    {l:'Talk time',v:fmtInt(tot.talk/3600)+' h',s:Math.round(pd.talk)+' min per recruiter a day',d:ppd?delta(pd.talk,ppd.talk,'rel',1):'',sp:dl.map(d=>bd(d).talk/3600),spc:COL.talk}
   ]);
-  // outcome donut + day pulse
-  const short=tot.c-tot.q, noPick=tot.n-tot.c;
-  const dn=donut([{l:'Real conversation ('+qLabel()+'+)',v:tot.q,c:COL.talk},{l:'Picked up, but short',v:short,c:COL.short},{l:'Not picked up',v:noPick,c:COL.none}],{big:pct0(qRate),small:'real conversations'});
+  // day pulse
   const s0=CFG.shiftStart*2,s1=CFG.shiftEnd*2,idx=[];for(let i=s0;i<s1;i++)idx.push(i);
   const base=div(sumArr(pick(T.H)),tot.n),Xs=pick(T.S), zS=i=>{const n=T.S.n[i];return n>=10&&base>0&&base<1?(Xs[i]/n-base)/Math.sqrt(base*(1-base)/n):0;};
   const halfHalt=idx.map(i=>{let a=0,c=0;for(let k=0;k<6;k++){const s=(i-s0)*6+k;if(s<H.SL){a+=H.avgUns[s];c++;}}return c?a/c:0;});
   const b1=CFG.break1*2-s0,b2=CFG.break2*2-s0,bl=Math.max(1,Math.round(CFG.breakLen/30));
   const busiest=idx.slice().sort((a,b)=>T.S.n[b]-T.S.n[a])[0], idlePeak=idx[halfHalt.indexOf(Math.max(...halfHalt))];
-  const pulse=chart({labels:idx.map(shortHour),W:760,H:260,xEvery:2,bars:[{name:'Calls made',data:idx.map(i=>T.S.n[i]),colors:idx.map(i=>Math.abs(zS(i))<2?COL.callsSoft:(zS(i)>0?'#5BBE9C':'#EE9A90')),color:COL.callsSoft}],
+  const pulse=chart({labels:idx.map(shortHour),W:760,H:250,xEvery:2,bars:[{name:'Calls made',data:idx.map(i=>T.S.n[i]),colors:idx.map(i=>Math.abs(zS(i))<2?COL.callsSoft:(zS(i)>0?'#5BBE9C':'#EE9A90')),color:COL.callsSoft}],
     lines:[{name:'People idle 10+ min',data:halfHalt,color:COL.bad,axis:'r',w:2}],y2Domain:[0,Math.max(1,niceMax(Math.max(...halfHalt)*1.15))],y2Fmt:v=>Math.round(v),
-    shade:[{a:b1,b:b1+bl-1,label:'Break'},{a:b2,b:b2+bl-1,label:'Break'}],legendExtra:[{n:'Clearly better pick-up',c:'#5BBE9C'},{n:'Clearly worse',c:'#EE9A90'}],
+    shade:[{a:b1,b:b1+bl-1,label:'Break'},{a:b2,b:b2+bl-1,label:'Break'}],legendExtra:[{n:'Better pick-up',c:'#5BBE9C'},{n:'Worse',c:'#EE9A90'}],
     tip:i=>{const k=idx[i],n=T.S.n[k];return '<b>'+fmtSod(k*1800)+'–'+fmtSod(k*1800+1800)+'</b><br>'+fmtInt(n)+' calls<br>'+mWord()+' '+(n?pct1(Xs[k]/n):'–')+'<br>'+r1(halfHalt[i])+' people idle on average';}});
-  h+='<div class="grid g12">'+card({id:'h-out',title:'Where calls end up',take:'Of every 10 calls, <b>'+Math.round(qRate*10)+'</b> become a real conversation and <b>'+Math.round(div(noPick,tot.n)*10)+'</b> are not picked up.',body:dn,
-      data:{cols:['Outcome',{l:'Calls',n:1},{l:'Share',n:1}],rows:[['Real conversation ('+qLabel()+'+)',tot.q,pct1(qRate)],['Picked up, but short',short,pct1(div(short,tot.n))],['Not picked up',noPick,pct1(div(noPick,tot.n))],['Total',tot.n,'100%']]}})+
-    card({id:'h-pulse',title:'A day at a glance',take:'Busiest half hour: <b>'+fmtSlot(busiest)+'</b>'+(Math.max(...halfHalt)>=.5?'. Most people idle around <b>'+fmtSlot(idlePeak)+'</b>':'')+'. Green and red bars mark half hours where '+mWordL()+' is clearly above or below normal.',body:pulse,
-      data:{cols:['Half hour (ET)',{l:'Calls',n:1},{l:mWord(),n:1},{l:'People idle (avg)',n:1}],rows:idx.map((k,i)=>[fmtSod(k*1800)+'–'+fmtSod(k*1800+1800),T.S.n[k],T.S.n[k]?pct1(Xs[k]/T.S.n[k]):'–',r1(halfHalt[i])])}})+'</div>';
-  // trend + highlights
+  // who to talk to first – four groups side by side
+  const nt=(r,t)=>({id:r.id,name:r.name,note:t});
+  const G=[['red','Often skipping work',regs.map(r=>nt(r,r.absent.length+' days missed')),'attendance','Attendance'],
+           ['amber','Many calls, little talk',hol.map(r=>nt(r,Math.round(r.dialsPerDay)+' calls, '+Math.round(r.talkMinPerDay)+' min talk')),'recruiters','Recruiters'],
+           ['amber','Most time with no calls',idle.map(r=>nt(r,Math.round(r.unsMinPerDay)+' min idle/day')),'halts','Work rhythm'],
+           ['red','May be padding call counts',pad.map(r=>nt(r,'score '+r.padScore)),'quality','Call quality']];
+  const nFlag=new Set([...regs,...hol,...idle,...pad].map(r=>r.id)).size;
+  h+=card({id:'h-who',title:'Who to talk to first',take:nFlag?'<b>'+nFlag+'</b> '+(nFlag===1?'person shows':'people show')+' at least one warning sign. Click a name for their profile.':'Nobody shows a warning sign in this period.',
+    body:'<div class="who">'+G.map(g=>whoCard(...g)).join('')+'</div>',
+    data:{cols:['Warning sign','Recruiter','Detail'],rows:G.flatMap(g=>g[2].map(x=>[g[1],x.name,x.note]))}});
+  // day pulse + daily trend
   const dR=dl.map(d=>{const b=bd(d);return (ST.metric==='q'?b.q:b.c)/b.n;}), tw=trendWord(dR);
   const bestD=dl.slice().sort((a,b)=>(pick(bd(b))/bd(b).n)-(pick(bd(a))/bd(a).n))[0];
-  const trend=chart({labels:dl.map(fmtDayShort),W:640,H:250,xEvery:Math.ceil(dl.length/12),bars:[{name:'Calls made',data:dl.map(d=>bd(d).n),color:COL.callsSoft}],lines:[{name:mWord()+' %',data:dR,color:ST.metric==='q'?COL.talk:COL.calls,axis:'r'}],y2Domain:[Math.max(0,div(pick(T.H).reduce((a,b)=>a+b,0),tot.n)-.15),Math.min(1,div(pick(T.H).reduce((a,b)=>a+b,0),tot.n)+.15)],
+  const trend=chart({labels:dl.map(fmtDayShort),W:760,H:250,xEvery:Math.ceil(dl.length/12),bars:[{name:'Calls made',data:dl.map(d=>bd(d).n),color:COL.callsSoft}],lines:[{name:mWord()+' %',data:dR,color:ST.metric==='q'?COL.talk:COL.calls,axis:'r'}],y2Domain:[Math.max(0,base-.15),Math.min(1,base+.15)],
     tip:i=>{const b=bd(dl[i]);return '<b>'+fmtDay(dl[i])+'</b><br>'+fmtInt(b.n)+' calls · '+b.recs.size+' recruiters<br>Picked up '+pct1(b.c/b.n)+'<br>Real conversations '+pct1(b.q/b.n);}});
-  const ins=homeInsights(ctx,S,T,H,I);
-  const insH='<div class="ins">'+ins.map(x=>'<button class="'+x.sev+'" data-tab="'+x.tab+'"><i></i><div><strong>'+esc(x.title)+'</strong><span>'+esc(x.text)+'</span></div><em>›</em></button>').join('')+'</div>';
-  h+='<div class="grid g2">'+card({id:'h-trend',title:'Calls per day',take:(tw?mWord()+' is <b>'+tw+'</b> across the period. ':'')+(bestD?'Best day: <b>'+fmtDay(bestD)+'</b> at '+pct0(pick(bd(bestD))/bd(bestD).n)+'.':''),body:trend,
-      data:{cols:['Date',{l:'Calls',n:1},{l:'Recruiters',n:1},{l:'Picked up',n:1},{l:'Real conversations',n:1},{l:'Talk (h)',n:1}],rows:dl.map(d=>{const b=bd(d);return [fmtDay(d),b.n,b.recs.size,pct1(b.c/b.n),pct1(b.q/b.n),r1(b.talk/3600)];})}})+
-    card({id:'h-ins',title:'What stands out',take:'Most urgent first. Click one for the detail.',body:insH,data:{cols:['Priority','Finding','Detail'],rows:ins.map(x=>[({high:'High',med:'Medium',info:'Info',good:'Good'})[x.sev],x.title,x.text])}})+'</div>';
-  // groups + scores
+  h+='<div class="grid g2" style="margin-top:16px">'+card({id:'h-pulse',title:'A day at a glance',take:'Busiest at <b>'+fmtSlot(busiest)+'</b>'+(Math.max(...halfHalt)>=.5?'; most people idle around <b>'+fmtSlot(idlePeak)+'</b>':'')+'.',body:pulse,
+      data:{cols:['Half hour (ET)',{l:'Calls',n:1},{l:mWord(),n:1},{l:'People idle (avg)',n:1}],rows:idx.map((k,i)=>[icell(fmtSod(k*1800)+'–'+fmtSod(k*1800+1800),k),T.S.n[k],T.S.n[k]?pct1(Xs[k]/T.S.n[k]):'–',r1(halfHalt[i])])}})+
+    card({id:'h-trend',title:'Day by day',take:(tw?mWord()+' is <b>'+tw+'</b>. ':'')+(bestD?'Best day: <b>'+fmtDay(bestD)+'</b> ('+pct0(pick(bd(bestD))/bd(bestD).n)+').':''),body:trend,
+      data:{cols:['Date',{l:'Calls',n:1},{l:'Recruiters',n:1},{l:'Picked up',n:1},{l:'Real conversations',n:1},{l:'Talk (h)',n:1}],rows:dl.map(d=>{const b=bd(d);return [dcell(d),b.n,b.recs.size,pct1(b.c/b.n),pct1(b.q/b.n),r1(b.talk/3600)];})}})+'</div>';
+  // more detail
+  const short=tot.c-tot.q, noPick=tot.n-tot.c;
   const groups=['On target','Efficient talker','Volume, little talk','Under target'], cnt=g=>real.filter(r=>r.seg===g).length;
-  const scored=real.filter(r=>r.pi!=null).sort((a,b)=>b.pi-a.pi), medPI=median(scored.map(r=>r.pi));
-  const li=r=>({l:r.name,v:r.pi,t:r.pi+' · '+r.band,click:r.id,c:bandHex(r.band),tip:'<b>'+esc(r.name)+'</b><br>'+Math.round(r.dialsPerDay)+' calls · '+Math.round(r.talkMinPerDay)+' min talk a day'});
-  h+='<div class="grid g3">'+card({id:'h-grp',title:'Performance groups',take:'<b>'+onT+' of '+real.length+'</b> hit both targets ('+CFG.targetDials+' calls, '+CFG.targetTalk+' talk minutes a day).',body:donut(groups.map(g=>({l:GN[g],v:cnt(g),c:segColor(g)})),{big:String(real.length),small:'recruiters',fmt:it=>String(it.v)}),
+  const scored=real.filter(r=>r.pi!=null).sort((a,b)=>b.pi-a.pi);
+  const li=r=>({l:r.name,v:r.pi,t:r.pi+' · '+r.band,click:r.id,c:bandHex(r.band)});
+  const more='<div class="grid g3">'+card({id:'h-out',title:'Where calls end up',take:'Of every 10 calls, <b>'+Math.round(qRate*10)+'</b> become real conversations.',body:donut([{l:'Real conversation',v:tot.q,c:COL.talk},{l:'Picked up, short',v:short,c:COL.short},{l:'Not picked up',v:noPick,c:COL.none}],{big:pct0(qRate),small:'real conv.',size:150}),
+      data:{cols:['Outcome',{l:'Calls',n:1},{l:'Share',n:1}],rows:[['Real conversation ('+qLabel()+'+)',tot.q,pct1(qRate)],['Picked up, but short',short,pct1(div(short,tot.n))],['Not picked up',noPick,pct1(div(noPick,tot.n))]]}})+
+    card({id:'h-grp',title:'Performance groups',take:'<b>'+cnt('On target')+' of '+real.length+'</b> hit both targets.',body:donut(groups.map(g=>({l:GN[g],v:cnt(g),c:segColor(g)})),{big:String(real.length),small:'recruiters',fmt:it=>String(it.v),size:150}),
       data:{cols:['Group',{l:'Recruiters',n:1},'Who'],rows:groups.map(g=>[GN[g],cnt(g),real.filter(r=>r.seg===g).map(r=>r.name).join(', ')])}})+
-    card({id:'h-top',title:'Highest scores',take:'Team median score is <b>'+Math.round(medPI)+'</b> out of 100.',body:hbars(scored.slice(0,6).map(li),{max:100}),data:{cols:['Recruiter',{l:'Score',n:1},'Band'],rows:scored.slice(0,6).map(r=>[r.name,r.pi,r.band])}})+
-    card({id:'h-low',title:'Lowest scores',take:'Score blends talk time, reach, volume, attendance, idle time and call quality.',body:hbars(scored.slice(-6).reverse().map(li),{max:100}),data:{cols:['Recruiter',{l:'Score',n:1},'Band'],rows:scored.slice(-6).reverse().map(r=>[r.name,r.pi,r.band])}})+'</div>';
-  // who to talk to
-  const md=MD(real), nt=(r,t)=>({id:r.id,name:r.name,note:t});
-  const regs=real.filter(r=>r.regularSkipper).sort((a,b)=>b.absent.length-a.absent.length).map(r=>nt(r,r.absent.length+' days missed'));
-  const hol=real.filter(r=>r.presentDays>=md&&r.seg==='Volume, little talk').sort((a,b)=>b.dialsPerDay-a.dialsPerDay).map(r=>nt(r,Math.round(r.dialsPerDay)+' calls, '+Math.round(r.talkMinPerDay)+' min talk'));
-  const idleAll=real.filter(r=>r.h.days>=md), idleCut=Math.max(30,quantile(idleAll.map(r=>r.unsMinPerDay),.75)); const idle=idleAll.filter(r=>r.unsMinPerDay>=idleCut).sort((a,b)=>b.unsMinPerDay-a.unsMinPerDay).map(r=>nt(r,Math.round(r.unsMinPerDay)+' min idle/day'));
-  const pad=real.filter(r=>r.padBand==='High').sort((a,b)=>b.padScore-a.padScore).map(r=>nt(r,'score '+r.padScore));
-  const flagRows=[...regs.map(x=>['Often skipping work',x.name,x.note]),...hol.map(x=>['Many calls, little talk',x.name,x.note]),...idle.map(x=>['Most time with no calls',x.name,x.note]),...pad.map(x=>['May be padding call counts',x.name,x.note])];
-  const nFlag=new Set([...regs,...hol,...idle,...pad].map(x=>x.id)).size;
-  h+=card({id:'h-who',title:'Who to talk to first',take:nFlag?'<b>'+nFlag+'</b> '+(nFlag===1?'person shows':'people show')+' at least one warning sign.':'Nobody shows a warning sign in this period.',
-    body:'<div class="who">'+whoCard('red','Often skipping work',regs,'attendance','Attendance')+whoCard('amber','Many calls, little talk',hol,'recruiters','Recruiters')+whoCard('amber','Most time with no calls',idle,'halts','Work rhythm')+whoCard('red','May be padding call counts',pad,'quality','Call quality')+'</div>',
-    data:{cols:['Warning sign','Recruiter','Detail'],rows:flagRows}});
+    card({id:'h-top',title:'Scores',take:'Top 3 and bottom 3 out of 100.',body:hbars([...scored.slice(0,3),...scored.slice(-3)].filter((r,i,a)=>a.indexOf(r)===i).map(li),{max:100}),data:{cols:['Recruiter',{l:'Score',n:1},'Band'],rows:scored.map(r=>[r.name,r.pi,r.band])}})+'</div>';
+  h+=moreDetail('home',more,3);
   return h;
 }
 
@@ -1272,123 +1363,114 @@ function tabHome(ctx){
    ============================================================ */
 function tabRecruiters(ctx){
   const S=scorecard(ctx),rows=S.rows.filter(r=>r.presentDays>=1),B=S.bench,T=CFG,real=rows.filter(r=>!r.shared);
-  const net=((T.shiftEnd-T.shiftStart)*60-2*T.breakLen)/60;
   const groups=['On target','Efficient talker','Volume, little talk','Under target'], cnt=s=>rows.filter(r=>r.seg===s).length;
-  const top=real.slice().sort((a,b)=>(b.pi||0)-(a.pi||0))[0];
-  let h=pgHead('Recruiters','<b>'+cnt('On target')+' of '+rows.length+'</b> recruiters hit both targets. The typical recruiter makes <b>'+Math.round(B.medDials)+' calls</b> and talks <b>'+Math.round(B.medTalk)+' minutes</b> a day'+(top?'; top score is '+esc(top.name)+' ('+top.pi+')':'')+'.')+scopeNote(ctx);
+  const sc_=real.filter(r=>r.pi!=null).sort((a,b)=>b.pi-a.pi), top=sc_[0], low=sc_[sc_.length-1];
+  const hol=real.filter(r=>r.seg==='Volume, little talk').sort((a,b)=>b.dialsPerDay-a.dialsPerDay), eff=real.filter(r=>r.seg==='Efficient talker');
+  const ins=[];
+  if(top&&low&&top!==low) ins.push({k:'info',h:'Top score: <b>'+esc(top.name)+'</b> ('+top.pi+'). Lowest: <b>'+esc(low.name)+'</b> ('+low.pi+').',coach:low.id});
+  if(hol.length) ins.push({k:'warn',h:names(hol,2)+' '+(hol.length===1?'makes':'make')+' many calls but '+(hol.length===1?'talks':'talk')+' little – listen to a few recordings.',coach:hol[0].id});
+  if(eff.length) ins.push({k:'good',h:names(eff,2)+' '+(eff.length===1?'makes':'make')+' fewer calls but '+(eff.length===1?'talks':'talk')+' well – no pressure on volume.'});
+  if(B.medTalk<T.targetTalk*.85) ins.push({k:'warn',h:'The typical recruiter talks <b>'+Math.round(B.medTalk)+' min</b> a day against a '+T.targetTalk+'-minute target.'});
+  let h=pgHead('Recruiters','<b>'+cnt('On target')+' of '+rows.length+'</b> recruiters hit both targets ('+T.targetDials+' calls and '+T.targetTalk+' talk minutes a day).',ins)+scopeNote(ctx);
   h+=kpis([{l:'Active recruiters',v:rows.length,s:S.silent.length?S.silent.length+' on the roster with no calls':'everyone on the roster called'},
-    {l:'On target',v:cnt('On target'),s:pct0(div(cnt('On target'),rows.length))+' of the team',tone:'good'},
     {l:'Typical calls a day',v:Math.round(B.medDials),s:'target '+T.targetDials,tone:B.medDials<T.targetDials*.85?'warn':''},
     {l:'Typical talk a day',v:Math.round(B.medTalk)+' min',s:'target '+T.targetTalk+' min',tone:B.medTalk<T.targetTalk*.85?'warn':''},
     {l:'Typical pick-up',v:pct0(B.medConn),s:'median recruiter'}]);
-  const lab=new Set();[...rows].sort((a,b)=>b.dialsPerDay-a.dialsPerDay).slice(0,3).forEach(r=>lab.add(r.id));[...rows].sort((a,b)=>a.talkMinPerDay-b.talkMinPerDay).slice(0,3).forEach(r=>lab.add(r.id));rows.filter(r=>r.seg==='Efficient talker').sort((a,b)=>b.talkMinPerDay-a.talkMinPerDay).slice(0,2).forEach(r=>lab.add(r.id));
-  const sc=scatter({W:680,H:380,pts:rows.map(r=>({x:r.dialsPerDay,y:r.talkMinPerDay,color:segColor(r.seg),lab:lab.has(r.id)?firstName(r.name):'',click:'goCoach('+r.id+')',tip:'<b>'+esc(r.name)+'</b><br>'+Math.round(r.dialsPerDay)+' calls/day · '+Math.round(r.talkMinPerDay)+' min talk/day<br>Picked up '+pct0(r.connRate)+'<br>'+esc(GN[r.seg])})),refX:T.targetDials,refY:T.targetTalk,xTitle:'Calls made per day',yTitle:'Talk minutes per day',
+  const lab=new Set();[...rows].sort((a,b)=>b.dialsPerDay-a.dialsPerDay).slice(0,3).forEach(r=>lab.add(r.id));[...rows].sort((a,b)=>a.talkMinPerDay-b.talkMinPerDay).slice(0,3).forEach(r=>lab.add(r.id));eff.slice(0,2).forEach(r=>lab.add(r.id));
+  const sc=scatter({W:1000,H:360,pts:rows.map(r=>({x:r.dialsPerDay,y:r.talkMinPerDay,color:segColor(r.seg),lab:lab.has(r.id)?firstName(r.name):'',click:'goCoach('+r.id+')',tip:'<b>'+esc(r.name)+'</b><br>'+Math.round(r.dialsPerDay)+' calls/day · '+Math.round(r.talkMinPerDay)+' min talk/day<br>Picked up '+pct0(r.connRate)+'<br>'+esc(GN[r.seg])})),refX:T.targetDials,refY:T.targetTalk,xTitle:'Calls made per day',yTitle:'Talk minutes per day',
     quads:[{x:T.targetDials*1.03,y:T.targetTalk*.06,t:'many calls, little talk',anchor:'start'},{x:T.targetDials*.02,y:T.targetTalk*1.06,t:'fewer calls, good talk',anchor:'start'},{x:T.targetDials*.02,y:T.targetTalk*.06,t:'below target',anchor:'start'}],
-    legend:groups.map(g=>({n:GN[g],c:segColor(g)}))});
-  h+='<div class="grid g21">'+card({id:'r-sc',title:'Calls vs talk time',take:'Each dot is a recruiter – click one to open their profile. The green corner is where both targets are met.',body:sc,
-      data:{cols:['Recruiter',{l:'Calls/day',n:1},{l:'Talk min/day',n:1},{l:'Picked up',n:1},'Group'],rows:rows.slice().sort((a,b)=>b.dialsPerDay-a.dialsPerDay).map(r=>[r.name,Math.round(r.dialsPerDay),Math.round(r.talkMinPerDay),pct0(r.connRate),GN[r.seg]])}})+
-    card({id:'r-grp',title:'Groups',take:'Targets are set in Settings.',body:donut(groups.map(g=>({l:GN[g],v:cnt(g),c:segColor(g)})),{big:String(rows.length),small:'recruiters',fmt:it=>String(it.v)}),data:{cols:['Group',{l:'Recruiters',n:1}],rows:groups.map(g=>[GN[g],cnt(g)])}})+'</div>';
-  // score histogram + outcome mix
-  const bins=[[0,20],[20,35],[35,55],[55,75],[75,101]], bl=['0–19','20–34','35–54','55–74','75–100'], bn=['At risk','At risk','Needs coaching','On track','Strong'];
-  const bc=bins.map(([a,b])=>real.filter(r=>r.pi!=null&&r.pi>=a&&r.pi<b).length);
-  const hist=chart({labels:bl,W:520,H:240,bars:[{name:'Recruiters',data:bc,colors:bn.map(bandHex),color:COL.calls}],yFmt:v=>Math.round(v)+'',tip:i=>'<b>Score '+bl[i]+'</b> ('+bn[i]+')<br>'+bc[i]+' recruiters'});
-  const el=real.filter(r=>r.presentDays>=MD(real));
-  const mixR=el.slice().sort((a,b)=>b.qualRate-a.qualRate).slice(0,14);
-  h+='<div class="grid g2">'+card({id:'r-hist',title:'Score spread',take:'<b>'+(bc[3]+bc[4])+'</b> recruiters are on track or strong; <b>'+(bc[0]+bc[1])+'</b> are at risk.',body:hist,data:{cols:['Score',{l:'Recruiters',n:1},'Band'],rows:bl.map((l,i)=>[l,bc[i],bn[i]])}})+
-    card({id:'r-mix',title:'How each person’s calls end',take:'Sorted by share of real conversations. Longer green bars mean more calls turn into real talks.',body:sbars(mixR.map(r=>({l:r.name,click:r.id,parts:[r.qual,r.conn-r.qual,r.dials-r.conn],t:pct0(r.qualRate)})),[{n:'Real conversation',c:COL.talk},{n:'Short',c:COL.short},{n:'Not picked up',c:COL.none}]),
-      data:{cols:['Recruiter',{l:'Calls',n:1},{l:'Real conversation',n:1},{l:'Short',n:1},{l:'Not picked up',n:1}],rows:el.slice().sort((a,b)=>b.qualRate-a.qualRate).map(r=>[r.name,r.dials,pct1(r.qualRate),pct1(div(r.conn-r.qual,r.dials)),pct1(div(r.dials-r.conn,r.dials))])}})+'</div>';
-  const mx=Math.max(...el.map(r=>r.dialsPerDay),1);
-  const li=r=>({l:r.name,v:r.dialsPerDay,t:Math.round(r.dialsPerDay)+' · '+Math.round(r.talkMinPerDay)+'m',click:r.id,c:segColor(r.seg)});
-  const hi=el.slice().sort((a,b)=>b.dialsPerDay-a.dialsPerDay).slice(0,10), lo=el.slice().sort((a,b)=>a.dialsPerDay-b.dialsPerDay).slice(0,10);
-  const dRow=r=>[r.name,Math.round(r.dialsPerDay),Math.round(r.talkMinPerDay),GN[r.seg]];
-  h+='<div class="grid g2">'+card({id:'r-most',title:'Most calls per day',take:'Calls · talk minutes a day. Colour shows the group.',body:hbars(hi.map(li),{max:mx}),data:{cols:['Recruiter',{l:'Calls/day',n:1},{l:'Talk min/day',n:1},'Group'],rows:hi.map(dRow)}})+
-    card({id:'r-least',title:'Fewest calls per day',take:'Check talk minutes before judging – some talk longer on fewer calls.',body:hbars(lo.map(li),{max:mx}),data:{cols:['Recruiter',{l:'Calls/day',n:1},{l:'Talk min/day',n:1},'Group'],rows:lo.map(dRow)}})+'</div>';
+    legend:groups.map(g=>({n:GN[g]+' ('+cnt(g)+')',c:segColor(g)}))});
+  h+=card({id:'r-sc',title:'Calls vs talk time',take:'Each dot is a recruiter – click one to open their profile. Top-right = both targets met.',body:sc,
+      data:{cols:['Recruiter',{l:'Calls/day',n:1},{l:'Talk min/day',n:1},{l:'Picked up',n:1},'Group'],rows:rows.map(r=>[r.name,Math.round(r.dialsPerDay),Math.round(r.talkMinPerDay),pct0(r.connRate),GN[r.seg]])}});
   const mxD=Math.max(...rows.map(r=>r.dialsPerDay),T.targetDials),mxT=Math.max(...rows.map(r=>r.talkMinPerDay),T.targetTalk);
   const cols=[{k:'name',l:'Recruiter',cls:'nm',f:nameBtn},{k:'seg',l:'Group',f:r=>segBadge(r.seg),v:r=>GN[r.seg]},{k:'pi',l:'Score',n:1,tip:'0–100 blend of talk time, people reached, call volume, attendance, idle time and call quality',v:r=>r.pi,f:r=>r.pi==null?'–':badge(String(r.pi),bandColor(r.band))},
     {k:'dialsPerDay',l:'Calls/day',n:1,tip:'Dark tick = target',f:r=>mbar(r.dialsPerDay,mxD,null,T.targetDials)+Math.round(r.dialsPerDay)},
     {k:'talkMinPerDay',l:'Talk min/day',n:1,f:r=>mbar(r.talkMinPerDay,mxT,COL.talk,T.targetTalk)+Math.round(r.talkMinPerDay)},{k:'connRate',l:'Picked up',n:1,f:r=>pct0(r.connRate)},{k:'qualRate',l:'Real conv.',n:1,f:r=>pct0(r.qualRate)},
-    {k:'reachPerDay',l:'Reached/day',n:1,f:r=>Math.round(r.reachPerDay)},{k:'unsMinPerDay',l:'Idle min/day',n:1,f:r=>Math.round(r.unsMinPerDay)},{k:'presentDays',l:'Days worked',n:1},{k:'abs',l:'Missed',n:1,v:r=>r.absent.length,f:r=>r.absent.length||'–'}];
-  h+=tcard({title:'Everyone',take:'Click a column to sort, a name to open the profile. Net calling time is '+net+' hours a day.',body:table('lb',cols,rows,{sort:{k:'pi',d:-1},search:r=>r.name,limit:15,name:'recruiters'})});
+    {k:'unsMinPerDay',l:'Idle min/day',n:1,f:r=>Math.round(r.unsMinPerDay)},{k:'presentDays',l:'Days worked',n:1},{k:'abs',l:'Missed',n:1,v:r=>r.absent.length,f:r=>r.absent.length||'–'}];
+  h+='<div style="margin-top:14px">'+tcard({title:'Everyone',take:'Click any column to sort, a name to open the profile.',body:table('lb',cols,rows,{sort:{k:'pi',d:-1},search:r=>r.name,limit:15,name:'recruiters'})})+'</div>';
+  const bins=[[0,20],[20,35],[35,55],[55,75],[75,101]], bl=['0–19','20–34','35–54','55–74','75–100'], bn=['At risk','At risk','Needs coaching','On track','Strong'];
+  const bc=bins.map(([a,b])=>real.filter(r=>r.pi!=null&&r.pi>=a&&r.pi<b).length);
+  const el=real.filter(r=>r.presentDays>=MD(real)), mixR=el.slice().sort((a,b)=>b.qualRate-a.qualRate);
+  let more='<div class="grid g2">'+card({id:'r-hist',title:'Score spread',take:'<b>'+(bc[3]+bc[4])+'</b> on track or strong, <b>'+(bc[0]+bc[1])+'</b> at risk.',body:chart({labels:bl,W:520,H:240,bars:[{name:'Recruiters',data:bc,colors:bn.map(bandHex),color:COL.calls}],yFmt:v=>Math.round(v)+'',tip:i=>'<b>Score '+bl[i]+'</b> ('+bn[i]+')<br>'+bc[i]+' recruiters'}),data:{cols:['Score',{l:'Recruiters',n:1},'Band'],rows:bl.map((l,i)=>[icell(l,i),bc[i],bn[i]])}})+
+    card({id:'r-mix',title:'How each person’s calls end',take:'Sorted by share of real conversations.',body:sbars(mixR.slice(0,12).map(r=>({l:r.name,click:r.id,parts:[r.qual,r.conn-r.qual,r.dials-r.conn],t:pct0(r.qualRate)})),[{n:'Real conversation',c:COL.talk},{n:'Short',c:COL.short},{n:'Not picked up',c:COL.none}]),
+      data:{cols:['Recruiter',{l:'Calls',n:1},{l:'Real conversation',n:1},{l:'Short',n:1},{l:'Not picked up',n:1}],rows:mixR.map(r=>[r.name,r.dials,pct1(r.qualRate),pct1(div(r.conn-r.qual,r.dials)),pct1(div(r.dials-r.conn,r.dials))])}})+'</div>';
   const ina=S.rows.filter(r=>r.presentDays===0&&r.dials>0);
-  if(ina.length||S.silent.length) h+='<div style="margin-top:14px">'+card({id:'r-ina',title:'Not active in this period',take:'Never reached '+CFG.absentDials+' calls on any day, or on the roster with no calls.',body:'<div class="chips">'+ina.map(r=>'<span class="chip">'+esc(r.name)+' · '+r.dials+' calls</span>').join('')+S.silent.map(n=>'<span class="chip">'+esc(n)+'</span>').join('')+'</div>',
-    data:{cols:['Name',{l:'Calls',n:1},'Reason'],rows:[...ina.map(r=>[r.name,r.dials,'Under '+CFG.absentDials+' calls every day']),...S.silent.map(n=>[n,0,'On roster, no calls'])]}})+'</div>';
+  if(ina.length||S.silent.length) more+=card({id:'r-ina',title:'Not active in this period',take:'Never reached '+CFG.absentDials+' calls on a day, or on the roster with no calls.',body:'<div class="chips">'+ina.map(r=>'<span class="chip">'+esc(r.name)+' · '+r.dials+' calls</span>').join('')+S.silent.map(n=>'<span class="chip">'+esc(n)+'</span>').join('')+'</div>',
+    data:{cols:['Name',{l:'Calls',n:1},'Reason'],rows:[...ina.map(r=>[r.name,r.dials,'Under '+CFG.absentDials+' calls every day']),...S.silent.map(n=>[n,0,'On roster, no calls'])]}});
+  h+=moreDetail('recruiters',more,ina.length||S.silent.length?3:2);
   return h;
 }
 
 /* ============================================================
-   RECRUITER PROFILE
+   RECRUITER PROFILE  (the person is chosen in the filter bar)
    ============================================================ */
+function profileRows(ctx){ return scorecard(ctx).rows.filter(r=>r.presentDays>=1); }
+function profilePerson(ctx){ const rows=profileRows(ctx); return (ST.coach!=null&&rows.find(r=>r.id===ST.coach))||rows.slice().sort((a,b)=>(b.regularSkipper-a.regularSkipper)||(b.absent.length-a.absent.length)||((a.pi||0)-(b.pi||0)))[0]; }
 function tabProfile(ctx){
-  const S=scorecard(ctx),rows=S.rows.filter(r=>r.presentDays>=1),T=CFG,B=S.bench,TS=timeStats(ctx);
-  const o=(ST.coach!=null&&rows.find(r=>r.id===ST.coach))||rows.slice().sort((a,b)=>(b.regularSkipper-a.regularSkipper)||(b.absent.length-a.absent.length)||((a.pi||0)-(b.pi||0)))[0];
+  const S=scorecard(ctx),rows=profileRows(ctx),T=CFG,B=S.bench,TS=timeStats(ctx);
+  const o=profilePerson(ctx);
   if(!o) return pgHead('Recruiter profile')+note('No active recruiters in this selection.','warn'); ST.coach=o.id;
-  const opts=rows.slice().sort((a,b)=>a.name.localeCompare(b.name)).map(r=>'<option value="'+r.id+'" '+(r.id===o.id?'selected':'')+'>'+esc(r.name)+'</option>').join('');
   const rank=rows.filter(r=>r.pi!=null&&!r.shared).sort((a,b)=>b.pi-a.pi), pos=rank.findIndex(r=>r.id===o.id);
-  let h='<div class="prof"><div class="who1"><div class="av" style="background:'+avatarColor(o.id)+'">'+esc(initials(o.name))+'</div><div><h2>'+esc(o.name)+'</h2><p>'+segBadge(o.seg)+' '+(o.pi!=null?badge('Score '+o.pi+' · '+o.band,bandColor(o.band)):'')+(pos>=0?' <span style="color:var(--muted)">Rank '+(pos+1)+' of '+rank.length+'</span>':'')+(o.shared?' '+badge('Shared line','blue'):'')+'</p></div></div><label class="fg">Recruiter <select class="pick" data-coachsel>'+opts+'</select></label></div>'+scopeNote(ctx);
-  h+=kpis([{l:'Calls per day',v:Math.round(o.dialsPerDay),s:'target '+T.targetDials+' · team '+Math.round(B.medDials),d:delta(o.dialsPerDay,B.medDials,'rel',1,'','Compared with the team median'),tone:o.dialsPerDay<T.targetDials*.85?'warn':''},
-    {l:'Talk minutes per day',v:Math.round(o.talkMinPerDay),s:'target '+T.targetTalk+' · team '+Math.round(B.medTalk),d:delta(o.talkMinPerDay,B.medTalk,'rel',1,'','Compared with the team median'),tone:o.talkMinPerDay<T.targetTalk*.85?'warn':''},
-    {l:'Picked up',v:pct0(o.connRate),s:'team '+pct0(B.medConn),d:delta(o.connRate,B.medConn,'pts',1,'','Compared with the team median')},
+  const notes=coachNotes(o,S,TS,ST.metric), ord={bad:0,tip:1,good:2};
+  const ins=notes.slice().sort((a,b)=>ord[a.t]-ord[b.t]).slice(0,3).map(n=>({k:n.t==='bad'?'warn':n.t==='good'?'good':'info',h:esc(n.x)}));
+  let h='<div class="prof"><div class="who1"><div class="av" style="background:'+avatarColor(o.id)+'">'+esc(initials(o.name))+'</div><div><h2>'+esc(o.name)+'</h2><p>'+segBadge(o.seg)+' '+(o.pi!=null?badge('Score '+o.pi+' · '+o.band,bandColor(o.band)):'')+(pos>=0?' <span class="muted">Rank '+(pos+1)+' of '+rank.length+'</span>':'')+(o.shared?' '+badge('Shared line','blue'):'')+'</p></div></div></div>';
+  h+='<ul class="insights" style="margin:0 0 18px">'+ins.map(x=>'<li class="'+x.k+'"><span>'+x.h+'</span></li>').join('')+'</ul>'+scopeNote(ctx);
+  const tm='Compared with the team median';
+  h+=kpis([{l:'Calls per day',v:Math.round(o.dialsPerDay),s:'target '+T.targetDials+' · team '+Math.round(B.medDials),d:delta(o.dialsPerDay,B.medDials,'rel',1,'',tm),tone:o.dialsPerDay<T.targetDials*.85?'warn':''},
+    {l:'Talk minutes per day',v:Math.round(o.talkMinPerDay),s:'target '+T.targetTalk+' · team '+Math.round(B.medTalk),d:delta(o.talkMinPerDay,B.medTalk,'rel',1,'',tm),tone:o.talkMinPerDay<T.targetTalk*.85?'warn':''},
+    {l:'Real conversations',v:pct0(o.qualRate),s:'picked up '+pct0(o.connRate)+' · team '+pct0(B.medConn)},
     {l:'Days worked',v:o.presentDays,s:o.absent.length?o.absent.length+' missed of '+o.windowDays:'no missed days',tone:o.absent.length?'warn':'good'},
-    {l:'Idle time per day',v:Math.round(o.unsMinPerDay)+' min',s:o.unsPerDay.toFixed(1)+' gaps a day',tone:o.unsMinPerDay>=60?'warn':''},
-    {l:'First → last call',v:'<span style="font-size:20px">'+fmtSod(o.avgFirst)+' – '+fmtSod(o.avgLast)+'</span>',s:'average'}]);
-  // ---- calls by hour (bar + line), average day or a chosen day ----
-  const worked=[...o.days.entries()].filter(([d,a])=>a[0]>=T.absentDials).map(([d])=>d).sort((a,b)=>a-b);
-  const pDay=(ST.profDay!=null&&o.days.has(ST.profDay))?ST.profDay:null;
-  const hN=zeros(24),hC=zeros(24),hQ=zeros(24),hT=zeros(24); const io0=ctx.idxOut;
-  for(let k=0;k<io0.length;k++){ const i=io0[k]; if(DB.rec[i]!==o.id) continue; const d=DB.day[i]; if(pDay!=null?d!==pDay:!worked.includes(d)) continue;
-    const hh=(DB.sod[i]/3600)|0, L=DB.len[i]; hN[hh]++; if(DB.res[i]===0){ hC[hh]++; hT[hh]+=L; if(L>=CFG.quality) hQ[hh]++; } }
-  const dv=pDay!=null?1:(worked.length||1), sc1=v=>v/dv;
-  let hrsP=hoursOf(ctx); { const lo=Math.min(...hrsP,...hN.map((v,x)=>v?x:99)), hi=Math.max(...hrsP,...hN.map((v,x)=>v?x:-1)); hrsP=[]; for(let x=lo;x<=hi;x++) hrsP.push(x); }
-  const recDays=sumArr(rows.filter(r=>!r.shared).map(r=>r.presentDays))||1;
-  const avgMode=pDay==null, fmtV=v=>avgMode?r1(v):Math.round(v);
-  const peakH=hrsP.reduce((b,x)=>hN[x]>hN[b]?x:b,hrsP[0]);
-  const shiftH=hrsP.filter(x=>x>=T.shiftStart&&x<T.shiftEnd&&x!==T.break1&&x!==T.break2), quiet=shiftH.filter(x=>hN[x]<hN[peakH]*.35);
-  const byHour=chart({labels:hrsP.map(hLab),W:1000,H:280,stacked:true,
-    bars:[{name:'Real conversation ('+qLabel()+'+)',data:hrsP.map(x=>sc1(hQ[x])),color:COL.talk},{name:'Picked up, short',data:hrsP.map(x=>sc1(hC[x]-hQ[x])),color:COL.short},{name:'Not picked up',data:hrsP.map(x=>sc1(hN[x]-hC[x])),color:COL.none}],
-    lines:[{name:'Talk minutes (right)',data:hrsP.map(x=>sc1(hT[x])/60),color:COL.violet,axis:'r',w:2.4},...(avgMode?[{name:'Team average calls',data:hrsP.map(x=>TS.H.n[x]/recDays),color:COL.ink,dash:'5 4',dots:false,w:1.6}]:[])],
-    y2Domain:[0,Math.max(5,niceMax(Math.max(...hrsP.map(x=>sc1(hT[x])/60))*1.15))],y2Fmt:v=>Math.round(v)+'m',
-    shade:[{a:hrsP.indexOf(T.break1),b:hrsP.indexOf(T.break1)},{a:hrsP.indexOf(T.break2),b:hrsP.indexOf(T.break2)}].filter(s=>s.a>=0),
-    tip:i=>{const x=hrsP[i];return '<b>'+fmtHourRange(x)+'</b><br>'+fmtV(sc1(hN[x]))+' calls'+(avgMode?' (avg day)':'')+'<br>Picked up '+(hN[x]?pct0(hC[x]/hN[x]):'–')+' · real '+(hN[x]?pct0(hQ[x]/hN[x]):'–')+'<br>'+r1(sc1(hT[x])/60)+' talk min'+(avgMode?'<br>Team: '+r1(TS.H.n[x]/recDays)+' calls':'');}});
-  const dayOpts='<option value="">Average day ('+worked.length+' days)</option>'+worked.slice().reverse().map(d=>'<option value="'+d+'" '+(d===pDay?'selected':'')+'>'+fmtDay(d)+' · '+o.days.get(d)[0]+' calls</option>').join('');
-  h+=card({id:'p-byhour',title:'Calls by hour'+(pDay!=null?' on '+fmtDay(pDay):' – average day'),
-    take:hN[peakH]?'Busiest at <b>'+fmtHourRange(peakH)+'</b> ('+fmtV(sc1(hN[peakH]))+' calls)'+(quiet.length?'; quiet at <b>'+quiet.slice(0,3).map(fmtHour).join(', ')+'</b>':'; steady through the shift')+'. Bars: calls split by outcome. Purple line: talk minutes'+(avgMode?'. Dashed: team average per recruiter':'')+'.':'No calls in this selection.',
-    pre:'<div class="tbar"><label class="fg">Show <select class="pick" data-profday style="min-width:240px">'+dayOpts+'</select></label></div>',body:byHour,
-    data:{cols:['Hour (ET)',{l:'Calls',n:1},{l:'Real conversation',n:1},{l:'Short',n:1},{l:'Not picked up',n:1},{l:'Picked up %',n:1},{l:'Talk min',n:1},...(avgMode?[{l:'Team avg calls',n:1}]:[])],
-      rows:hrsP.map(x=>[fmtHourRange(x),fmtV(sc1(hN[x])),fmtV(sc1(hQ[x])),fmtV(sc1(hC[x]-hQ[x])),fmtV(sc1(hN[x]-hC[x])),hN[x]?pct1(hC[x]/hN[x]):'–',r1(sc1(hT[x])/60),...(avgMode?[r1(TS.H.n[x]/recDays)]:[])])}});
-  h+='<div style="height:14px"></div>';
-  const notes=coachNotes(o,S,TS,ST.metric);
-  const X=ST.metric==='q'?o.hQ:o.hC, tX=pick(TS.H), hrs=hoursOf(ctx).filter(x=>x>=T.shiftStart&&x<T.shiftEnd);
-  const hs=homog(o.hN,X,T.shiftStart,T.shiftEnd), adj=hourAdj(o,TS.H,ST.metric,15).filter(x=>x.h>=T.shiftStart&&x.h<T.shiftEnd&&x.n>=10).sort((a,b)=>b.adj-a.adj);
-  let when='Not enough calls to pick best hours yet.';
-  if(adj.length>=4) when=hs.sig?'Best: <b>'+adj.slice(0,2).map(x=>fmtHour(x.h)).join(' and ')+'</b>. Weakest: <b>'+adj.slice(-2).map(x=>fmtHour(x.h)).join(' and ')+'</b>.':'Their pick-up is about the same all day – any hour works.';
-  const tc=chart({labels:hrs.map(hLab),W:640,H:230,bars:[{name:'Their calls',data:hrs.map(x=>o.hN[x]),color:COL.callsSoft}],lines:[{name:'Their '+mWord().toLowerCase()+' %',data:hrs.map(x=>o.hN[x]>=5?X[x]/o.hN[x]:NaN),color:COL.calls,axis:'r'},{name:'Team',data:hrs.map(x=>TS.H.n[x]?tX[x]/TS.H.n[x]:NaN),color:COL.grey,axis:'r',dash:'4 4',dots:false}],y2Domain:(()=>{const v=hrs.flatMap(x=>[o.hN[x]>=5?X[x]/o.hN[x]:NaN,TS.H.n[x]?tX[x]/TS.H.n[x]:NaN]).filter(isFinite);return v.length?[Math.max(0,Math.floor((Math.min(...v)-.05)*20)/20),Math.min(1,Math.ceil((Math.max(...v)+.05)*20)/20)]:[0,1];})(),
-      tip:i=>{const x=hrs[i];return '<b>'+fmtHourRange(x)+'</b><br>'+o.hN[x]+' calls · '+(o.hN[x]?pct0(X[x]/o.hN[x]):'–')+'<br>Team '+pct0(tX[x]/(TS.H.n[x]||1));}});
-  h+='<div class="grid g2">'+card({id:'p-notes',title:'What to do',take:'Plain-language coaching points from their numbers.',body:'<div class="notes">'+notes.slice(0,7).map(n=>'<div class="'+n.t+'"><span>'+esc(n.x)+'</span></div>').join('')+'</div>',data:{cols:['Type','Point'],rows:notes.map(n=>[({good:'Strength',bad:'Concern',tip:'Tip'})[n.t],n.x])}})+
-    card({id:'p-hour',title:'Best time for '+esc(firstName(o.name))+' to call',take:when,body:tc,data:{cols:['Hour (ET)',{l:'Their calls',n:1},{l:'Their '+mWord().toLowerCase(),n:1},{l:'Team',n:1}],rows:hrs.map(x=>[fmtHourRange(x),o.hN[x],o.hN[x]?pct1(X[x]/o.hN[x]):'–',TS.H.n[x]?pct1(tX[x]/TS.H.n[x]):'–'])}})+'</div>';
-  // score breakdown + weekday + call length
+    {l:'Idle time per day',v:Math.round(o.unsMinPerDay)+' min',s:'first call '+fmtSod(o.avgFirst)+' · last '+fmtSod(o.avgLast),tone:o.unsMinPerDay>=60?'warn':''}]);
+  // --- day by day, with dates to talk through
+  const wd=ctx.wdays.filter(d=>d>=o.firstDay&&d<=o.lastDay2);
+  const st=d=>{const a=o.days.get(d); return a&&a[0]>=T.absentDials?(a[0]<T.lowDayFrac*T.targetDials&&a[2]/60<T.lowDayFrac*T.targetTalk?'Low activity':'Worked'):'Absent';};
+  const dayRate=d=>{const a=o.days.get(d); return a&&a[0]>=T.absentDials?div(a[3],a[0]):NaN;};
+  const teamRate=d=>{const b=TS.byDay.get(d); return b?div(b.q,b.n):NaN;};
+  const worked=wd.filter(d=>st(d)!=='Absent'), worst=worked.slice().sort((a,b)=>(dayRate(a)-teamRate(a))-(dayRate(b)-teamRate(b))).slice(0,3).filter(d=>dayRate(d)<teamRate(d)-.03);
+  const mx=Math.max(...wd.map(d=>o.days.get(d)?o.days.get(d)[0]:0),T.targetDials);
+  const rr=wd.map(dayRate).filter(isFinite).concat(wd.map(teamRate).filter(isFinite));
+  const dc=chart({labels:wd.map(fmtDayShort),W:1000,H:240,xEvery:Math.ceil(wd.length/24),yMax:niceMax(mx*1.05),bars:[{name:'Calls made',data:wd.map(d=>{const a=o.days.get(d);return a&&a[0]>=T.absentDials?a[0]:mx*.05;}),colors:wd.map(d=>{const s=st(d);return s==='Worked'?COL.callsSoft:s==='Low activity'?COL.short:COL.bad;}),color:COL.callsSoft}],
+    lines:[{name:'Their real conversations %',data:wd.map(dayRate),color:COL.talk,axis:'r'},{name:'Team that day',data:wd.map(teamRate),color:COL.grey,axis:'r',dash:'4 4',dots:false}],ref:[{y:T.targetDials,label:'call target',color:COL.ink}],y2Domain:[0,Math.min(1,Math.max(.2,...rr)*1.2)],
+    legendExtra:[{n:'Low-activity day',c:COL.short},{n:'Missed day',c:COL.bad}],
+    tip:i=>{const d=wd[i],a=o.days.get(d);return '<b>'+fmtDay(d)+'</b><br>'+(a&&a[0]>=T.absentDials?a[0]+' calls · '+a[3]+' real conversations ('+pct0(dayRate(d))+')<br>Team that day '+pct0(teamRate(d))+'<br>'+Math.round(a[2]/60)+' min talk · '+fmtSod(a[4])+' → '+fmtSod(a[5]):'Absent'+(a?' ('+a[0]+' calls)':''));}});
+  h+=card({id:'p-days',title:'Day by day',take:worst.length?'Dates to talk through: '+worst.map(d=>'<b>'+fmtDay(d)+'</b> ('+pct0(dayRate(d))+' vs team '+pct0(teamRate(d))+')').join(', ')+'.':wd.length+' working days: <b>'+worked.length+'</b> worked, <b>'+o.absent.length+'</b> missed. No day stands out below the team.',body:dc,
+    data:{cols:['Date','Weekday','Status',{l:'Calls',n:1},{l:'Picked up',n:1},{l:'Real conv.',n:1},{l:'Real conv. %',n:1},{l:'Team %',n:1},{l:'Talk min',n:1},'First call','Last call'],rows:wd.map(d=>{const a=o.days.get(d);return [dcell(d),icell(DOW[dowOf(d)],dowOf(d)),st(d),a?a[0]:0,a?a[1]:0,a?a[3]:0,isFinite(dayRate(d))?pct1(dayRate(d)):'–',pct1(teamRate(d)),a?Math.round(a[2]/60):0,a?fmtSod(a[4]):'–',a?fmtSod(a[5]):'–'];})}});
+  // --- weekday with the dates behind each bar
+  const dws=dowsOf(ctx).filter(w=>o.dowN[w]>0);
+  const byW=w=>worked.filter(d=>dowOf(d)===w);
+  const mR=dws.map(w=>o.dowN[w]>=10?o.dowC[w]/o.dowN[w]:NaN), tR=dws.map(w=>TS.dow.n[w]?TS.dow.c[w]/TS.dow.n[w]:NaN);
+  const gapW=dws.map((w,i)=>mR[i]-tR[i]), fin=gapW.filter(isFinite), wi=fin.length?gapW.indexOf(Math.min(...fin)):-1;
+  const wkRows=[]; for(const w of dws) for(const d of byW(w)){ const a=o.days.get(d), b=TS.byDay.get(d); wkRows.push([icell(DOW[w],w*1e6+d),dcell(d),a[0],pct1(div(a[1],a[0])),pct1(div(a[3],a[0])),b?pct1(div(b.c,b.n)):'–']); }
+  const wkChart=chart({labels:dws.map(w=>DOW[w]),W:520,H:240,yMax:1,yFmt:v=>Math.round(v*100)+'%',bars:[{name:esc(firstName(o.name)),data:mR,color:COL.calls},{name:'Team',data:tR,color:COL.none}],
+    tip:i=>{const w=dws[i];return '<b>'+DOW[w]+'</b> – them '+pct0(mR[i])+', team '+pct0(tR[i])+'<br>'+byW(w).map(d=>{const a=o.days.get(d);return fmtDay(d)+': '+pct0(div(a[1],a[0]))+' of '+a[0]+' calls';}).join('<br>');}});
+  h+='<div class="grid g2">'+card({id:'p-dow',title:'Pick-up by weekday',take:wi>=0&&gapW[wi]<-.03?'Weakest on <b>'+DOW[dws[wi]]+'s</b> ('+byW(dws[wi]).map(d=>fmtDayShort(d)).join(', ')+'). Hover a bar or open the table for each date.':'Close to the team on every weekday. Open the table for each date.',body:wkChart,
+      data:{cols:['Weekday','Date',{l:'Calls',n:1},{l:'Picked up',n:1},{l:'Real conv.',n:1},{l:'Team picked up',n:1}],rows:wkRows}})+
+    card({id:'p-hour',title:'Best time for '+esc(firstName(o.name))+' to call',take:bestHourText(o,TS,T),body:profHourChart(o,TS,ctx,T),data:profHourData(o,TS,ctx,T)})+'</div>';
+  // --- more
   const comp=[['Talk time',o.S.talk,30],['People reached',o.S.reach,20],['Call volume',o.S.vol,15],['Attendance',o.S.att,15],['Low idle time',o.S.disc,10],['Clean calling',o.S.integ,10]];
   const weakest=comp.slice().sort((a,b)=>a[1]/a[2]-b[1]/b[2])[0];
-  const dn=['Mon','Tue','Wed','Thu','Fri'], mR=dn.map((_,i)=>o.dowN[i]>=10?o.dowC[i]/o.dowN[i]:NaN), tR=dn.map((_,i)=>TS.dow.n[i]?TS.dow.c[i]/TS.dow.n[i]:NaN);
   const edges=[0,5,10,15,30,60,120,300,600,1e9], dlab=['0–5s','5–10s','10–15s','15–30s','30–60s','1–2m','2–5m','5–10m','10m+'], mine=zeros(9); const io=ctx.idxOut;
   for(let k=0;k<io.length;k++){ const i=io[k]; if(DB.rec[i]!==o.id||DB.res[i]!==0) continue; const L=DB.len[i]; for(let e=0;e<9;e++) if(L>=edges[e]&&L<edges[e+1]||(e===0&&L===0)){mine[e]++;break;} }
   const mTot=sumArr(mine)||1, tTot=sumArr(TS.dist)||1;
-  h+='<div class="grid g3">'+card({id:'p-score',title:'Score breakdown',take:o.pi==null?'Not enough activity to score.':'Biggest gap: <b>'+weakest[0].toLowerCase()+'</b> ('+Math.round(weakest[1])+' of '+weakest[2]+' points).',body:hbars(comp.map(c=>({l:c[0],v:c[1]/c[2],t:Math.round(c[1])+' / '+c[2],c:c[1]/c[2]>=.75?COL.talk:c[1]/c[2]>=.5?COL.calls:c[1]/c[2]>=.3?COL.short:COL.bad})),{max:1}),
-      data:{cols:['Part',{l:'Points',n:1},{l:'Out of',n:1}],rows:[...comp.map(c=>[c[0],Math.round(c[1]),c[2]]),['Total',o.pi==null?'–':o.pi,100]]}})+
-    card({id:'p-dow',title:'Pick-up by weekday',take:'Their picked-up rate next to the team.',body:chart({labels:dn,W:420,H:230,yMax:1,yFmt:v=>Math.round(v*100)+'%',bars:[{name:esc(firstName(o.name)),data:mR,color:COL.calls},{name:'Team',data:tR,color:COL.none}],tip:i=>'<b>'+dn[i]+'</b><br>Them '+pct0(mR[i])+' ('+o.dowN[i]+' calls)<br>Team '+pct0(tR[i])}),
-      data:{cols:['Weekday',{l:'Their calls',n:1},{l:'Their picked up',n:1},{l:'Team',n:1}],rows:dn.map((d,i)=>[d,o.dowN[i],pct1(mR[i]),pct1(tR[i])])}})+
-    card({id:'p-len',title:'How long their picked-up calls last',take:'<b>'+pct0(sumArr(mine.slice(0,3))/mTot)+'</b> end within 15 seconds (team '+pct0(sumArr(TS.dist.slice(0,3))/tTot)+').',body:chart({labels:dlab,W:420,H:230,yFmt:v=>Math.round(v*100)+'%',bars:[{name:esc(firstName(o.name)),data:mine.map(v=>v/mTot),color:COL.talk},{name:'Team',data:TS.dist.map(v=>v/tTot),color:COL.none}],tip:i=>'<b>'+dlab[i]+'</b><br>Them '+pct1(mine[i]/mTot)+'<br>Team '+pct1(TS.dist[i]/tTot)}),
-      data:{cols:['Length',{l:'Their calls',n:1},{l:'Their share',n:1},{l:'Team share',n:1}],rows:dlab.map((l,i)=>[l,mine[i],pct1(mine[i]/mTot),pct1(TS.dist[i]/tTot)])}})+'</div>';
-  const wd=ctx.wdays.filter(d=>d>=o.firstDay&&d<=o.lastDay2), mx=Math.max(...wd.map(d=>o.days.get(d)?o.days.get(d)[0]:0),T.targetDials);
-  const st=d=>{const a=o.days.get(d); return a&&a[0]>=T.absentDials?(a[0]<T.lowDayFrac*T.targetDials&&a[2]/60<T.lowDayFrac*T.targetTalk?'Low activity':'Worked'):'Absent';};
-  const dc=chart({labels:wd.map(fmtDayShort),W:1000,H:240,xEvery:Math.ceil(wd.length/24),yMax:niceMax(mx*1.05),bars:[{name:'Calls made',data:wd.map(d=>{const a=o.days.get(d);return a&&a[0]>=T.absentDials?a[0]:mx*.05;}),colors:wd.map(d=>{const s=st(d);return s==='Worked'?COL.calls:s==='Low activity'?COL.short:COL.bad;}),color:COL.calls}],
-    lines:[{name:'Talk minutes (right)',data:wd.map(d=>{const a=o.days.get(d);return a&&a[0]>=T.absentDials?a[2]/60:0;}),color:COL.talk,axis:'r'}],ref:[{y:T.targetDials,label:'call target',color:COL.ink}],y2Fmt:v=>Math.round(v)+'m',y2Domain:[0,Math.max(T.targetTalk*1.4,...wd.map(d=>{const a=o.days.get(d);return a?a[2]/60:0;}))],
-    legendExtra:[{n:'Low-activity day',c:COL.short},{n:'Missed day',c:COL.bad}],
-    tip:i=>{const a=o.days.get(wd[i]);return '<b>'+fmtDay(wd[i])+'</b><br>'+(a&&a[0]>=T.absentDials?a[0]+' calls · '+Math.round(a[2]/60)+' min talk<br>'+fmtSod(a[4])+' → '+fmtSod(a[5]):'Absent'+(a?' ('+a[0]+' calls)':''));}});
-  const lowN=wd.filter(d=>st(d)==='Low activity').length;
-  h+=card({id:'p-days',title:'Day by day',take:wd.length+' working days: <b>'+wd.filter(d=>st(d)==='Worked').length+'</b> full, <b>'+lowN+'</b> low activity, <b>'+o.absent.length+'</b> missed.',body:dc,
-    data:{cols:['Date','Status',{l:'Calls',n:1},{l:'Picked up',n:1},{l:'Talk min',n:1},'First call','Last call'],rows:wd.map(d=>{const a=o.days.get(d);return [fmtDay(d),st(d),a?a[0]:0,a?a[1]:0,a?Math.round(a[2]/60):0,a?fmtSod(a[4]):'–',a?fmtSod(a[5]):'–'];})}});
+  const more='<div class="grid g3">'+card({id:'p-notes',title:'All coaching notes',body:'<div class="notes">'+notes.map(n=>'<div class="'+n.t+'"><span>'+esc(n.x)+'</span></div>').join('')+'</div>',data:{cols:['Type','Point'],rows:notes.map(n=>[({good:'Strength',bad:'Concern',tip:'Tip'})[n.t],n.x])}})+
+    card({id:'p-score',title:'Score breakdown',take:o.pi==null?'Not enough activity to score.':'Biggest gap: <b>'+weakest[0].toLowerCase()+'</b>.',body:hbars(comp.map(c=>({l:c[0],v:c[1]/c[2],t:Math.round(c[1])+' / '+c[2],c:c[1]/c[2]>=.75?COL.talk:c[1]/c[2]>=.5?COL.calls:c[1]/c[2]>=.3?COL.short:COL.bad})),{max:1}),
+      data:{cols:['Part',{l:'Points',n:1},{l:'Out of',n:1}],rows:comp.map(c=>[c[0],Math.round(c[1]),c[2]])}})+
+    card({id:'p-len',title:'Call length',take:'<b>'+pct0(sumArr(mine.slice(0,3))/mTot)+'</b> of picked-up calls end within 15 s (team '+pct0(sumArr(TS.dist.slice(0,3))/tTot)+').',body:chart({labels:dlab,W:420,H:230,yFmt:v=>Math.round(v*100)+'%',bars:[{name:esc(firstName(o.name)),data:mine.map(v=>v/mTot),color:COL.talk},{name:'Team',data:TS.dist.map(v=>v/tTot),color:COL.none}],tip:i=>'<b>'+dlab[i]+'</b><br>Them '+pct1(mine[i]/mTot)+'<br>Team '+pct1(TS.dist[i]/tTot)}),
+      data:{cols:['Length',{l:'Their calls',n:1},{l:'Their share',n:1},{l:'Team share',n:1}],rows:dlab.map((l,i)=>[icell(l,i),mine[i],pct1(mine[i]/mTot),pct1(TS.dist[i]/tTot)])}})+'</div>';
+  h+=moreDetail('profile',more,3);
   return h;
 }
+function profHours(ctx,T){ return hoursOf(ctx).filter(x=>x>=T.shiftStart&&x<T.shiftEnd); }
+function bestHourText(o,TS,T){ const X=ST.metric==='q'?o.hQ:o.hC, hs=homog(o.hN,X,T.shiftStart,T.shiftEnd), adj=hourAdj(o,TS.H,ST.metric,15).filter(x=>x.h>=T.shiftStart&&x.h<T.shiftEnd&&x.n>=10).sort((a,b)=>b.adj-a.adj);
+  if(adj.length<4) return 'Not enough calls to pick best hours yet.';
+  return hs.sig?'Best: <b>'+adj.slice(0,2).map(x=>fmtHour(x.h)).join(' and ')+'</b>. Weakest: <b>'+adj.slice(-2).map(x=>fmtHour(x.h)).join(' and ')+'</b>.':'About the same all day – any hour works.'; }
+function profHourChart(o,TS,ctx,T){ const X=ST.metric==='q'?o.hQ:o.hC, tX=pick(TS.H), hrs=profHours(ctx,T);
+  const v=hrs.flatMap(x=>[o.hN[x]>=5?X[x]/o.hN[x]:NaN,TS.H.n[x]?tX[x]/TS.H.n[x]:NaN]).filter(isFinite);
+  return chart({labels:hrs.map(hLab),W:520,H:240,bars:[{name:'Their calls',data:hrs.map(x=>o.hN[x]),color:COL.callsSoft}],lines:[{name:'Their '+mWord().toLowerCase()+' %',data:hrs.map(x=>o.hN[x]>=5?X[x]/o.hN[x]:NaN),color:COL.calls,axis:'r'},{name:'Team',data:hrs.map(x=>TS.H.n[x]?tX[x]/TS.H.n[x]:NaN),color:COL.grey,axis:'r',dash:'4 4',dots:false}],
+    y2Domain:v.length?[Math.max(0,Math.floor((Math.min(...v)-.05)*20)/20),Math.min(1,Math.ceil((Math.max(...v)+.05)*20)/20)]:[0,1],
+    tip:i=>{const x=hrs[i];return '<b>'+fmtHourRange(x)+'</b><br>'+o.hN[x]+' calls · '+(o.hN[x]?pct0(X[x]/o.hN[x]):'–')+'<br>Team '+pct0(tX[x]/(TS.H.n[x]||1));}}); }
+function profHourData(o,TS,ctx,T){ const X=ST.metric==='q'?o.hQ:o.hC, tX=pick(TS.H), hrs=profHours(ctx,T);
+  return {cols:['Hour (ET)',{l:'Their calls',n:1},{l:'Their '+mWord().toLowerCase(),n:1},{l:'Team',n:1}],rows:hrs.map(x=>[icell(fmtHourRange(x),x),o.hN[x],o.hN[x]?pct1(X[x]/o.hN[x]):'–',TS.H.n[x]?pct1(tX[x]/TS.H.n[x]):'–'])}; }
 
 /* ============================================================
    WHEN TO CALL
@@ -1397,33 +1479,32 @@ function tabWhen(ctx){
   const T=timeStats(ctx),hrs=hoursOf(ctx),X=pick(T.H),N=T.H.n;
   const tn=sumArr(hrs.map(x=>N[x])),tx=sumArr(hrs.map(x=>X[x])),base=div(tx,tn),hs=homog(N,X,hrs[0],hrs[hrs.length-1]+1);
   const rate=hrs.map(x=>N[x]>=10?X[x]/N[x]:NaN),se=hrs.map(x=>N[x]>=10?Math.sqrt(base*(1-base)/N[x]):NaN),z=hrs.map((x,i)=>(rate[i]-base)/se[i]);
-  const ok=hourRank(T,hrs);
-  const best=ok[0], worst=ok[ok.length-1];
-  let h=pgHead('When to call',hs.sig&&best?'<b>Time of day matters.</b> '+mWord()+' peaks at <b>'+fmtHourRange(best.h)+'</b> ('+pct0(best.r)+') and dips at <b>'+fmtHourRange(worst.h)+'</b> ('+pct0(worst.r)+'), against an average of '+pct0(base)+'.':'<b>Time of day makes little difference.</b> Every hour sits close to the '+pct0(base)+' average – the small ups and downs are normal variation.')+scopeNote(ctx);
+  const ok=hourRank(T,hrs), best=ok[0], worst=ok[ok.length-1];
+  const dws=dowsOf(ctx),DX=pick(T.dow), dR=dws.map(i=>T.dow.n[i]?DX[i]/T.dow.n[i]:0), bw=dws[dR.indexOf(Math.max(...dR))];
+  const cellV=(w,x)=>{const n=T.DH.n[w][x]; return n>=10?pick(T.DH)[w][x]/n:NaN;};
+  let bestCell=null; for(const w of dws) for(const x of hrs){ const v=cellV(w,x); if(isFinite(v)&&T.DH.n[w][x]>=CFG.minSample&&(!bestCell||v>bestCell.v)) bestCell={w,x,v}; }
+  const ins=[];
+  if(hs.sig&&best){ ins.push({k:'good',h:'Call at <b>'+fmtHourRange(best.h)+'</b> – '+pct0(best.r)+' '+mWordL()+' vs '+pct0(base)+' average.'}); ins.push({k:'warn',h:'Avoid <b>'+fmtHourRange(worst.h)+'</b> for prospecting – only '+pct0(worst.r)+'. Use it for admin or sourcing.'}); }
+  else ins.push({k:'info',h:'Time of day makes little difference – every hour is close to the '+pct0(base)+' average. Focus on lists, not timing.'});
+  if(bestCell) ins.push({k:'info',h:'Sweet spot: <b>'+DOW[bestCell.w]+' '+fmtHourRange(bestCell.x)+'</b> at '+pct0(bestCell.v)+'.'});
+  let h=pgHead('When to call',null,ins)+scopeNote(ctx);
   const dots=rate.map((r,i)=>Math.abs(z[i])>=2?(z[i]>0?COL.talk:COL.bad):COL.calls);
-  const hourly=chart({labels:hrs.map(hLab),W:1000,H:290,bars:[{name:'Calls made',data:hrs.map(x=>N[x]),color:COL.callsSoft}],lines:[{name:mWord()+' %',data:rate,color:COL.calls,axis:'r',dotColors:dots}],
+  const hourly=chart({labels:hrs.map(hLab),W:1000,H:280,bars:[{name:'Calls made',data:hrs.map(x=>N[x]),color:COL.callsSoft}],lines:[{name:mWord()+' %',data:rate,color:COL.calls,axis:'r',dotColors:dots}],
     y2Domain:[Math.max(0,base-.1),Math.min(1,base+.1)],band:{lo:se.map(s=>base-2*s),hi:se.map(s=>base+2*s),axis:'r',color:COL.talk,name:'Normal range'},ref:[{y:base,axis:'r',label:'average '+pct0(base),color:COL.talk}],
     tip:i=>'<b>'+fmtHourRange(hrs[i])+' ET</b><br>'+fmtInt(N[hrs[i]])+' calls<br>'+mWord()+' '+pct1(rate[i])+'<br>Avg call '+fmtDur(div(T.H.talk[hrs[i]],T.H.c[hrs[i]]))+(Math.abs(z[i])>=2?'<br><b>'+(z[i]>0?'Clearly above':'Clearly below')+' average</b>':'')});
   const nUp=z.filter(v=>v>=2).length, nDn=z.filter(v=>v<=-2).length;
-  h+=card({id:'w-hour',title:mWord()+' by hour',take:'Shaded band = normal range. '+(nUp||nDn?'<b>'+nUp+'</b> hours are clearly better (green dots), <b>'+nDn+'</b> clearly worse (red).':'No hour falls outside the normal range.'),body:hourly,
-    data:{cols:['Hour (ET)',{l:'Calls',n:1},{l:mWord(),n:1},{l:'Avg picked-up call',n:1},'Verdict'],rows:hrs.map((x,i)=>[fmtHourRange(x),N[x],pct1(rate[i]),fmtDur(div(T.H.talk[x],T.H.c[x])),Math.abs(z[i])>=2?(z[i]>0?'Clearly better':'Clearly worse'):'Normal'])}});
-  const list=(a,c)=>hbars(a.map(x=>({l:fmtHourRange(x.h),v:x.r,t:pct0(x.r)+' · '+fmtInt(x.n),c})),{max:ok.length?ok[0].r:1,empty:'Not enough calls.'});
-  const b3=ok.slice(0,3), w3=ok.slice(-3).reverse();
-  h+='<div class="grid g2" style="margin-top:14px">'+card({id:'w-best',title:'Best hours to call',take:'Ranked by '+mWordL()+' (hours with at least '+CFG.minSample+' calls).',body:list(b3,COL.talk),data:{cols:['Hour (ET)',{l:mWord(),n:1},{l:'Calls',n:1}],rows:b3.map(x=>[fmtHourRange(x.h),pct1(x.r),x.n])}})+
-    card({id:'w-worst',title:'Weakest hours',take:'Keep prospecting out of these if you can – use them for admin or sourcing.',body:list(w3,COL.bad),data:{cols:['Hour (ET)',{l:mWord(),n:1},{l:'Calls',n:1}],rows:w3.map(x=>[fmtHourRange(x.h),pct1(x.r),x.n])}})+'</div>';
-  const dn=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],DX=pick(T.dow),dws=[0,1,2,3,4].concat(ctx.F.scope==='shift'?[]:[5,6]);
-  const dbase=div(sumArr(dws.map(i=>DX[i])),sumArr(dws.map(i=>T.dow.n[i])));
-  const cellV=(w,x)=>{const n=T.DH.n[w][x]; return n>=10?pick(T.DH)[w][x]/n:NaN;};
-  let bestCell=null; for(const w of dws) for(const x of hrs){ const v=cellV(w,x); if(isFinite(v)&&T.DH.n[w][x]>=CFG.minSample&&(!bestCell||v>bestCell.v)) bestCell={w,x,v}; }
-  const hm=heat({rows:dws.map(i=>({label:dn[i],i})),cols:hrs.map(x=>fmtHour(x).replace(' ','')),cell:(r,j)=>{const n=T.DH.n[r.i][hrs[j]];if(n<10)return null;const v=pick(T.DH)[r.i][hrs[j]]/n;return {t:Math.round(v*100),bg:divColor(v,base,ST.metric==='q'?.06:.05),tip:'<b>'+dn[r.i]+' '+fmtHourRange(hrs[j])+'</b><br>'+pct1(v)+' · '+fmtInt(n)+' calls'};}});
-  const dR=dws.map(i=>T.dow.n[i]?DX[i]/T.dow.n[i]:0), bw=dws[dR.indexOf(Math.max(...dR))];
-  const dowc=chart({labels:dws.map(i=>dn[i]),W:400,H:280,yMax:1,yFmt:v=>Math.round(v*100)+'%',bars:[{name:mWord()+' %',data:dR,colors:dws.map(i=>i===bw?COL.talk:COL.talkSoft),color:COL.talk}],ref:[{y:dbase,label:'avg '+pct0(dbase),color:COL.ink}],tip:i=>'<b>'+dn[dws[i]]+'</b><br>'+pct1(DX[dws[i]]/(T.dow.n[dws[i]]||1))+' · '+fmtInt(T.dow.n[dws[i]])+' calls'});
-  h+='<div class="grid g21">'+card({id:'w-heat',title:'Day and hour',take:bestCell?'Sweet spot: <b>'+dn[bestCell.w]+' '+fmtHourRange(bestCell.x)+'</b> at '+pct0(bestCell.v)+'. Green = above average, red = below; number = %.':'Green = above average, red = below; number = %.',body:hm,
-      data:{cols:['Day',...hrs.map(x=>({l:fmtHour(x),n:1}))],rows:dws.map(w=>[dn[w],...hrs.map(x=>{const v=cellV(w,x);return isFinite(v)?pct0(v):'–';})])}})+
-    card({id:'w-dow',title:'By weekday',take:'<b>'+dn[bw]+'</b> is the strongest day at '+pct0(Math.max(...dR))+'.',body:dowc,data:{cols:['Day',{l:'Calls',n:1},{l:mWord(),n:1}],rows:dws.map((i,k)=>[dn[i],T.dow.n[i],pct1(dR[k])])}})+'</div>';
+  h+=card({id:'w-hour',title:mWord()+' by hour',take:nUp||nDn?'<b>'+nUp+'</b> hours clearly better (green dots), <b>'+nDn+'</b> clearly worse (red). The shaded band is normal variation.':'No hour falls outside the normal range (shaded).',body:hourly,
+    data:{cols:['Hour (ET)',{l:'Calls',n:1},{l:mWord(),n:1},{l:'Avg picked-up call',n:1},'Verdict'],rows:hrs.map((x,i)=>[icell(fmtHourRange(x),x),N[x],isFinite(rate[i])?pct1(rate[i]):'–',fmtDur(div(T.H.talk[x],T.H.c[x])),Math.abs(z[i])>=2?(z[i]>0?'Clearly better':'Clearly worse'):'Normal'])}});
+  const hm=heat({rows:dws.map(i=>({label:DOW[i],i})),cols:hrs.map(x=>fmtHour(x).replace(' ','')),cell:(r,j)=>{const n=T.DH.n[r.i][hrs[j]];if(n<10)return null;const v=pick(T.DH)[r.i][hrs[j]]/n;return {t:Math.round(v*100),bg:divColor(v,base,ST.metric==='q'?.06:.05),tip:'<b>'+DOW[r.i]+' '+fmtHourRange(hrs[j])+'</b><br>'+pct1(v)+' · '+fmtInt(n)+' calls'};}});
+  h+='<div style="margin-top:14px">'+card({id:'w-heat',title:'Day and hour',take:'Green = above average, red = below; number = % '+mWord().toLowerCase()+'.',body:hm,
+      data:{cols:['Day',...hrs.map(x=>({l:fmtHour(x),n:1}))],rows:dws.map(w=>[icell(DOW[w],w),...hrs.map(x=>{const v=cellV(w,x);return isFinite(v)?pct0(v):'–';})])}})+'</div>';
+  const DN=dws.map(i=>DOW[i]), dbase=div(sumArr(dws.map(i=>DX[i])),sumArr(dws.map(i=>T.dow.n[i])));
+  const dowc=chart({labels:DN,W:520,H:250,yMax:1,yFmt:v=>Math.round(v*100)+'%',bars:[{name:mWord()+' %',data:dR,colors:dws.map(i=>i===bw?COL.talk:COL.talkSoft),color:COL.talk}],ref:[{y:dbase,label:'avg '+pct0(dbase),color:COL.ink}],tip:i=>'<b>'+DN[i]+'</b><br>'+pct1(dR[i])+' · '+fmtInt(T.dow.n[dws[i]])+' calls'});
   const lens=hrs.map(x=>div(T.H.talk[x],T.H.c[x])), lb=hrs[lens.indexOf(Math.max(...lens))];
-  const lenC=chart({labels:hrs.map(hLab),W:1000,H:210,yFmt:v=>Math.round(v)+'s',bars:[{name:'Average length of picked-up calls',data:lens,colors:hrs.map(x=>x===lb?COL.violet:'#D6CBEF'),color:COL.violet}],tip:i=>'<b>'+fmtHourRange(hrs[i])+'</b><br>'+fmtDur(lens[i])+' average'});
-  h+=card({id:'w-len',title:'How long conversations last',take:'Candidates talk longest at <b>'+fmtHourRange(lb)+'</b> ('+fmtDur(Math.max(...lens))+' on average).',body:lenC,data:{cols:['Hour (ET)',{l:'Picked-up calls',n:1},{l:'Avg length',n:1},{l:'Talk (min)',n:1}],rows:hrs.map((x,i)=>[fmtHourRange(x),T.H.c[x],fmtDur(lens[i]),Math.round(T.H.talk[x]/60)])}});
+  const lenC=chart({labels:hrs.map(hLab),W:520,H:250,yFmt:v=>Math.round(v)+'s',bars:[{name:'Average length of picked-up calls',data:lens,colors:hrs.map(x=>x===lb?COL.violet:'#D6CBEF'),color:COL.violet}],tip:i=>'<b>'+fmtHourRange(hrs[i])+'</b><br>'+fmtDur(lens[i])+' average'});
+  const more='<div class="grid g2">'+card({id:'w-dow',title:'By weekday',take:'<b>'+DOW[bw]+'</b> is the strongest day ('+pct0(Math.max(...dR))+').',body:dowc,data:{cols:['Day',{l:'Calls',n:1},{l:mWord(),n:1}],rows:dws.map((i,k)=>[icell(DOW[i],i),T.dow.n[i],pct1(dR[k])])}})+
+    card({id:'w-len',title:'How long conversations last',take:'Longest at <b>'+fmtHourRange(lb)+'</b> ('+fmtDur(Math.max(...lens))+' on average).',body:lenC,data:{cols:['Hour (ET)',{l:'Picked-up calls',n:1},{l:'Avg length',n:1},{l:'Talk (min)',n:1}],rows:hrs.map((x,i)=>[icell(fmtHourRange(x),x),T.H.c[x],fmtDur(lens[i]),Math.round(T.H.talk[x]/60)])}})+'</div>';
+  h+=moreDetail('when',more,2);
   return h;
 }
 
@@ -1436,35 +1517,40 @@ function tabWhere(ctx){
   const xs=g=>ST.metric==='q'?g.q:g.c;
   const states=ST_.list.filter(g=>g.key.length===2), rated=states.filter(g=>g.n>=CFG.minSample).map(g=>({g,r:xs(g)/g.n})).sort((a,b)=>b.r-a.r);
   const inv=ST_.list.find(g=>g.key==='Invalid / unknown'), bad=ST_.nonUs+(inv?inv.n:0);
-  const bigS=states.slice().sort((a,b)=>b.n-a.n)[0];
-  let h=pgHead('Where to call','Calls reached <b>'+states.length+' states</b>'+(bigS?', most often <b>'+bigS.key+'</b> ('+pct0(div(bigS.n,T.total.n))+' of calls)':'')+'.'+(rated.length>1?' Best '+mWordL()+': <b>'+rated[0].g.key+'</b> ('+pct0(rated[0].r)+'); weakest: <b>'+rated[rated.length-1].g.key+'</b> ('+pct0(rated[rated.length-1].r)+').':'')+' Ported mobiles can live elsewhere, so treat this as a close guide.')+scopeNote(ctx);
-  h+=kpis([{l:'States reached',v:states.length},{l:'Area codes dialled',v:AC.list.length},{l:'Unusable numbers',v:fmtInt(bad),s:'short codes, foreign or invalid area codes',tone:bad?'warn':''},{l:'Average '+mWordL(),v:pct0(base)}]);
-  const mapData=new Map(ST_.list.map(g=>[g.key,{n:g.n,rate:xs(g)/g.n,what}]));
-  const top=states.slice().sort((a,b)=>xs(b)-xs(a)).slice(0,10);
-  h+='<div class="grid g21">'+card({id:'wh-map',title:mWord()+' by state',take:'Green = candidates there answer more than average, red = less, grey = too few calls.',body:usMap(mapData,base,CFG.minSample,ST.metric==='q'?.06:.05),
-      data:{cols:['State',{l:'Calls',n:1},{l:mWord(),n:1},{l:'Rate',n:1},{l:'Different numbers',n:1}],rows:states.slice().sort((a,b)=>b.n-a.n).map(g=>[g.key,g.n,xs(g),pct1(xs(g)/g.n),g.uniq])}})+
-    card({id:'wh-top',title:'Most calls picked up',take:'Top 10 states by volume of '+(ST.metric==='q'?'real conversations':'picked-up calls')+' (count · rate).',body:hbars(top.map(g=>({l:g.key,v:xs(g),t:fmtInt(xs(g))+' · '+pct0(xs(g)/g.n)})),{color:COL.talk}),data:{cols:['State',{l:mWord(),n:1},{l:'Rate',n:1}],rows:top.map(g=>[g.key,xs(g),pct1(xs(g)/g.n)])}})+'</div>';
-  const zones=TZ.list.filter(g=>g.key!=='Other'&&g.n>=200).sort((a,b)=>TZ_ORDER.indexOf(a.key)-TZ_ORDER.indexOf(b.key)), zc=[COL.calls,COL.talk,COL.short,COL.violet,COL.bad,COL.grey];
-  if(zones.length){ const X=g=>ST.metric==='q'?g.hQ:g.hC; let mn=1,mxr=0; const lines=zones.map((g,i)=>{const d=hrs.map(x=>g.hN[x]>=15?X(g)[x]/g.hN[x]:NaN); d.forEach(v=>{if(isFinite(v)){mn=Math.min(mn,v);mxr=Math.max(mxr,v);}}); return {name:g.key+' time',data:d,color:zc[i%6],dots:false,w:2.4};});
-    const lo=Math.max(0,Math.floor((mn-.04)*20)/20),hi=Math.min(1,Math.ceil((mxr+.03)*20)/20);
-    const zrows=zones.map(g=>{const bw=bestWorst(g.hN,X(g),10,30);const off=TZ_OFF[g.key]||0;return [g.key,g.n,pct1(xs(g)/g.n),bw?winLab(bw.best.h):'–',bw?winLab(bw.best.h+off):'–'];});
-    h+='<div class="grid g21">'+card({id:'wh-tz',title:mWord()+' through the day, by candidate time zone',take:'A line that sits higher answers more often at that ET hour.',body:chart({labels:hrs.map(hLab),W:760,H:270,yMin:lo,yMax:hi,yFmt:v=>Math.round(v*100)+'%',lines,tip:i=>'<b>'+fmtHourRange(hrs[i])+' ET</b><br>'+zones.map((g,k)=>g.key+': '+(isFinite(lines[k].data[i])?pct0(lines[k].data[i]):'–')).join('<br>')}),
-        data:{cols:['Hour (ET)',...zones.map(g=>({l:g.key,n:1}))],rows:hrs.map((x,i)=>[fmtHourRange(x),...lines.map(l=>isFinite(l.data[i])?pct1(l.data[i]):'–')])}})+
-      card({id:'wh-tzt',title:'Best window per time zone',take:'Local time is what the candidate sees on their clock.',body:dataTable({cols:['Zone',{l:'Calls',n:1},{l:mWord(),n:1},'Best 2h (ET)','Their local time'],rows:zrows}),data:{cols:['Zone',{l:'Calls',n:1},{l:mWord(),n:1},'Best 2h (ET)','Their local time'],rows:zrows}})+'</div>'; }
-  const minN=ST.minLoc==null?50:ST.minLoc, X2=g=>ST.metric==='q'?g.hQ:g.hC;
-  const rows=AC.list.filter(g=>g.n>=minN).map(g=>Object.assign(g,{lab:'('+g.key+')',rate:xs(g)/g.n,bw:bestWorst(g.hN,X2(g),10,Math.max(8,Math.round(minN/3)))}));
-  const win=(g,w)=>{ if(!g.bw||!g.bw[w]) return '–'; const t=winLab(g.bw[w].h); return g.bw.sig.sig? '<b>'+t+'</b>' : '<span style="color:#9AA0A8" '+tipA('Too few calls to be sure')+'>'+t+'</span>'; };
-  const cols=[{k:'lab',l:'Area code',cls:'nm',v:g=>+g.key},{k:'state',l:'State'},{k:'n',l:'Calls',n:1,f:g=>fmtInt(g.n)},{k:'rate',l:mWord(),n:1,f:g=>mbar(g.rate,1,COL.talk,base)+pct0(g.rate)},{k:'uniq',l:'Numbers',n:1,f:g=>fmtInt(g.uniq)},{k:'best',l:'Best time (ET)',v:g=>g.bw?g.bw.best.adj:null,f:g=>win(g,'best'),x:g=>g.bw?winLab(g.bw.best.h):''},{k:'worst',l:'Worst time (ET)',v:g=>g.bw&&g.bw.worst?g.bw.worst.adj:null,f:g=>win(g,'worst'),x:g=>g.bw&&g.bw.worst?winLab(g.bw.worst.h):''}];
-  h+=tcard({title:'Best and worst time for each area code',take:'Bold times are backed by enough calls; grey times are only a hint.',body:table('ac',cols,rows,{sort:{k:'n',d:-1},search:g=>g.lab+' '+g.state,ph:'Search area code or state…',limit:15,name:'area-codes',tools:'<label class="fg">Min. calls <input type="number" min="1" value="'+minN+'" data-minloc style="width:76px"></label>'})});
   const P=presenceStats(ctx),nm=['Same area code','Same state','Different state'],rr=P.rel.map(o=>({n:o.n,r:div(ST.metric==='q'?o.q:o.c,o.n)}));
   const poor=P.dids.filter(d=>d.n>=100).map(d=>({d,rate:div(ST.metric==='q'?d.q:d.c,d.n)})).filter(x=>x.rate<=base-.08).sort((a,b)=>a.rate-b.rate);
   const lift=rr[0].n>=50&&rr[2].n>=50?rr[0].r-rr[2].r:null;
-  h+='<div class="grid g2" style="margin-top:14px">'+card({id:'wh-local',title:'Does a local number help?',take:lift==null?'Not enough same-area calls to compare.':Math.abs(lift)<.02?'Local numbers make <b>little difference</b> here.':'Same-area-code calls are <b>'+Math.abs(lift*100).toFixed(1)+' pts '+(lift>0?'better':'worse')+'</b> than out-of-state calls.',
+  const ins=[];
+  if(rated.length>1) ins.push({k:'info',h:'Best '+mWordL()+': <b>'+rated[0].g.key+'</b> ('+pct0(rated[0].r)+'). Weakest: <b>'+rated[rated.length-1].g.key+'</b> ('+pct0(rated[rated.length-1].r)+').'});
+  if(poor.length) ins.push({k:'warn',h:'<b>'+poor.length+'</b> caller ID'+(poor.length===1?'':'s')+' get 8+ points below average – possibly flagged as spam. Worst: '+fmtPhone(poor[0].d.did)+'.'});
+  if(lift!=null&&Math.abs(lift)>=.02) ins.push({k:lift>0?'good':'info',h:'Calling from a local area code is <b>'+Math.abs(lift*100).toFixed(1)+' pts '+(lift>0?'better':'worse')+'</b> than out of state.'});
+  if(bad) ins.push({k:'warn',h:'<b>'+fmtInt(bad)+'</b> calls went to unusable numbers (short codes, foreign or invalid area codes).'});
+  let h=pgHead('Where to call','Calls reached <b>'+states.length+' states</b> and <b>'+AC.list.length+' area codes</b>. Ported mobiles can live elsewhere, so treat this as a close guide.',ins)+scopeNote(ctx);
+  const mapData=new Map(ST_.list.map(g=>[g.key,{n:g.n,rate:xs(g)/g.n,what}]));
+  const top=states.slice().sort((a,b)=>xs(b)-xs(a)).slice(0,10);
+  h+='<div class="grid g21">'+card({id:'wh-map',title:mWord()+' by state',take:'Green = answer more than average, red = less, grey = too few calls.',body:usMap(mapData,base,CFG.minSample,ST.metric==='q'?.06:.05),
+      data:{cols:['State',{l:'Calls',n:1},{l:mWord(),n:1},{l:'Rate',n:1},{l:'Different numbers',n:1}],rows:states.map(g=>[g.key,g.n,xs(g),pct1(xs(g)/g.n),g.uniq])}})+
+    card({id:'wh-top',title:'Top 10 states',take:'By volume of '+(ST.metric==='q'?'real conversations':'picked-up calls')+' (count · rate).',body:hbars(top.map(g=>({l:g.key,v:xs(g),t:fmtInt(xs(g))+' · '+pct0(xs(g)/g.n)})),{color:COL.talk}),data:{cols:['State',{l:mWord(),n:1},{l:'Rate',n:1}],rows:top.map(g=>[g.key,xs(g),pct1(xs(g)/g.n)])}})+'</div>';
+  const minN=ST.minLoc==null?50:ST.minLoc, X2=g=>ST.metric==='q'?g.hQ:g.hC;
+  const rows=AC.list.filter(g=>g.n>=minN).map(g=>Object.assign(g,{lab:'('+g.key+')',rate:xs(g)/g.n,bw:bestWorst(g.hN,X2(g),10,Math.max(8,Math.round(minN/3)))}));
+  const win=(g,w)=>{ if(!g.bw||!g.bw[w]) return '–'; const t=winLab(g.bw[w].h); return g.bw.sig.sig? '<b>'+t+'</b>' : '<span class="muted" '+tipA('Too few calls to be sure')+'>'+t+'</span>'; };
+  const cols=[{k:'lab',l:'Area code',cls:'nm',v:g=>+g.key},{k:'state',l:'State'},{k:'n',l:'Calls',n:1,f:g=>fmtInt(g.n)},{k:'rate',l:mWord(),n:1,f:g=>mbar(g.rate,1,COL.talk,base)+pct0(g.rate)},{k:'uniq',l:'Numbers',n:1,f:g=>fmtInt(g.uniq)},{k:'best',l:'Best time (ET)',v:g=>g.bw?g.bw.best.adj:null,f:g=>win(g,'best'),x:g=>g.bw?winLab(g.bw.best.h):''},{k:'worst',l:'Worst time (ET)',v:g=>g.bw&&g.bw.worst?g.bw.worst.adj:null,f:g=>win(g,'worst'),x:g=>g.bw&&g.bw.worst?winLab(g.bw.worst.h):''}];
+  h+='<div style="margin-top:14px">'+tcard({title:'Best and worst time for each area code',take:'Bold times are backed by enough calls; grey times are only a hint.',body:table('ac',cols,rows,{sort:{k:'n',d:-1},search:g=>g.lab+' '+g.state,ph:'Search area code or state…',limit:12,name:'area-codes',tools:'<label class="fg">Min. calls <input type="number" min="1" value="'+minN+'" data-minloc style="width:76px"></label>'})})+'</div>';
+  let more='';
+  const zones=TZ.list.filter(g=>g.key!=='Other'&&g.n>=200).sort((a,b)=>TZ_ORDER.indexOf(a.key)-TZ_ORDER.indexOf(b.key)), zc=[COL.calls,COL.talk,COL.short,COL.violet,COL.bad,COL.grey];
+  if(zones.length){ const X=g=>ST.metric==='q'?g.hQ:g.hC; let mn=1,mxr=0; const lines=zones.map((g,i)=>{const d=hrs.map(x=>g.hN[x]>=15?X(g)[x]/g.hN[x]:NaN); d.forEach(v=>{if(isFinite(v)){mn=Math.min(mn,v);mxr=Math.max(mxr,v);}}); return {name:g.key+' time',data:d,color:zc[i%6],dots:false,w:2.4};});
+    const lo=Math.max(0,Math.floor((mn-.04)*20)/20),hi=Math.min(1,Math.ceil((mxr+.03)*20)/20);
+    const zrows=zones.map(g=>{const bw=bestWorst(g.hN,X(g),10,30);const off=TZ_OFF[g.key]||0;return [g.key,g.n,pct1(xs(g)/g.n),bw?icell(winLab(bw.best.h),bw.best.h):'–',bw?icell(winLab(bw.best.h+off),bw.best.h+off):'–'];});
+    more+='<div class="grid g21">'+card({id:'wh-tz',title:'Through the day, by candidate time zone',take:'A higher line answers more often at that ET hour.',body:chart({labels:hrs.map(hLab),W:760,H:260,yMin:lo,yMax:hi,yFmt:v=>Math.round(v*100)+'%',lines,tip:i=>'<b>'+fmtHourRange(hrs[i])+' ET</b><br>'+zones.map((g,k)=>g.key+': '+(isFinite(lines[k].data[i])?pct0(lines[k].data[i]):'–')).join('<br>')}),
+        data:{cols:['Hour (ET)',...zones.map(g=>({l:g.key,n:1}))],rows:hrs.map((x,i)=>[icell(fmtHourRange(x),x),...lines.map(l=>isFinite(l.data[i])?pct1(l.data[i]):'–')])}})+
+      card({id:'wh-tzt',title:'Best window per time zone',take:'Local time is what the candidate sees on their clock.',tableOnly:true,data:{cols:['Zone',{l:'Calls',n:1},{l:mWord(),n:1},'Best 2h (ET)','Their local time'],rows:zrows}})+'</div>'; }
+  more+='<div class="grid g2">'+card({id:'wh-local',title:'Does a local number help?',take:lift==null?'Not enough same-area calls to compare.':Math.abs(lift)<.02?'Little difference here.':'Same area code is <b>'+Math.abs(lift*100).toFixed(1)+' pts '+(lift>0?'better':'worse')+'</b>.',
       body:chart({labels:nm,W:520,H:230,yMax:1,yFmt:v=>Math.round(v*100)+'%',bars:[{name:mWord(),data:rr.map(x=>x.r),color:COL.talk}],tip:i=>'<b>'+nm[i]+'</b><br>'+pct1(rr[i].r)+' · '+fmtInt(rr[i].n)+' calls'}),
       data:{cols:['Caller ID vs candidate',{l:'Calls',n:1},{l:mWord(),n:1}],rows:nm.map((l,i)=>[l,rr[i].n,pct1(rr[i].r)])}})+
-    card({id:'wh-poor',title:'Caller IDs with poor pick-up',take:poor.length?'<b>'+poor.length+'</b> numbers get 8+ points below average (100+ calls). They may be flagged as spam – consider replacing them.':'No caller ID stands out.',
-      body:poor.length?hbars(poor.slice(0,8).map(x=>({l:fmtPhone(x.d.did),v:x.rate,t:pct0(x.rate)+' · '+(x.d.rec>=0?firstName(mName(x.d.rec)):'?'),c:COL.bad,tip:'Used mostly by '+esc(x.d.rec>=0?mName(x.d.rec):'?')+'<br>'+fmtInt(x.d.n)+' calls'})),{max:1}):'<p class="hint">✓ Every caller ID with 100+ calls is within 8 points of average.</p>',
+    card({id:'wh-poor',title:'Caller IDs with poor pick-up',take:poor.length?'8+ points below average with 100+ calls.':'No caller ID stands out.',
+      body:poor.length?hbars(poor.slice(0,8).map(x=>({l:fmtPhone(x.d.did),v:x.rate,t:pct0(x.rate)+' · '+(x.d.rec>=0?firstName(mName(x.d.rec)):'?'),c:COL.bad,tip:'Used mostly by '+esc(x.d.rec>=0?mName(x.d.rec):'?')+'<br>'+fmtInt(x.d.n)+' calls'})),{max:1}):'<p class="hint">Every caller ID with 100+ calls is within 8 points of average.</p>',
       data:{cols:['Caller ID','Used mostly by',{l:'Calls',n:1},{l:mWord(),n:1}],rows:poor.map(x=>[fmtPhone(x.d.did),x.d.rec>=0?mName(x.d.rec):'?',x.d.n,pct1(x.rate)])}})+'</div>';
+  h+=moreDetail('where',more,zones.length?4:2);
   return h;
 }
 
@@ -1476,36 +1562,41 @@ function tabHalts(ctx){
   const HD=sumArr(rows.map(r=>r.h.days));
   if(!HD) return pgHead('Work rhythm')+note('No gaps could be measured – no active recruiter-days in this selection.','warn');
   const shift=(T.shiftEnd-T.shiftStart)*60, per=H.totals.unsMin/HD, m=H.moments[0];
-  let h=pgHead('Work rhythm','On an average day each recruiter spends <b>'+Math.round(per)+' minutes</b> ('+pct0(per/shift)+' of the shift) with no calls outside breaks. A gap is '+T.haltMin+'+ minutes without a call – a reason to ask, not proof, since sourcing and meetings count too.')+scopeNote(ctx);
+  const top=rows.slice().sort((a,b)=>b.unsMinPerDay-a.unsMinPerDay).slice(0,12), mx=Math.max(...top.map(r=>r.unsMinPerDay),1);
+  const pk=Array.from(H.avgUns).indexOf(Math.max(...H.avgUns));
+  const longBrk=rows.filter(r=>r.h.overN>=2).sort((a,b)=>b.h.overN-a.h.overN);
+  const ins=[{k:per>=45?'warn':'info',h:'Most idle together around <b>'+fmtSod(ss+pk*300)+'</b> – a good moment for a check-in or a call block.'}];
+  if(top[0]&&top[0].unsMinPerDay>=30) ins.push({k:'warn',h:names(top.filter(r=>r.unsMinPerDay>=Math.max(30,per*1.5)),2)+' '+(top.filter(r=>r.unsMinPerDay>=Math.max(30,per*1.5)).length>1?'have':'has')+' the most idle time ('+Math.round(top[0].unsMinPerDay)+' min a day at the top).',coach:top[0].id});
+  if(longBrk.length) ins.push({k:'warn',h:names(longBrk,2)+' often '+(longBrk.length===1?'takes':'take')+' breaks longer than '+(T.breakLen+T.breakGrace)+' min.',coach:longBrk[0].id});
+  let h=pgHead('Work rhythm','Each recruiter spends about <b>'+Math.round(per)+' minutes</b> a day ('+pct0(per/shift)+' of the shift) with no calls outside breaks. Gaps are a reason to ask, not proof – sourcing and meetings count too.',ins)+scopeNote(ctx);
   const P=prevCtx(ctx), PH=P&&haltPass(P), PHD=PH&&sumArr(PH.list.map(o=>o.days));
   h+=kpis([{l:'Idle time per person a day',v:Math.round(per)+' min',s:pct0(per/shift)+' of the shift',tone:per>=60?'warn':'',d:PHD?delta(per,PH.totals.unsMin/PHD,'rel',-1):''},
-    {l:'Idle gaps per day',v:(H.totals.uns/HD).toFixed(1),s:'per recruiter'},
-    {l:'Long gaps ('+T.longHalt+'+ min)',v:fmtInt(H.totals.long),s:(H.totals.long/HD).toFixed(1)+' per recruiter a day'},
+    {l:'Idle gaps per day',v:(H.totals.uns/HD).toFixed(1),s:'per recruiter, '+T.haltMin+'+ min each'},
     {l:'Breaks that ran long',v:fmtInt(H.totals.brkOver),s:'over '+(T.breakLen+T.breakGrace)+' min',tone:H.totals.brkOver?'warn':''},
     m?{l:'Most idle at once',v:m.n+' people',s:fmtDay(m.day)+', '+fmtSod(ss+m.slot*300)}:null]);
-  const a=T.shiftStart*2,b=T.shiftEnd*2,idx=[];for(let i=a;i<b;i++)idx.push(i);const b1=T.break1*2-a,b2=T.break2*2-a,bl=Math.max(1,Math.round(T.breakLen/30));
-  const start=chart({labels:idx.map(shortHour),W:640,H:250,xEvery:2,stacked:true,shade:[{a:b1,b:b1+bl-1},{a:b2,b:b2+bl-1}],bars:[{name:'Idle gaps',data:idx.map(i=>H.slotUns[i]),color:COL.short},{name:'Breaks',data:idx.map(i=>H.slotAll[i]-H.slotUns[i]),color:COL.none}],tip:i=>'<b>'+fmtSlot(idx[i])+'</b><br>'+H.slotUns[idx[i]]+' idle gaps started<br>'+(H.slotAll[idx[i]]-H.slotUns[idx[i]])+' breaks started'});
   const sl=[];for(let i=0;i<H.SL;i++)sl.push(i);const c1=(T.break1*3600-ss)/300,c2=(T.break2*3600-ss)/300,cl=T.breakLen/5;
   const conc=chart({labels:sl.map(i=>fmtSod(ss+i*300).replace(' AM','a').replace(' PM','p')),W:640,H:250,xEvery:12,shade:[{a:c1,b:c1+cl-1},{a:c2,b:c2+cl-1}],lines:[{name:'On break or idle',data:Array.from(H.avgAll),color:'#8C929B',dots:false},{name:'Idle only',data:Array.from(H.avgUns),color:COL.bad,w:2.6,dots:false}],
     tip:i=>'<b>'+fmtSod(ss+i*300)+'</b><br>'+H.avgAll[i].toFixed(0)+' people on break or idle ('+pct0(H.avgPct[i])+')<br>'+H.avgUns[i].toFixed(0)+' idle only'});
-  const pk=Array.from(H.avgUns).indexOf(Math.max(...H.avgUns));
-  h+='<div class="grid g2">'+card({id:'hl-start',title:'When idle gaps start',take:'Peak: <b>'+fmtSlot(H.peakSlot)+'</b>. Shaded = scheduled breaks.',body:start,data:{cols:['Half hour',{l:'Idle gaps started',n:1},{l:'Breaks started',n:1}],rows:idx.map(i=>[fmtSlot(i),H.slotUns[i],H.slotAll[i]-H.slotUns[i]])}})+
-    card({id:'hl-conc',title:'People idle at the same time',take:'Most people idle together around <b>'+fmtSod(ss+pk*300)+'</b> ('+r1(H.avgUns[pk])+' on average).',body:conc,data:{cols:['Time',{l:'On break or idle',n:1},{l:'Idle only',n:1},{l:'Share of team',n:1}],rows:sl.map(i=>[fmtSod(ss+i*300),r1(H.avgAll[i]),r1(H.avgUns[i]),pct0(H.avgPct[i])])}})+'</div>';
-  const days=H.days,di=days.map(d=>H.dayInfo.get(d)), dv=di.map(x=>x.unsMin/x.present), tw=trendWord(dv.map(v=>v/100));
-  const trend=chart({labels:days.map(fmtDayShort),W:640,H:240,xEvery:Math.ceil(days.length/12),bars:[{name:'Idle minutes per recruiter',data:dv,color:COL.short}],ref:[{y:per,label:'avg '+Math.round(per)+'m',color:COL.ink}],tip:i=>'<b>'+fmtDay(days[i])+'</b><br>'+Math.round(dv[i])+' idle min per recruiter<br>'+(di[i].uns/di[i].present).toFixed(1)+' gaps · '+di[i].long+' long gaps<br>'+di[i].present+' recruiters'});
-  const top=rows.slice().sort((a,b)=>b.unsMinPerDay-a.unsMinPerDay).slice(0,12), mx=Math.max(...top.map(r=>r.unsMinPerDay),1);
-  h+='<div class="grid g2">'+card({id:'hl-day',title:'Idle time by day',take:tw?'Idle time is <b>'+(tw==='rising'?'growing':tw==='slipping'?'shrinking':'steady')+'</b> over the period.':'Average idle minutes per recruiter each day.',body:trend,data:{cols:['Date',{l:'Idle min per person',n:1},{l:'Gaps per person',n:1},{l:'Long gaps',n:1},{l:'Recruiters',n:1}],rows:days.map((d,i)=>[fmtDay(d),Math.round(dv[i]),r1(di[i].uns/di[i].present),di[i].long,di[i].present])}})+
+  h+='<div class="grid g2">'+card({id:'hl-conc',title:'People idle at the same time',take:'Average headcount with no calls for '+T.haltMin+'+ min. Shaded = breaks.',body:conc,data:{cols:['Time',{l:'On break or idle',n:1},{l:'Idle only',n:1},{l:'Share of team',n:1}],rows:sl.map(i=>[icell(fmtSod(ss+i*300),i),r1(H.avgAll[i]),r1(H.avgUns[i]),pct0(H.avgPct[i])])}})+
     card({id:'hl-top',title:'Most idle time per day',take:'Top 12. Click a name for their profile.',body:hbars(top.map(r=>({l:r.name,v:r.unsMinPerDay,t:Math.round(r.unsMinPerDay)+' min',click:r.id,c:COL.short,tip:esc(r.name)+'<br>'+r.unsPerDay.toFixed(1)+' gaps a day · longest '+fmtMin(r.h.longest/60)})),{max:mx}),data:{cols:['Recruiter',{l:'Idle min/day',n:1},{l:'Gaps/day',n:1},'Longest gap'],rows:top.map(r=>[r.name,Math.round(r.unsMinPerDay),r1(r.unsPerDay),fmtMin(r.h.longest/60)])}})+'</div>';
+  const cols=[{k:'name',l:'Recruiter',cls:'nm',f:nameBtn},{k:'unsMinPerDay',l:'Idle min/day',n:1,f:r=>mbar(r.unsMinPerDay,mx,COL.short)+Math.round(r.unsMinPerDay)},{k:'unsPerDay',l:'Gaps/day',n:1,f:r=>r.unsPerDay.toFixed(1)},{k:'longest',l:'Longest gap',n:1,v:r=>r.h.longest,f:r=>fmtMin(r.h.longest/60)},{k:'over',l:'Long breaks',n:1,v:r=>r.h.overN,f:r=>r.h.overN},{k:'af',l:'Avg first call',n:1,v:r=>r.avgFirst,f:r=>fmtSod(r.avgFirst)},{k:'al',l:'Avg last call',n:1,v:r=>r.avgLast,f:r=>fmtSod(r.avgLast)}];
+  h+=tcard({title:'Details',take:'Recruiters with fewer than '+md+' active days are left out.',body:table('halt',cols,rows,{sort:{k:'unsMinPerDay',d:-1},search:r=>r.name,limit:10,name:'work-rhythm'})});
+  // more
+  const a=T.shiftStart*2,b=T.shiftEnd*2,idx=[];for(let i=a;i<b;i++)idx.push(i);const b1=T.break1*2-a,b2=T.break2*2-a,bl=Math.max(1,Math.round(T.breakLen/30));
+  const start=chart({labels:idx.map(shortHour),W:520,H:240,xEvery:2,stacked:true,shade:[{a:b1,b:b1+bl-1},{a:b2,b:b2+bl-1}],bars:[{name:'Idle gaps',data:idx.map(i=>H.slotUns[i]),color:COL.short},{name:'Breaks',data:idx.map(i=>H.slotAll[i]-H.slotUns[i]),color:COL.none}],tip:i=>'<b>'+fmtSlot(idx[i])+'</b><br>'+H.slotUns[idx[i]]+' idle gaps started<br>'+(H.slotAll[idx[i]]-H.slotUns[idx[i]])+' breaks started'});
+  const days=H.days,di=days.map(d=>H.dayInfo.get(d)), dv=di.map(x=>x.unsMin/x.present), tw=trendWord(dv.map(v=>v/100));
+  const trend=chart({labels:days.map(fmtDayShort),W:520,H:240,xEvery:Math.ceil(days.length/10),bars:[{name:'Idle minutes per recruiter',data:dv,color:COL.short}],ref:[{y:per,label:'avg '+Math.round(per)+'m',color:COL.ink}],tip:i=>'<b>'+fmtDay(days[i])+'</b><br>'+Math.round(dv[i])+' idle min per recruiter<br>'+di[i].present+' recruiters'});
   const bk=chart({labels:H.buckets.map(x=>x.l),W:420,H:230,bars:[{name:'Gaps',data:H.buckets.map(x=>x.n),color:COL.short}],tip:i=>'<b>'+H.buckets[i].l+'</b><br>'+fmtInt(H.buckets[i].n)+' gaps · '+fmtMin(H.buckets[i].min)});
-  const dnm=['Mon','Tue','Wed','Thu','Fri'],dwv=dnm.map((_,i)=>div(H.dowUns[i],H.dowDays[i])), wv=dwv.indexOf(Math.max(...dwv));
-  const dow=chart({labels:dnm,W:420,H:230,bars:[{name:'Idle gaps per recruiter per day',data:dwv,colors:dwv.map((_,i)=>i===wv?COL.short:COL.short2||'#F3D9A8'),color:COL.short}],yFmt:v=>r1(v)+''});
+  const dw=workDows(), dwv=dw.map(w=>div(H.dowUns[w],H.dowDays[w])), wv=dwv.indexOf(Math.max(...dwv));
+  const dow=chart({labels:dw.map(w=>DOW[w]),W:420,H:230,bars:[{name:'Idle gaps per recruiter per day',data:dwv,colors:dwv.map((_,i)=>i===wv?COL.short:'#F3D9A8'),color:COL.short}],yFmt:v=>r1(v)+''});
   const brTaken=sumArr(rows.map(r=>r.h.brTaken[0]+r.h.brTaken[1])),brExp=sumArr(rows.map(r=>r.h.brExp[0]+r.h.brExp[1]));
   const longShare=div(H.buckets[2].n+H.buckets[3].n,sumArr(H.buckets.map(x=>x.n)));
-  h+='<div class="grid g3">'+card({id:'hl-len',title:'How long are the gaps?',take:'<b>'+pct0(longShare)+'</b> of gaps last 30 minutes or more.',body:bk,data:{cols:['Length',{l:'Gaps',n:1},{l:'Minutes lost',n:1}],rows:H.buckets.map(x=>[x.l,x.n,Math.round(x.min)])}})+
-    card({id:'hl-dow',title:'Which weekday is worst?',take:'<b>'+dnm[wv]+'</b> has the most idle gaps per person.',body:dow,data:{cols:['Day',{l:'Gaps per person-day',n:1},{l:'Long gaps',n:1}],rows:dnm.map((d,i)=>[d,r1(dwv[i]),H.dowLong[i]])}})+
-    card({id:'hl-brk',title:'Breaks taken on time',take:'Share of expected breaks taken at the scheduled time.',body:donut([{l:'On time',v:brTaken,c:COL.talk},{l:'Worked through / off schedule',v:brExp-brTaken,c:COL.none}],{size:150,big:pct0(div(brTaken,brExp))}),data:{cols:['Break',{l:'Count',n:1}],rows:[['Taken on time',brTaken],['Worked through / off schedule',brExp-brTaken]]}})+'</div>';
-  const cols=[{k:'name',l:'Recruiter',cls:'nm',f:nameBtn},{k:'unsMinPerDay',l:'Idle min/day',n:1,f:r=>mbar(r.unsMinPerDay,mx,COL.short)+Math.round(r.unsMinPerDay)},{k:'unsPerDay',l:'Gaps/day',n:1,f:r=>r.unsPerDay.toFixed(1)},{k:'longest',l:'Longest gap',n:1,v:r=>r.h.longest,f:r=>fmtMin(r.h.longest/60)},{k:'over',l:'Long breaks',n:1,v:r=>r.h.overN,f:r=>r.h.overN},{k:'af',l:'Avg first call',n:1,v:r=>r.avgFirst,f:r=>fmtSod(r.avgFirst)},{k:'al',l:'Avg last call',n:1,v:r=>r.avgLast,f:r=>fmtSod(r.avgLast)}];
-  h+=tcard({title:'Details',take:'Recruiters with fewer than '+md+' active days are left out so one short day does not distort the ranking.',body:table('halt',cols,rows,{sort:{k:'unsMinPerDay',d:-1},search:r=>r.name,limit:10,name:'work-rhythm'})});
+  const more='<div class="grid g2">'+card({id:'hl-start',title:'When gaps start',take:'Peak: <b>'+fmtSlot(H.peakSlot)+'</b>.',body:start,data:{cols:['Half hour',{l:'Idle gaps started',n:1},{l:'Breaks started',n:1}],rows:idx.map(i=>[icell(fmtSlot(i),i),H.slotUns[i],H.slotAll[i]-H.slotUns[i]])}})+
+    card({id:'hl-day',title:'Idle time by day',take:tw?'Idle time is <b>'+(tw==='rising'?'growing':tw==='slipping'?'shrinking':'steady')+'</b>.':'Average idle minutes per recruiter.',body:trend,data:{cols:['Date',{l:'Idle min per person',n:1},{l:'Gaps per person',n:1},{l:'Long gaps',n:1},{l:'Recruiters',n:1}],rows:days.map((d,i)=>[dcell(d),Math.round(dv[i]),r1(di[i].uns/di[i].present),di[i].long,di[i].present])}})+'</div>'+
+    '<div class="grid g3">'+card({id:'hl-len',title:'Gap length',take:'<b>'+pct0(longShare)+'</b> last 30 min or more.',body:bk,data:{cols:['Length',{l:'Gaps',n:1},{l:'Minutes lost',n:1}],rows:H.buckets.map((x,i)=>[icell(x.l,i),x.n,Math.round(x.min)])}})+
+    card({id:'hl-dow',title:'By weekday',take:'<b>'+DOW[dw[wv]]+'</b> has the most gaps per person.',body:dow,data:{cols:['Day',{l:'Gaps per person-day',n:1},{l:'Long gaps',n:1}],rows:dw.map((w,i)=>[icell(DOW[w],w),r1(dwv[i]),H.dowLong[w]])}})+
+    card({id:'hl-brk',title:'Breaks on time',take:'Breaks taken at the scheduled time.',body:donut([{l:'On time',v:brTaken,c:COL.talk},{l:'Worked through / off schedule',v:brExp-brTaken,c:COL.none}],{size:140,big:pct0(div(brTaken,brExp))}),data:{cols:['Break',{l:'Count',n:1}],rows:[['Taken on time',brTaken],['Worked through / off schedule',brExp-brTaken]]}})+'</div>';
+  h+=moreDetail('halts',more,5);
   return h;
 }
 
@@ -1513,31 +1604,40 @@ function tabHalts(ctx){
    ATTENDANCE
    ============================================================ */
 function tabAttendance(ctx){
-  const S=scorecard(ctx),rows=S.rows.filter(r=>r.presentDays>=1&&!r.shared),T=CFG,dn=['Mon','Tue','Wed','Thu','Fri'];
-  const skip=rows.filter(r=>r.absent.length),reg=rows.filter(r=>r.regularSkipper),aDays=sumArr(rows.map(r=>r.absent.length)),wdays=sumArr(rows.map(r=>r.windowDays));
-  let h=pgHead('Attendance','Team attendance is <b>'+(wdays?pct1(1-aDays/wdays):'–')+'</b>. '+(reg.length?'<b>'+reg.length+'</b> '+(reg.length===1?'person is a':'people are')+' regular skippers. ':skip.length?'Nobody has a repeat pattern yet. ':'Nobody missed a day. ')+'A working day counts as missed when someone makes fewer than '+T.absentDials+' calls; holidays are detected automatically.')+scopeNote(ctx);
-  h+=kpis([{l:'Working days',v:ctx.wdays.length},{l:'Team attendance',v:wdays?pct1(1-aDays/wdays):'–',s:fmtInt(aDays)+' missed person-days',tone:wdays&&aDays/wdays>.08?'warn':'good'},{l:'Missed at least one day',v:skip.length,s:'of '+rows.length,tone:skip.length?'warn':'good'},{l:'Regular skippers',v:reg.length,s:'3+ days, or the same weekday repeatedly',tone:reg.length?'warn':'good'}]);
-  const worst=rows.filter(r=>r.absent.length).sort((a,b)=>b.absent.length-a.absent.length).slice(0,12),mx=Math.max(...worst.map(r=>r.absent.length),1);
-  const wdCount=zeros(5);rows.forEach(r=>r.absentByDow.forEach((c,i)=>wdCount[i]+=c)); const wmax=wdCount.indexOf(Math.max(...wdCount));
+  const S=scorecard(ctx),rows=S.rows.filter(r=>r.presentDays>=1&&!r.shared),T=CFG,dw=workDows();
+  const skip=rows.filter(r=>r.absent.length),reg=rows.filter(r=>r.regularSkipper).sort((a,b)=>b.absent.length-a.absent.length),aDays=sumArr(rows.map(r=>r.absent.length)),wdays=sumArr(rows.map(r=>r.windowDays));
+  const wdCount=zeros(7);rows.forEach(r=>r.absentByDow.forEach((c,i)=>wdCount[i]+=c)); const wmax=dw.reduce((b,w)=>wdCount[w]>wdCount[b]?w:b,dw[0]);
   const perDay=ctx.wdays.map(d=>rows.filter(r=>r.absent.includes(d)).length), pmax=perDay.indexOf(Math.max(...perDay,0));
-  h+='<div class="grid g3">'+card({id:'a-most',title:'Most missed days',take:'Red = regular skipper.',body:worst.length?hbars(worst.map(r=>({l:r.name,v:r.absent.length,t:r.absent.length+' of '+r.windowDays,click:r.id,c:r.regularSkipper?COL.bad:COL.short})),{max:mx}):'<p class="hint">✓ Nobody missed a day.</p>',data:{cols:['Recruiter',{l:'Missed',n:1},{l:'Expected',n:1},'Regular skipper'],rows:worst.map(r=>[r.name,r.absent.length,r.windowDays,r.regularSkipper?'Yes':'No'])}})+
-    card({id:'a-dow',title:'Which weekday people miss',take:aDays?'<b>'+dn[wmax]+'</b> is missed most. Tall Mondays or Fridays point to long weekends.':'No missed days.',body:chart({labels:dn,W:420,H:240,bars:[{name:'Missed days',data:wdCount,colors:wdCount.map((v,i)=>(i===0||i===4)?COL.bad:COL.short),color:COL.short}],yFmt:v=>Math.round(v)+'',tip:i=>'<b>'+dn[i]+'</b><br>'+wdCount[i]+' missed days'}),data:{cols:['Weekday',{l:'Missed days',n:1}],rows:dn.map((d,i)=>[d,wdCount[i]])}})+
-    card({id:'a-day',title:'People absent each day',take:perDay.length&&perDay[pmax]?'Worst day: <b>'+fmtDay(ctx.wdays[pmax])+'</b> with '+perDay[pmax]+' absent.':'No absences.',body:chart({labels:ctx.wdays.map(fmtDayShort),W:420,H:240,xEvery:Math.ceil(ctx.wdays.length/8),bars:[{name:'Absent',data:perDay,color:COL.bad}],yFmt:v=>Math.round(v)+'',tip:i=>'<b>'+fmtDay(ctx.wdays[i])+'</b><br>'+perDay[i]+' absent'}),data:{cols:['Date',{l:'Absent',n:1},'Who'],rows:ctx.wdays.map((d,i)=>[fmtDay(d),perDay[i],rows.filter(r=>r.absent.includes(d)).map(r=>r.name).join(', ')])}})+'</div>';
-  const md=MD(rows),el=rows.filter(r=>r.presentDays>=md),lateS=el.slice().sort((a,b)=>b.avgFirst-a.avgFirst).slice(0,10),earlyS=el.slice().sort((a,b)=>a.avgLast-b.avgLast).slice(0,10);
-  const medF=median(el.map(r=>r.avgFirst)),medL=median(el.map(r=>r.avgLast));
-  h+='<div class="grid g2">'+card({id:'a-late',title:'Latest to start calling',take:'Average first call of the day. Team typical: <b>'+fmtSod(medF)+'</b>.',body:hbars(lateS.map(r=>({l:r.name,v:Math.max(0,(r.avgFirst-T.shiftStart*3600)/60),t:fmtSod(r.avgFirst),click:r.id,c:COL.short,tip:esc(r.name)+'<br>First call on average at '+fmtSod(r.avgFirst)+'<br>'+r.late+' days after '+fmtSod(T.shiftStart*3600+T.lateGrace*60)})),{max:Math.max(...lateS.map(r=>(r.avgFirst-T.shiftStart*3600)/60),1)}),data:{cols:['Recruiter','Avg first call',{l:'Late days',n:1}],rows:lateS.map(r=>[r.name,fmtSod(r.avgFirst),r.late])}})+
-    card({id:'a-early',title:'Earliest to stop calling',take:'Average last call of the day. Team typical: <b>'+fmtSod(medL)+'</b>.',body:hbars(earlyS.map(r=>({l:r.name,v:Math.max(0,(T.shiftEnd*3600-r.avgLast)/60),t:fmtSod(r.avgLast),click:r.id,c:COL.short,tip:esc(r.name)+'<br>Last call on average at '+fmtSod(r.avgLast)+'<br>'+r.early+' days before '+fmtSod(T.shiftEnd*3600-T.earlyGrace*60)})),{max:Math.max(...earlyS.map(r=>(T.shiftEnd*3600-r.avgLast)/60),1)}),data:{cols:['Recruiter','Avg last call',{l:'Early days',n:1}],rows:earlyS.map(r=>[r.name,fmtSod(r.avgLast),r.early])}})+'</div>';
+  const late=rows.filter(r=>r.late>=3).sort((a,b)=>b.late-a.late);
+  const ins=[];
+  if(reg.length) ins.push({k:'warn',h:names(reg,3)+' '+(reg.length===1?'is a regular skipper':'are regular skippers')+' – worth a one-to-one.',coach:reg[0].id});
+  else if(skip.length) ins.push({k:'info',h:'<b>'+skip.length+'</b> missed a day, but nobody has a repeat pattern.'}); else ins.push({k:'good',h:'Nobody missed a working day.'});
+  if(aDays&&wdCount[wmax]>=2) ins.push({k:(wmax===dw[0]||wmax===dw[dw.length-1])?'warn':'info',h:'<b>'+DOW[wmax]+'</b> is missed most ('+wdCount[wmax]+' person-days)'+((wmax===dw[0]||wmax===dw[dw.length-1])?' – a sign of long weekends.':'.')});
+  if(late.length) ins.push({k:'warn',h:names(late,2)+' often '+(late.length===1?'starts':'start')+' calling after '+fmtSod(T.shiftStart*3600+T.lateGrace*60)+'.',coach:late[0].id});
+  let h=pgHead('Attendance','Team attendance is <b>'+(wdays?pct1(1-aDays/wdays):'–')+'</b> over '+ctx.wdays.length+' working days ('+daysLabel()+'). A day counts as missed below '+T.absentDials+' calls; holidays are detected automatically.',ins)+scopeNote(ctx);
+  h+=kpis([{l:'Team attendance',v:wdays?pct1(1-aDays/wdays):'–',s:fmtInt(aDays)+' missed person-days',tone:wdays&&aDays/wdays>.08?'warn':'good'},{l:'Missed at least one day',v:skip.length,s:'of '+rows.length,tone:skip.length?'warn':'good'},{l:'Regular skippers',v:reg.length,s:'3+ days, or the same weekday repeatedly',tone:reg.length?'warn':'good'},{l:'Worst day',v:perDay[pmax]?perDay[pmax]+' absent':'–',s:perDay[pmax]?fmtDay(ctx.wdays[pmax]):'no absences'}]);
   const calRows=rows.filter(r=>ST.calAll||r.absent.length).sort((a,b)=>b.absent.length-a.absent.length).slice(0,ST.calAll?200:30),wd=ctx.wdays;
   const calCell=(r,d)=>{const a=r.days.get(d),inWin=d>=r.firstDay&&d<=r.lastDay2; if(!inWin) return ''; if(!a||a[0]<T.absentDials) return 'Absent'; return a[0];};
-  if(calRows.length&&wd.length) h+=card({id:'a-cal',title:'Attendance calendar',take:'Red ✕ = absent · amber = low activity · green = worked (darker = more calls) · grey = before start or after leaving.',
+  if(calRows.length&&wd.length) h+=card({id:'a-cal',title:'Attendance calendar',take:'✕ = absent · amber = low activity · green = worked (darker = more calls) · grey = before start or after leaving.',
     body:'<div class="tbar"><button class="sm" data-calall>'+(ST.calAll?'Only people with missed days':'Include everyone')+'</button></div>'+
     heat({cls:'cal',rows:calRows.map(r=>({label:r.name,r})),cols:wd.map(d=>fmtDayShort(d)),cell:(row,j)=>{const r=row.r,d=wd[j],a=r.days.get(d),inWin=d>=r.firstDay&&d<=r.lastDay2;
       if(!inWin) return {t:'',bg:'#EDEEEB'}; if(!a||a[0]<T.absentDials) return {t:'✕',bg:'#F2B8B1',tip:'<b>'+esc(r.name)+'</b><br>'+fmtDay(d)+'<br>Absent ('+(a?a[0]:0)+' calls)'};
       const low=a[0]<T.lowDayFrac*T.targetDials&&a[2]/60<T.lowDayFrac*T.targetTalk;return {t:'',bg:low?'#F5DBA8':mix('#DDF1EA','#23997A',clamp(a[0]/T.targetDials/1.2)),tip:'<b>'+esc(r.name)+'</b><br>'+fmtDay(d)+'<br>'+a[0]+' calls · '+Math.round(a[2]/60)+' min talk'+(low?'<br>Low activity':'')};}}),
     data:{cols:['Recruiter',...wd.map(d=>fmtDayShort(d))],rows:calRows.map(r=>[r.name,...wd.map(d=>calCell(r,d))])}});
-  const pat=r=>r.absent.length?dn.map((d,i)=>r.absentByDow[i]?d+'×'+r.absentByDow[i]:'').filter(Boolean).join(' '):'–';
-  const wc=[{k:'name',l:'Recruiter',cls:'nm',f:nameBtn},{k:'flag',l:'Status',v:r=>r.regularSkipper?2:r.absent.length?1:0,f:r=>r.regularSkipper?badge('Regular skipper','red'):r.absent.length?badge('Missed days','amber'):badge('Clean','teal')},{k:'abs',l:'Days missed',n:1,v:r=>r.absent.length,f:r=>r.absent.length},{k:'win',l:'Days expected',n:1,v:r=>r.windowDays,f:r=>r.windowDays},{k:'rate',l:'Attendance',n:1,v:r=>1-r.absentPct,f:r=>pct0(1-r.absentPct)},{k:'pat',l:'Which days',v:r=>pat(r),f:r=>esc(pat(r))},{k:'st',l:'Longest run',n:1,v:r=>r.maxStreak,f:r=>r.maxStreak?r.maxStreak+' days':'–'},{k:'late',l:'Late starts',n:1},{k:'early',l:'Early finishes',n:1}];
+  else h+=note('Nobody missed a working day in this period.');
+  const pat=r=>r.absent.length?DOW.map((d,i)=>r.absentByDow[i]?d+'×'+r.absentByDow[i]:'').filter(Boolean).join(' '):'–';
+  const wc=[{k:'name',l:'Recruiter',cls:'nm',f:nameBtn},{k:'flag',l:'Status',v:r=>r.regularSkipper?2:r.absent.length?1:0,f:r=>r.regularSkipper?badge('Regular skipper','red'):r.absent.length?badge('Missed days','amber'):badge('Clean','teal')},{k:'abs',l:'Days missed',n:1,v:r=>r.absent.length,f:r=>r.absent.length},{k:'dates',l:'Dates missed',cls:'wrap',v:r=>r.absent[0]||null,f:r=>esc(r.absent.map(fmtDayShort).join(', ')||'–')},{k:'rate',l:'Attendance',n:1,v:r=>1-r.absentPct,f:r=>pct0(1-r.absentPct)},{k:'pat',l:'Which days',v:r=>pat(r),f:r=>esc(pat(r))},{k:'late',l:'Late starts',n:1},{k:'early',l:'Early finishes',n:1}];
   h+='<div style="margin-top:14px">'+tcard({title:'Watch-list',take:'Sorted by status. Shared “Bench User” lines are left out.',body:table('att',wc,rows,{sort:{k:'flag',d:-1},search:r=>r.name,limit:12,name:'attendance'})})+'</div>';
+  // more
+  const worst=rows.filter(r=>r.absent.length).sort((a,b)=>b.absent.length-a.absent.length).slice(0,12),mx=Math.max(...worst.map(r=>r.absent.length),1);
+  const md=MD(rows),el=rows.filter(r=>r.presentDays>=md),lateS=el.slice().sort((a,b)=>b.avgFirst-a.avgFirst).slice(0,10),earlyS=el.slice().sort((a,b)=>a.avgLast-b.avgLast).slice(0,10);
+  const medF=median(el.map(r=>r.avgFirst)),medL=median(el.map(r=>r.avgLast));
+  const more='<div class="grid g3">'+card({id:'a-most',title:'Most missed days',take:'Red = regular skipper.',body:worst.length?hbars(worst.map(r=>({l:r.name,v:r.absent.length,t:r.absent.length+' of '+r.windowDays,click:r.id,c:r.regularSkipper?COL.bad:COL.short,tip:esc(r.absent.map(fmtDay).join(', '))})),{max:mx}):'<p class="hint">Nobody missed a day.</p>',data:{cols:['Recruiter',{l:'Missed',n:1},{l:'Expected',n:1},'Dates','Regular skipper'],rows:worst.map(r=>[r.name,r.absent.length,r.windowDays,r.absent.map(fmtDayShort).join(', '),r.regularSkipper?'Yes':'No'])}})+
+    card({id:'a-dow',title:'Missed by weekday',take:aDays?'<b>'+DOW[wmax]+'</b> is missed most.':'No missed days.',body:chart({labels:dw.map(w=>DOW[w]),W:420,H:240,bars:[{name:'Missed days',data:dw.map(w=>wdCount[w]),colors:dw.map(w=>(w===dw[0]||w===dw[dw.length-1])?COL.bad:COL.short),color:COL.short}],yFmt:v=>Math.round(v)+'',tip:i=>'<b>'+DOW[dw[i]]+'</b><br>'+wdCount[dw[i]]+' missed days'}),data:{cols:['Weekday',{l:'Missed days',n:1}],rows:dw.map(w=>[icell(DOW[w],w),wdCount[w]])}})+
+    card({id:'a-day',title:'People absent each day',take:perDay[pmax]?'Worst: <b>'+fmtDay(ctx.wdays[pmax])+'</b>.':'No absences.',body:chart({labels:ctx.wdays.map(fmtDayShort),W:420,H:240,xEvery:Math.ceil(ctx.wdays.length/8),bars:[{name:'Absent',data:perDay,color:COL.bad}],yFmt:v=>Math.round(v)+'',tip:i=>'<b>'+fmtDay(ctx.wdays[i])+'</b><br>'+perDay[i]+' absent'}),data:{cols:['Date',{l:'Absent',n:1},'Who'],rows:ctx.wdays.map((d,i)=>[dcell(d),perDay[i],rows.filter(r=>r.absent.includes(d)).map(r=>r.name).join(', ')])}})+'</div>'+
+    '<div class="grid g2">'+card({id:'a-late',title:'Latest to start calling',take:'Average first call. Team typical: <b>'+fmtSod(medF)+'</b>.',body:hbars(lateS.map(r=>({l:r.name,v:Math.max(0,(r.avgFirst-T.shiftStart*3600)/60),t:fmtSod(r.avgFirst),click:r.id,c:COL.short})),{max:Math.max(...lateS.map(r=>(r.avgFirst-T.shiftStart*3600)/60),1)}),data:{cols:['Recruiter','Avg first call',{l:'Late days',n:1}],rows:lateS.map(r=>[r.name,fmtSod(r.avgFirst),r.late])}})+
+    card({id:'a-early',title:'Earliest to stop calling',take:'Average last call. Team typical: <b>'+fmtSod(medL)+'</b>.',body:hbars(earlyS.map(r=>({l:r.name,v:Math.max(0,(T.shiftEnd*3600-r.avgLast)/60),t:fmtSod(r.avgLast),click:r.id,c:COL.short})),{max:Math.max(...earlyS.map(r=>(T.shiftEnd*3600-r.avgLast)/60),1)}),data:{cols:['Recruiter','Avg last call',{l:'Early days',n:1}],rows:earlyS.map(r=>[r.name,fmtSod(r.avgLast),r.early])}})+'</div>';
+  h+=moreDetail('attendance',more,5);
   return h;
 }
 
@@ -1546,26 +1646,30 @@ function tabAttendance(ctx){
    ============================================================ */
 function tabQuality(ctx){
   const S=scorecard(ctx),RE=reachStats(ctx),T=timeStats(ctx),rows=S.rows.filter(r=>r.dials>=100&&!r.shared);
-  const shortShare=div(sumArr(T.dist.slice(0,3)),T.total.c), wasted=RE.deadDials;
-  let h=pgHead('Call quality','<b>'+pct0(shortShare)+'</b> of picked-up calls end within 15 seconds, and <b>'+fmtInt(wasted)+'</b> calls went to numbers that never answered after '+CFG.deadAttempts+'+ tries. This page separates real conversations from activity that only inflates the count.')+scopeNote(ctx);
-  h+=kpis([{l:'Calls made',v:fmtInt(RE.dials)},{l:'Different numbers',v:fmtInt(RE.unique),s:RE.avgAttempts.toFixed(1)+' calls per number'},{l:'People reached',v:fmtInt(RE.reached),s:pct0(RE.reached/RE.unique)+' of numbers picked up'},{l:'Dead numbers',v:fmtInt(RE.dead),s:'tried '+CFG.deadAttempts+'+ times, never answered',tone:RE.dead?'warn':''},{l:'Chased by 2+ people',v:fmtInt(RE.multi),s:'numbers called by several recruiters',tone:RE.multi?'warn':''}]);
-  const dl=['0–5s','5–10s','10–15s','15–30s','30–60s','1–2m','2–5m','5–10m','10m+'];
-  const dist=chart({labels:dl,W:640,H:240,bars:[{name:'Picked up',data:T.dist,color:COL.talk},{name:'Not picked up',data:T.distNC,color:COL.none}],tip:i=>'<b>'+dl[i]+'</b><br>Picked up: '+fmtInt(T.dist[i])+'<br>Not picked up: '+fmtInt(T.distNC[i])});
-  const rep=RE.dials-RE.unique;
-  h+='<div class="grid g21">'+card({id:'q-dist',title:'How long calls last',take:'A spike under 15 seconds means many “picked up” calls are voicemail or hang-ups.',body:dist,data:{cols:['Length',{l:'Picked up',n:1},{l:'Not picked up',n:1}],rows:dl.map((l,i)=>[l,T.dist[i],T.distNC[i]])}})+
-    card({id:'q-new',title:'New numbers vs repeat calls',take:'<b>'+pct0(RE.unique/RE.dials)+'</b> of calls went to a number for the first time.',body:donut([{l:'First call to a number',v:RE.unique,c:COL.calls},{l:'Repeat call',v:rep,c:COL.short}],{big:pct0(RE.unique/RE.dials),small:'new numbers'}),data:{cols:['Type',{l:'Calls',n:1},{l:'Share',n:1}],rows:[['First call to a number',RE.unique,pct1(RE.unique/RE.dials)],['Repeat call',rep,pct1(rep/RE.dials)]]}})+'</div>';
+  const shortShare=div(sumArr(T.dist.slice(0,3)),T.total.c);
   const top=rows.filter(r=>r.padScore!=null).sort((a,b)=>b.padScore-a.padScore);
   const why=r=>{const d=r.padDetail.slice().sort((a,b)=>b.score*b.w-a.score*a.w)[0];return d&&d.score>=.25?({micro:'many instant hang-ups',short:'many very short calls',repeat:'dials same number repeatedly',rapid:'rapid-fire dialling',hollow:'little talk per call'})[d.k]:'–';};
-  const hiN=top.filter(r=>r.padBand==='High').length, mdN=top.filter(r=>r.padBand==='Medium').length;
-  h+='<div class="grid g21">'+card({id:'q-pad',title:'Padding check',take:(hiN?'<b>'+hiN+'</b> high and ':'')+'<b>'+mdN+'</b> medium scores. 0–100 compares each person with the team on instant hang-ups, short calls, repeat and rapid-fire dialling – a prompt to listen to recordings, not proof.',
-      body:hbars(top.slice(0,12).map(r=>({l:r.name,v:r.padScore,t:r.padScore+' · '+r.padBand,click:r.id,c:r.padBand==='High'?COL.bad:r.padBand==='Medium'?COL.short:COL.talk,tip:esc(r.name)+'<br>Main reason: '+why(r)})),{max:100}),data:{cols:['Recruiter',{l:'Score',n:1},'Band','Main reason'],rows:top.map(r=>[r.name,r.padScore,r.padBand,why(r)])}})+
-    card({id:'q-att',title:'Attempts per number',take:'How often each number was called, and how many ever picked up.',body:chart({labels:RE.hist.map(x=>x.l),W:420,H:250,bars:[{name:'Numbers',data:RE.hist.map(x=>x.n),color:COL.calls},{name:'…ever picked up',data:RE.hist.map(x=>x.reached),color:COL.talk}],tip:i=>'<b>'+RE.hist[i].l+'</b><br>'+fmtInt(RE.hist[i].n)+' numbers · '+pct0(RE.hist[i].reached/(RE.hist[i].n||1))+' picked up'}),
-      data:{cols:['Attempts',{l:'Numbers',n:1},{l:'Ever picked up',n:1},{l:'Rate',n:1}],rows:RE.hist.map(x=>[x.l,x.n,x.reached,pct1(div(x.reached,x.n))])}})+'</div>';
-  const cols=[{k:'name',l:'Recruiter',cls:'nm',f:nameBtn},{k:'padScore',l:'Padding score',n:1,f:r=>r.padScore==null?'–':badge(r.padScore+' · '+r.padBand,r.padBand==='High'?'red':r.padBand==='Medium'?'amber':'teal')},{k:'why',l:'Main reason',v:r=>why(r),f:r=>esc(why(r))},{k:'dials',l:'Calls',n:1,f:r=>fmtInt(r.dials)},{k:'ur',l:'People reached',n:1,v:r=>r.uniqueReached,f:r=>fmtInt(r.uniqueReached)},{k:'rr',l:'Reached ÷ calls',n:1,v:r=>div(r.uniqueReached,r.dials),f:r=>pct0(div(r.uniqueReached,r.dials))},{k:'sh',l:'Calls ≤'+CFG.shortConn+'s',n:1,v:r=>div(r.short,r.conn),f:r=>pct0(div(r.short,r.conn))},{k:'mi',l:'Instant hang-ups',n:1,v:r=>div(r.micro,r.dials),f:r=>pct0(div(r.micro,r.dials))},{k:'avg',l:'Avg talk',n:1,v:r=>r.avgTalkSec,f:r=>fmtDur(r.avgTalkSec)}];
+  const hiP=top.filter(r=>r.padBand==='High');
+  const ins=[{k:shortShare>=.3?'warn':'info',h:'<b>'+pct0(shortShare)+'</b> of picked-up calls end within 15 seconds – voicemail or a quick hang-up.'}];
+  if(hiP.length) ins.push({k:'warn',h:names(hiP,2)+' may be padding call counts ('+why(hiP[0])+'). Listen to a few recordings.',coach:hiP[0].id});
+  if(RE.dead) ins.push({k:'warn',h:'<b>'+fmtInt(RE.deadDials)+'</b> calls went to '+fmtInt(RE.dead)+' numbers that never answered after '+CFG.deadAttempts+'+ tries – take them off the lists.'});
+  if(RE.multi) ins.push({k:'info',h:'<b>'+fmtInt(RE.multi)+'</b> candidates were called by two or more recruiters.'});
+  let h=pgHead('Call quality','Separates real conversations from activity that only inflates the call count.',ins)+scopeNote(ctx);
+  h+=kpis([{l:'Different numbers',v:fmtInt(RE.unique),s:RE.avgAttempts.toFixed(1)+' calls per number'},{l:'People reached',v:fmtInt(RE.reached),s:pct0(RE.reached/RE.unique)+' of numbers picked up'},{l:'Dead numbers',v:fmtInt(RE.dead),s:'tried '+CFG.deadAttempts+'+ times, never answered',tone:RE.dead?'warn':''},{l:'Chased by 2+ people',v:fmtInt(RE.multi),s:'numbers called by several recruiters',tone:RE.multi?'warn':''}]);
+  const dl=['0–5s','5–10s','10–15s','15–30s','30–60s','1–2m','2–5m','5–10m','10m+'];
+  const dist=chart({labels:dl,W:520,H:250,bars:[{name:'Picked up',data:T.dist,color:COL.talk},{name:'Not picked up',data:T.distNC,color:COL.none}],tip:i=>'<b>'+dl[i]+'</b><br>Picked up: '+fmtInt(T.dist[i])+'<br>Not picked up: '+fmtInt(T.distNC[i])});
+  h+='<div class="grid g2">'+card({id:'q-dist',title:'How long calls last',take:'A spike under 15 seconds means many “picked up” calls are not conversations.',body:dist,data:{cols:['Length',{l:'Picked up',n:1},{l:'Not picked up',n:1}],rows:dl.map((l,i)=>[icell(l,i),T.dist[i],T.distNC[i]])}})+
+    card({id:'q-pad',title:'Padding check',take:'0–100 against the team: instant hang-ups, short calls, repeat and rapid-fire dialling. A prompt, not proof.',
+      body:hbars(top.slice(0,10).map(r=>({l:r.name,v:r.padScore,t:r.padScore+' · '+r.padBand,click:r.id,c:r.padBand==='High'?COL.bad:r.padBand==='Medium'?COL.short:COL.talk,tip:esc(r.name)+'<br>Main reason: '+why(r)})),{max:100}),data:{cols:['Recruiter',{l:'Score',n:1},'Band','Main reason'],rows:top.map(r=>[r.name,r.padScore,r.padBand,why(r)])}})+'</div>';
+  const cols=[{k:'name',l:'Recruiter',cls:'nm',f:nameBtn},{k:'padScore',l:'Padding score',n:1,f:r=>r.padScore==null?'–':badge(r.padScore+' · '+r.padBand,r.padBand==='High'?'red':r.padBand==='Medium'?'amber':'teal')},{k:'why',l:'Main reason',v:r=>why(r),f:r=>esc(why(r))},{k:'dials',l:'Calls',n:1,f:r=>fmtInt(r.dials)},{k:'ur',l:'People reached',n:1,v:r=>r.uniqueReached,f:r=>fmtInt(r.uniqueReached)},{k:'sh',l:'Calls ≤'+CFG.shortConn+'s',n:1,v:r=>div(r.short,r.conn),f:r=>pct0(div(r.short,r.conn))},{k:'mi',l:'Instant hang-ups',n:1,v:r=>div(r.micro,r.dials),f:r=>pct0(div(r.micro,r.dials))},{k:'avg',l:'Avg talk',n:1,v:r=>r.avgTalkSec,f:r=>fmtDur(r.avgTalkSec)}];
   h+=tcard({title:'By recruiter',take:'Recruiters with at least 100 calls.',body:table('pad',cols,rows,{sort:{k:'padScore',d:-1},search:r=>r.name,limit:10,name:'call-quality'})});
-  const num=n=>fmtPhone(n);
-  h+='<div class="grid g2" style="margin-top:14px">'+tcard({title:'Numbers to stop calling',take:'Called '+CFG.deadAttempts+'+ times, never picked up – '+fmtInt(RE.dead)+' numbers, '+fmtInt(RE.deadDials)+' calls wasted.',body:table('dead',[{k:'n',l:'Number',f:r=>num(r[0]),x:r=>num(r[0])},{k:'att',l:'Tries',n:1,v:r=>r[1].att,f:r=>r[1].att},{k:'rc',l:'Called by',cls:'wrap',f:r=>esc(r[1].recs.slice(0,3).map(mName).join(', '))}],RE.deadList,{sort:{k:'att',d:-1},limit:8,name:'dead-numbers'})})+
-    tcard({title:'Candidates chased by several recruiters',take:'Two or more recruiters called the same number ('+fmtInt(RE.multi)+' numbers).',body:table('multi',[{k:'n',l:'Number',f:r=>num(r[0]),x:r=>num(r[0])},{k:'att',l:'Calls',n:1,v:r=>r[1].att,f:r=>r[1].att},{k:'rc',l:'Called by',cls:'wrap',f:r=>esc(r[1].recs.slice(0,3).map(mName).join(', '))+(r[1].recs.length>3?' +'+(r[1].recs.length-3):'')}],RE.multiList,{sort:{k:'att',d:-1},limit:8,name:'shared-numbers'})})+'</div>';
+  const rep=RE.dials-RE.unique, num=n=>fmtPhone(n);
+  const more='<div class="grid g2">'+card({id:'q-new',title:'New numbers vs repeat calls',take:'<b>'+pct0(RE.unique/RE.dials)+'</b> of calls went to a number for the first time.',body:donut([{l:'First call to a number',v:RE.unique,c:COL.calls},{l:'Repeat call',v:rep,c:COL.short}],{big:pct0(RE.unique/RE.dials),small:'new numbers',size:150}),data:{cols:['Type',{l:'Calls',n:1},{l:'Share',n:1}],rows:[['First call to a number',RE.unique,pct1(RE.unique/RE.dials)],['Repeat call',rep,pct1(rep/RE.dials)]]}})+
+    card({id:'q-att',title:'Attempts per number',take:'How often each number was called, and how many ever answered.',body:chart({labels:RE.hist.map(x=>x.l),W:520,H:230,bars:[{name:'Numbers',data:RE.hist.map(x=>x.n),color:COL.calls},{name:'…ever picked up',data:RE.hist.map(x=>x.reached),color:COL.talk}],tip:i=>'<b>'+RE.hist[i].l+'</b><br>'+fmtInt(RE.hist[i].n)+' numbers · '+pct0(RE.hist[i].reached/(RE.hist[i].n||1))+' picked up'}),
+      data:{cols:['Attempts',{l:'Numbers',n:1},{l:'Ever picked up',n:1},{l:'Rate',n:1}],rows:RE.hist.map((x,i)=>[icell(x.l,i),x.n,x.reached,pct1(div(x.reached,x.n))])}})+'</div>'+
+    '<div class="grid g2">'+tcard({title:'Numbers to stop calling',take:'Called '+CFG.deadAttempts+'+ times, never picked up.',body:table('dead',[{k:'n',l:'Number',f:r=>num(r[0]),x:r=>num(r[0]),v:r=>r[0]},{k:'att',l:'Tries',n:1,v:r=>r[1].att,f:r=>r[1].att},{k:'rc',l:'Called by',cls:'wrap',v:r=>r[1].recs.map(mName).join(', '),f:r=>esc(r[1].recs.slice(0,3).map(mName).join(', '))}],RE.deadList,{sort:{k:'att',d:-1},limit:8,name:'dead-numbers'})})+
+    tcard({title:'Candidates chased by several recruiters',take:'Two or more recruiters called the same number.',body:table('multi',[{k:'n',l:'Number',f:r=>num(r[0]),x:r=>num(r[0]),v:r=>r[0]},{k:'att',l:'Calls',n:1,v:r=>r[1].att,f:r=>r[1].att},{k:'rc',l:'Called by',cls:'wrap',v:r=>r[1].recs.map(mName).join(', '),f:r=>esc(r[1].recs.slice(0,3).map(mName).join(', '))+(r[1].recs.length>3?' +'+(r[1].recs.length-3):'')}],RE.multiList,{sort:{k:'att',d:-1},limit:8,name:'shared-numbers'})})+'</div>';
+  h+=moreDetail('quality',more,4);
   return h;
 }
 
@@ -1576,81 +1680,97 @@ function tabInbound(ctx){
   const S=scorecard(ctx),I=S.inbound;
   if(!I.sessions) return pgHead('Inbound calls')+scopeNote(ctx)+note('No inbound calls in this selection.','warn');
   const cb=I.cb, hrs=hoursOf(ctx), missRate=hrs.map(x=>div(I.hM[x],I.hN[x])), worstH=hrs.filter(x=>I.hN[x]>=5).sort((a,b)=>div(I.hM[b],I.hN[b])-div(I.hM[a],I.hN[a]))[0];
-  let h=pgHead('Inbound calls','<b>'+fmtInt(I.sessions)+'</b> candidates called in; <b>'+pct0(I.ans/I.sessions)+'</b> were answered. Of the missed callers, <b>'+pct0(div(cb.w120,cb.n))+'</b> got a call back within 2 hours and <b>'+pct0(div(cb.n-cb.ever,cb.n))+'</b> never did.'+(worstH!=null?' Most missed: <b>'+fmtHourRange(worstH)+'</b>.':''))+scopeNote(ctx);
-  h+=kpis([{l:'Inbound calls',v:fmtInt(I.sessions),s:'each counted once'},{l:'Answered',v:pct0(I.ans/I.sessions),s:fmtInt(I.ans)+' calls',tone:'good'},{l:'Not answered',v:pct0(I.unans/I.sessions),s:fmtInt(I.unans)+' calls',tone:I.unans/I.sessions>=.3?'warn':''},{l:'Called back same day',v:pct0(div(cb.sameDay,cb.n)),s:cb.delayN?'after '+fmtDur(cb.delaySum/cb.delayN)+' on average':''},{l:'Never called back',v:pct0(div(cb.n-cb.ever,cb.n)),s:fmtInt(cb.n-cb.ever)+' callers',tone:cb.n-cb.ever?'warn':''}]);
+  const worst=I.list.filter(r=>r.realMiss>0).sort((a,b)=>b.realMiss-a.realMiss);
+  const ins=[];
+  if(cb.n) ins.push({k:cb.n-cb.ever?'warn':'good',h:cb.n-cb.ever?'<b>'+fmtInt(cb.n-cb.ever)+'</b> missed callers ('+pct0(div(cb.n-cb.ever,cb.n))+') never got a call back.':'Every missed caller got a call back.'});
+  if(worstH!=null) ins.push({k:'info',h:'Most missed at <b>'+fmtHourRange(worstH)+'</b> ('+pct0(div(I.hM[worstH],I.hN[worstH]))+' unanswered) – cover this hour.'});
+  if(worst.length) ins.push({k:'warn',h:names(worst,2)+' '+(worst.length===1?'misses':'miss')+' the most inbound calls.',coach:worst[0].id});
+  let h=pgHead('Inbound calls','<b>'+fmtInt(I.sessions)+'</b> candidates called in; <b>'+pct0(I.ans/I.sessions)+'</b> were answered. Each call is counted once, even if it rang several people.',ins)+scopeNote(ctx);
+  h+=kpis([{l:'Answered',v:pct0(I.ans/I.sessions),s:fmtInt(I.ans)+' of '+fmtInt(I.sessions)+' calls',tone:I.unans/I.sessions>=.3?'warn':'good'},{l:'Called back within 2 h',v:pct0(div(cb.w120,cb.n)),s:'of missed callers'},{l:'Called back same day',v:pct0(div(cb.sameDay,cb.n)),s:cb.delayN?'after '+fmtDur(cb.delaySum/cb.delayN)+' on average':''},{l:'Never called back',v:pct0(div(cb.n-cb.ever,cb.n)),s:fmtInt(cb.n-cb.ever)+' callers',tone:cb.n-cb.ever?'warn':''}]);
   const fun=[['Not answered',cb.n],['Called back within 30 min',cb.w30],['Within 2 hours',cb.w120],['Within 24 hours',cb.w24],['Ever called back',cb.ever]];
-  h+='<div class="grid g3">'+card({id:'i-ans',title:'Answered or not',take:'Every inbound call counted once, even if it rang several people.',body:donut([{l:'Answered',v:I.ans,c:COL.talk},{l:'Not answered',v:I.unans,c:COL.bad}],{big:pct0(I.ans/I.sessions),small:'answered'}),data:{cols:['Result',{l:'Calls',n:1},{l:'Share',n:1}],rows:[['Answered',I.ans,pct1(I.ans/I.sessions)],['Not answered',I.unans,pct1(I.unans/I.sessions)]]}})+
-    card({id:'i-hour',title:'Inbound calls by hour',take:'When candidates call, and when nobody picks up.',body:chart({labels:hrs.map(hLab),W:420,H:240,stacked:true,bars:[{name:'Answered',data:hrs.map(x=>I.hA[x]),color:COL.talk},{name:'Not answered',data:hrs.map(x=>I.hM[x]),color:COL.bad}],tip:i=>'<b>'+fmtHourRange(hrs[i])+'</b><br>'+I.hN[hrs[i]]+' calls · '+pct0(missRate[i])+' not answered'}),
-      data:{cols:['Hour',{l:'Calls',n:1},{l:'Answered',n:1},{l:'Not answered',n:1},{l:'Missed rate',n:1}],rows:hrs.map((x,i)=>[fmtHourRange(x),I.hN[x],I.hA[x],I.hM[x],pct1(missRate[i])])}})+
-    card({id:'i-cb',title:'What happens to missed callers?',take:'Share of missed callers who got a call back from anyone.',body:hbars(fun.map(([l,v])=>({l,v,t:pct0(div(v,cb.n)),c:l==='Not answered'?COL.bad:COL.talk})),{max:cb.n}),data:{cols:['Stage',{l:'Callers',n:1},{l:'Share',n:1}],rows:fun.map(([l,v])=>[l,v,pct1(div(v,cb.n))])}})+'</div>';
-  const worst=I.list.filter(r=>r.realMiss>0).sort((a,b)=>b.realMiss-a.realMiss).slice(0,12),mx=Math.max(...worst.map(r=>r.realMiss),1);
-  h+='<div class="grid g2">'+card({id:'i-rec',title:'Most missed inbound calls',take:'Calls that rang this recruiter and nobody answered.',body:hbars(worst.map(r=>({l:r.name,v:r.realMiss,t:r.realMiss+' · '+pct0(r.ansRate)+' answered',click:r.id,c:COL.bad})),{max:mx,empty:'No missed inbound calls.'}),data:{cols:['Recruiter',{l:'Missed',n:1},{l:'Answer rate',n:1}],rows:worst.map(r=>[r.name,r.realMiss,pct1(r.ansRate)])}})+
-    tcard({title:'Inbound by recruiter',take:'“Rang elsewhere” = rang them but a colleague answered.',body:table('inb',[{k:'name',l:'Recruiter',cls:'nm',f:r=>'<button data-coach="'+r.id+'">'+esc(r.name)+'</button>'},{k:'offered',l:'Rang them',n:1},{k:'ans',l:'Answered',n:1},{k:'realMiss',l:'Missed',n:1},{k:'ringMiss',l:'Rang elsewhere',n:1},{k:'ansRate',l:'Answer rate',n:1,f:r=>pct0(r.ansRate)}],I.list,{sort:{k:'realMiss',d:-1},search:r=>r.name,limit:10,name:'inbound'})})+'</div>';
+  h+='<div class="grid g2">'+card({id:'i-hour',title:'Inbound calls by hour',take:'When candidates call, and when nobody picks up.',body:chart({labels:hrs.map(hLab),W:520,H:240,stacked:true,bars:[{name:'Answered',data:hrs.map(x=>I.hA[x]),color:COL.talk},{name:'Not answered',data:hrs.map(x=>I.hM[x]),color:COL.bad}],tip:i=>'<b>'+fmtHourRange(hrs[i])+'</b><br>'+I.hN[hrs[i]]+' calls · '+pct0(missRate[i])+' not answered'}),
+      data:{cols:['Hour',{l:'Calls',n:1},{l:'Answered',n:1},{l:'Not answered',n:1},{l:'Missed rate',n:1}],rows:hrs.map((x,i)=>[icell(fmtHourRange(x),x),I.hN[x],I.hA[x],I.hM[x],pct1(missRate[i])])}})+
+    card({id:'i-cb',title:'What happens to missed callers?',take:'Share of missed callers who got a call back from anyone.',body:hbars(fun.map(([l,v])=>({l,v,t:pct0(div(v,cb.n)),c:l==='Not answered'?COL.bad:COL.talk})),{max:cb.n}),data:{cols:['Stage',{l:'Callers',n:1},{l:'Share',n:1}],rows:fun.map(([l,v],i)=>[icell(l,i),v,pct1(div(v,cb.n))])}})+'</div>';
+  h+=tcard({title:'Inbound by recruiter',take:'“Rang elsewhere” = rang them but a colleague answered.',body:table('inb',[{k:'name',l:'Recruiter',cls:'nm',f:r=>'<button data-coach="'+r.id+'">'+esc(r.name)+'</button>'},{k:'offered',l:'Rang them',n:1},{k:'ans',l:'Answered',n:1},{k:'realMiss',l:'Missed',n:1},{k:'ringMiss',l:'Rang elsewhere',n:1},{k:'ansRate',l:'Answer rate',n:1,f:r=>pct0(r.ansRate)}],I.list,{sort:{k:'realMiss',d:-1},search:r=>r.name,limit:10,name:'inbound'})});
+  const mx=Math.max(...worst.map(r=>r.realMiss),1);
+  const more='<div class="grid g2">'+card({id:'i-ans',title:'Answered or not',body:donut([{l:'Answered',v:I.ans,c:COL.talk},{l:'Not answered',v:I.unans,c:COL.bad}],{big:pct0(I.ans/I.sessions),small:'answered',size:150}),data:{cols:['Result',{l:'Calls',n:1},{l:'Share',n:1}],rows:[['Answered',I.ans,pct1(I.ans/I.sessions)],['Not answered',I.unans,pct1(I.unans/I.sessions)]]}})+
+    card({id:'i-rec',title:'Most missed inbound calls',take:'Rang this recruiter and nobody answered.',body:hbars(worst.slice(0,10).map(r=>({l:r.name,v:r.realMiss,t:r.realMiss+' · '+pct0(r.ansRate)+' answered',click:r.id,c:COL.bad})),{max:mx,empty:'No missed inbound calls.'}),data:{cols:['Recruiter',{l:'Missed',n:1},{l:'Answer rate',n:1}],rows:worst.map(r=>[r.name,r.realMiss,pct1(r.ansRate)])}})+'</div>';
+  h+=moreDetail('inbound',more,2);
   return h;
 }
 
 /* ============================================================
-   App shell: navigation, filters, data drawer, settings, events
+   App shell: navigation, filters, data drawer, loading
    ============================================================ */
 const TABS={home:tabHome,recruiters:tabRecruiters,profile:tabProfile,when:tabWhen,where:tabWhere,halts:tabHalts,attendance:tabAttendance,quality:tabQuality,inbound:tabInbound};
 const NAV=[['home','Overview'],['recruiters','Recruiters'],['profile','Profile'],['when','When to call'],['where','Where to call'],['halts','Work rhythm'],['attendance','Attendance'],['quality','Call quality'],['inbound','Inbound']];
 
-function toast(msg,kind,ms){ const el=document.createElement('div'); el.className='toast '+(kind||''); el.textContent=msg; $('#toast').appendChild(el); setTimeout(()=>el.remove(),ms||(kind==='err'?9000:3800)); }
+function toast(msg,kind,ms){ const el=document.createElement('div'); el.className='toast '+(kind||''); el.textContent=msg; $('#toast').appendChild(el); setTimeout(()=>el.remove(),ms||(kind==='err'?9000:4200)); }
 const tick=()=>new Promise(r=>setTimeout(r,25));
 function showLoading(m){ $('#loadMsg').textContent=m; $('#loading').classList.add('on'); }
 function hideLoading(){ $('#loading').classList.remove('on'); }
 
-function loadPrefs(){ try{ const s=JSON.parse(localStorage.getItem('bi_cfg')||'null'); if(s) setCfg(s); const a=JSON.parse(localStorage.getItem('bi_ui')||'null'); if(a){ if(a.metric) ST.metric=a.metric; if(a.scope) ST.F.scope=a.scope; if(a.tables!=null) ST.tables=!!a.tables; } }catch(e){} }
-function savePrefs(){ try{ localStorage.setItem('bi_cfg',JSON.stringify(CFG)); localStorage.setItem('bi_ui',JSON.stringify({metric:ST.metric,scope:ST.F.scope,tables:ST.tables})); }catch(e){} }
+function loadPrefs(){ try{ const s=JSON.parse(localStorage.getItem('bi_cfg')||'null'); if(s) setCfg(s); const a=JSON.parse(localStorage.getItem('bi_ui')||'null'); if(a){ if(a.metric) ST.metric=a.metric; if(a.scope) ST.F.scope=a.scope; if(a.tables!=null) ST.tables=!!a.tables; if(a.more) ST.moreOpen=a.more; } }catch(e){} }
+function savePrefs(){ try{ localStorage.setItem('bi_cfg',JSON.stringify(CFG)); localStorage.setItem('bi_ui',JSON.stringify({metric:ST.metric,scope:ST.F.scope,tables:ST.tables,more:ST.moreOpen})); }catch(e){} }
 
 let RL_VER=-1,RL=[];
 function recruiterList(){ if(RL_VER===DB.ver) return RL; const c=new Map(); for(let i=0;i<DB.n;i++) if(DB.dir[i]===0&&DB.rec[i]>=0) c.set(DB.rec[i],(c.get(DB.rec[i])||0)+1);
   RL=[...c.entries()].map(([id,n])=>({id,name:NAMES[id],n})).sort((a,b)=>a.name.localeCompare(b.name)); RL_VER=DB.ver; return RL; }
 
 function renderNav(){ $('#nav').innerHTML=NAV.map(([k,t])=>'<button data-tab="'+k+'" class="'+(ST.tab===k?'on':'')+'" '+(ST.tab===k?'aria-current="page"':'')+'>'+t+'</button>').join(''); }
-function setTab(t){ ST.tab=t; render(); window.scrollTo(0,0); }
-function goCoach(id){ if(id<0) return; ST.coach=id; setTab('profile'); }
+function setTab(t){ if(t==='profile'&&ST.F.recs&&ST.F.recs.size===1) ST.coach=[...ST.F.recs][0]; ST.tab=t; render(); window.scrollTo(0,0); }
+function goCoach(id){ if(id<0) return; ST.coach=id; ST.tab='profile'; render(); window.scrollTo(0,0); }
 
+function recBtnLabel(){ const F=ST.F, rl=recruiterList();
+  if(ST.tab==='profile'){ const n=ST.coach!=null?NAMES[ST.coach]:null; return (n||'Choose recruiter')+' ▾'; }
+  return (F.recs?F.recs.size+' of '+rl.length+' recruiters':'All '+rl.length+' recruiters')+' ▾'; }
 function renderTop(){
   const el=$('#fbar'); const hb=$('#dataBtn'); if(hb) hb.innerHTML='<span class="dot '+(DB.n?'':'off')+'"></span><span class="t">'+(DB.n?fmtInt(DB.n)+' calls':'No data')+'</span>';
-  if(!DB.n){ el.innerHTML='<div class="hrow"><span class="range">All times are Eastern Time (ET). Load a RingCentral call log to begin.</span></div>'; return; }
-  const F=ST.F, mn=dayISO(DB.minDay), mx=dayISO(DB.maxDay), rl=recruiterList(); const sel=F.recs?F.recs.size:rl.length;
-  const pr=F.from==null&&F.to==null?0:ST.preset;
+  if(!DB.n){ el.innerHTML='<div class="hrow"><span class="range">All times are Eastern Time (ET). Add one or more RingCentral call logs to begin.</span></div>'; return; }
+  const F=ST.F, mn=dayISO(DB.minDay), mx=dayISO(DB.maxDay);
+  const pr=F.from==null&&F.to==null?0:ST.preset, prof=ST.tab==='profile';
   el.innerHTML='<div class="hrow"><div class="fg"><input type="date" id="dFrom" min="'+mn+'" max="'+mx+'" value="'+dayISO(F.from==null?DB.minDay:F.from)+'" aria-label="From date"> – <input type="date" id="dTo" min="'+mn+'" max="'+mx+'" value="'+dayISO(F.to==null?DB.maxDay:F.to)+'" aria-label="To date"></div>'+
-   '<span class="seg" id="presets">'+[[1,'Last day'],[5,'Last 5 days'],[20,'Last 20 days'],[0,'All']].map(([n,l])=>'<button data-preset="'+n+'" class="'+(pr===n?'on':'')+'">'+l+'</button>').join('')+'</span>'+
-   '<div class="rel"><button class="chipbtn '+(F.recs?'on':'')+'" id="recBtn">'+(F.recs?sel+' of '+rl.length+' recruiters':'All '+rl.length+' recruiters')+' ▾</button><div class="dd" id="recDD"></div></div>'+
-   '<button class="chipbtn '+(F.scope==='shift'?'on':'')+'" id="scopeBtn" '+tipA('On: only Mon–Fri '+fmtHour(CFG.shiftStart)+'–'+fmtHour(CFG.shiftEnd)+' ET (holidays detected automatically). Off: every call in the file.')+'><span class="sw"></span>Business hours</button>'+
-   '<span class="seg" '+tipA('What counts as a success in the pick-up charts')+'><button data-metric="c" class="'+(ST.metric==='c'?'on':'')+'">Picked up</button><button data-metric="q" class="'+(ST.metric==='q'?'on':'')+'">Real conversation ('+qLabel()+'+)</button></span>'+
-   '<span class="sp"></span><span class="seg" '+tipA('Show every chart as a table (you can still switch each one)')+'><button data-tables="0" class="'+(!ST.tables?'on':'')+'">Charts</button><button data-tables="1" class="'+(ST.tables?'on':'')+'">Tables</button></span></div>';
+   '<span class="seg" id="presets">'+[[1,'Last day'],[5,'5 days'],[20,'20 days'],[0,'All']].map(([n,l])=>'<button data-preset="'+n+'" class="'+(pr===n?'on':'')+'">'+l+'</button>').join('')+'</span>'+
+   '<div class="rel"><button class="chipbtn '+(prof||F.recs?'on':'')+'" id="recBtn" '+tipA(prof?'Pick the person to profile':'Filter every page to some recruiters')+'>'+esc(recBtnLabel())+'</button><div class="dd" id="recDD"></div></div>'+
+   '<button class="chipbtn '+(F.scope==='shift'?'on':'')+'" id="scopeBtn" '+tipA('On: only '+daysLabel()+', '+hoursLabel()+' ET (holidays detected automatically). Change days and hours in Settings.')+'><span class="sw"></span>Business hours <span class="sub">'+daysLabel()+' · '+hoursLabel()+'</span></button>'+
+   '<span class="sp"></span><span class="seg" '+tipA('What counts as a success in the pick-up charts')+'><button data-metric="c" class="'+(ST.metric==='c'?'on':'')+'">Picked up</button><button data-metric="q" class="'+(ST.metric==='q'?'on':'')+'">Real conversations</button></span>'+
+   '<span class="seg" '+tipA('Show every chart as a sortable table (T)')+'><button data-tables="0" class="'+(!ST.tables?'on':'')+'">Charts</button><button data-tables="1" class="'+(ST.tables?'on':'')+'">Tables</button></span></div>';
 }
 function fillRecDD(){
   const dd=$('#recDD'); if(!dd) return;
-  dd.innerHTML='<input type="search" placeholder="Search recruiters" id="recQ"><div class="tbar" style="margin:8px 0 0"><button class="sm" data-recall="1">Select all</button><button class="sm" data-recall="0">Clear</button></div><div class="lst" id="recList"></div>';
+  const prof=ST.tab==='profile';
+  dd.innerHTML='<input type="search" placeholder="Search recruiters" id="recQ">'+(prof?'':'<div class="tbar" style="margin:8px 0 0"><button class="sm" data-recall="1">Select all</button><button class="sm" data-recall="0">Clear</button></div>')+'<div class="lst" id="recList"></div>';
   const q=$('#recQ'); q.value=ST.recSearch||''; drawRecList(q.value);
 }
-function drawRecList(q){ const F=ST.F,rl=recruiterList(); $('#recList').innerHTML=rl.filter(r=>r.name.toLowerCase().includes(q.toLowerCase())).map(r=>'<label><input type="checkbox" data-rec="'+r.id+'" '+(!F.recs||F.recs.has(r.id)?'checked':'')+'> '+esc(r.name)+' <span style="color:#9AA0A8;margin-left:auto">'+fmtInt(r.n)+'</span></label>').join(''); }
+function drawRecList(q){ const F=ST.F,rl=recruiterList().filter(r=>r.name.toLowerCase().includes(q.toLowerCase()));
+  $('#recList').innerHTML= ST.tab==='profile'
+    ? rl.map(r=>'<button class="pickrow '+(r.id===ST.coach?'on':'')+'" data-coachpick="'+r.id+'"><span>'+esc(r.name)+'</span><span class="muted">'+fmtInt(r.n)+'</span></button>').join('')
+    : rl.map(r=>'<label><input type="checkbox" data-rec="'+r.id+'" '+(!F.recs||F.recs.has(r.id)?'checked':'')+'> '+esc(r.name)+' <span class="muted" style="margin-left:auto">'+fmtInt(r.n)+'</span></label>').join(''); }
 
 /* ---------- data drawer ---------- */
 const PERSIST={ok:null,savedAt:0};
 function openDrawer(on){ $('#drawer').classList.toggle('on',on); $('#scrim').classList.toggle('on',on); if(on) renderData(); }
 function renderData(){
   const el=$('#dataPanel'); if(!el) return; const sup=SYNC.supported; let h='';
-  if(!SOURCES.length&&!SYNC.entries.size) h+='<p class="hint">Nothing loaded yet. Add a RingCentral call log export (.xlsx or .csv).</p>';
-  for(const s of SOURCES){ const e=SYNC.entries.get(s.name); const rng=s.minT?fmtDay(Math.floor(s.minT/86400))+' → '+fmtDay(Math.floor(s.maxT/86400)):'';
-    h+='<div class="file"><div class="nm">'+esc(s.name)+'</div><div class="mt">'+(e?'Synced file':'Uploaded file')+' · '+fmtInt(s.rows)+' calls'+(s.skipped?' ('+fmtInt(s.skipped)+' duplicates skipped)':'')+'<br>'+rng+(e&&e.lastSync?' · read '+new Date(e.lastSync).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}):'')+'</div>'+
-      (e?'<div class="fb"><button class="btn sm2" data-syncone="'+esc(s.name)+'">Sync now</button><button class="btn sm2 danger" data-rmsync="'+esc(s.name)+'">Remove</button></div>':'<div class="fb"><button class="btn sm2 danger" data-rmsrc="'+s.id+'">Remove file</button></div>')+'</div>'; }
+  if(DB.n){ const skipped=sumArr(SOURCES.map(s=>s.skipped||0));
+    h+='<div class="merged"><b>'+fmtInt(DB.n)+'</b> unique calls from <b>'+SOURCES.length+'</b> file'+(SOURCES.length===1?'':'s')+'<br><span>'+fmtDay(DB.minDay)+' → '+fmtDay(DB.maxDay)+(skipped?' · '+fmtInt(skipped)+' duplicate rows merged away':'')+'</span></div>'; }
+  h+='<div class="stack"><button class="btn pri" data-act="upload">+ Add files</button><p class="hint">Select several exports at once (e.g. 6 files). Calls that appear in more than one file – same time, recruiter, number, length and result – are counted once.</p></div>';
+  if(!SOURCES.length&&!SYNC.entries.size) h+='<p class="hint">Nothing loaded yet.</p>';
+  for(const s of SOURCES.slice().sort((a,b)=>(a.minT||0)-(b.minT||0))){ const e=SYNC.entries.get(s.name); const rng=s.minT?fmtDay(Math.floor(s.minT/86400))+' → '+fmtDay(Math.floor(s.maxT/86400)):'';
+    h+='<div class="file"><div class="nm">'+esc(s.name)+'</div><div class="mt">'+rng+'<br>'+fmtInt(s.rows)+' new calls'+(s.skipped?' · '+fmtInt(s.skipped)+' already loaded':'')+(e?' · synced'+(e.lastSync?' '+new Date(e.lastSync).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}):''):'')+'</div>'+
+      (e?'<div class="fb"><button class="btn sm2" data-syncone="'+esc(s.name)+'">Sync now</button><button class="btn sm2 danger" data-rmsync="'+esc(s.name)+'">Remove</button></div>':'<div class="fb"><button class="btn sm2 danger" data-rmsrc="'+s.id+'">Remove</button></div>')+'</div>'; }
   for(const [n,e] of SYNC.entries) if(!SOURCES.some(s=>s.name===n)) h+='<div class="file"><div class="nm">'+esc(n)+'</div><div class="mt">Synced file · waiting for permission</div><div class="fb"><button class="btn sm2 pri" data-syncone="'+esc(n)+'">Allow &amp; sync</button><button class="btn sm2 danger" data-rmsync="'+esc(n)+'">Remove</button></div></div>';
-  h+='<div class="stack"><button class="btn pri" data-act="upload">Upload Excel or CSV</button><button class="btn" data-act="sync" '+(sup?'':'disabled title="File sync needs Chrome or Edge on desktop"')+'>Sync a file from this computer</button></div>';
+  h+='<button class="btn" data-act="sync" '+(sup?'':'disabled title="File sync needs Chrome or Edge on desktop"')+'>Sync a file from this computer</button>';
   if(SYNC.entries.size) h+='<label class="auto"><input type="checkbox" id="autoSync" '+(SYNC.auto?'checked':'')+'> Auto-sync every <select id="autoInt">'+[1,2,5,15].map(m=>'<option value="'+m+'" '+(SYNC.interval===m?'selected':'')+'>'+m+' min</option>').join('')+'</select></label>';
-  h+='<p class="hint">'+(DB.n?(PERSIST.ok===false?'⚠ Could not save in this browser – data will be lost on refresh.':'✓ Saved in this browser – still here after a refresh. Nothing leaves your computer.'):'Everything stays in your browser.')+(sup?'':' File sync needs Chrome or Edge on desktop.')+'</p>';
+  h+='<p class="hint">'+(DB.n?(PERSIST.ok===false?'⚠ Could not save in this browser – data will be lost on refresh.':'Saved in this browser. Nothing leaves your computer.'):'Everything stays in your browser.')+'</p>';
   if(DB.n) h+='<button class="btn danger" data-act="clear">Remove all data</button>';
   el.innerHTML=h;
 }
 
 function emptyState(){
-  return '<div class="empty" id="dropzone"><h2>Load a RingCentral call log</h2><p>Drop the exported <b>.xlsx</b> or <b>.csv</b> anywhere on this page. One day or several weeks both work, and the data is kept in this browser so you only load it once.</p>'+
-   '<ol><li>In RingCentral, open <b>Analytics → Call log</b> and export to Excel.</li><li>Drop the file here, or choose it below.</li><li>Use the filter bar to pick dates and people. Every chart can be flipped to a table and copied.</li></ol>'+
-   '<div class="acts"><button class="btn pri" data-act="upload">Choose file(s)</button><button class="btn" data-act="sync" '+(SYNC.supported?'':'disabled')+'>Sync a file from this computer</button></div>'+
+  return '<div class="empty" id="dropzone"><h2>Add your RingCentral call logs</h2><p>Drop one or more exported <b>.xlsx</b> or <b>.csv</b> files anywhere on this page. Overlapping exports are merged – each call is counted once.</p>'+
+   '<ol><li>In RingCentral, export the call log to Excel.</li><li>Drop the files here, or choose them below (select several at once).</li><li>Use the filter bar to pick dates and people. Every chart flips to a sortable table you can copy.</li></ol>'+
+   '<div class="acts"><button class="btn pri" data-act="upload">Choose files</button><button class="btn" data-act="sync" '+(SYNC.supported?'':'disabled')+'>Sync a file from this computer</button></div>'+
    '<p class="fine">Nothing is uploaded anywhere. Times are read as Eastern Time.</p></div>';
 }
 
@@ -1658,37 +1778,46 @@ function render(){
   renderNav(); renderTop(); if($('#drawer').classList.contains('on')) renderData(); const v=$('#view');
   for(const k in DATA) delete DATA[k];
   if(!DB.n){ v.innerHTML=emptyState(); return; }
-  const ctx=makeCtx(ST.F);
-  if(!ctx.idxOut.length&&!ctx.idxIn.length){ v.innerHTML=note('<b>No calls match the current filters.</b> '+(ST.F.scope==='shift'?'“Business hours” is on – switch it off to see weekend and after-hours calls, or widen the dates or recruiters.':'Widen the dates or recruiters.'),'warn'); return; }
+  // the profile compares one person with the whole team, so it ignores the recruiter filter
+  const F=ST.tab==='profile'? Object.assign({},ST.F,{recs:null}) : ST.F;
+  const ctx=makeCtx(F);
+  if(!ctx.idxOut.length&&!ctx.idxIn.length){ v.innerHTML=note('<b>No calls match the current filters.</b> '+(ST.F.scope==='shift'?'“Business hours” is on – switch it off to see other days and hours, or widen the dates or recruiters.':'Widen the dates or recruiters.'),'warn'); return; }
   const a=document.activeElement, qid=a&&a.dataset&&a.dataset.q, pos=a&&a.selectionStart, y=window.scrollY;
   let html; try{ html=TABS[ST.tab](ctx); }catch(e){ console.error(e); html=note('Something went wrong drawing this page: '+esc(e.message),'warn'); }
   v.innerHTML=html; window.scrollTo(0,y);
+  if(ST.tab==='profile'){ const b=$('#recBtn'); if(b) b.textContent=recBtnLabel(); }
   if(ST.keepRecOpen){ ST.keepRecOpen=false; const dd=$('#recDD'); if(dd){ fillRecDD(); dd.classList.add('on'); const q=$('#recQ'); if(q) q.focus(); } }
   if(qid){ const i=v.querySelector('[data-q="'+qid+'"]'); if(i){ i.focus(); try{ i.setSelectionRange(pos,pos);}catch(e){} } }
 }
 
-/* ---------- file loading ---------- */
-async function loadBuffer(buf,name,kind,meta){
+/* ---------- file loading: several files at once, merged without duplicates ---------- */
+async function loadBuffer(buf,name,kind,meta,quiet){
   showLoading('Reading “'+name+'”…'); await tick();
   try{
-    const bs=XLSX.read(buf,{type:'array',bookSheets:true}), names=bs.SheetNames;
-    const calls=names.find(n=>/^calls$/i.test(n))||names.find(n=>/call/i.test(n))||names.find(n=>!/filter/i.test(n))||names[0], filt=names.find(n=>/filter/i.test(n));
-    showLoading('Parsing workbook…'); await tick();
+    const bs=XLSX.read(buf,{type:'array',bookSheets:true}), sn=bs.SheetNames;
+    const calls=sn.find(n=>/^calls$/i.test(n))||sn.find(n=>/call/i.test(n))||sn.find(n=>!/filter/i.test(n))||sn[0], filt=sn.find(n=>/filter/i.test(n));
     let wb=XLSX.read(buf,{type:'array',sheets:filt&&filt!==calls?[calls,filt]:[calls],dense:true,cellDates:false});
-    showLoading('Extracting call rows…'); await tick();
     const rows=XLSX.utils.sheet_to_json(wb.Sheets[calls],{header:1,raw:true,defval:null});
     const fr=filt&&filt!==calls&&wb.Sheets[filt]?XLSX.utils.sheet_to_json(wb.Sheets[filt],{header:1,raw:true,defval:null}):null;
-    wb=null; showLoading('Indexing '+fmtInt(rows.length-1)+' calls…'); await tick();
+    wb=null; showLoading('Merging '+fmtInt(rows.length-1)+' calls from “'+name+'”…'); await tick();
     const r=ingestFile(rows,fr,name,kind,meta||{}); rows.length=0;
-    ST.F.from=null; ST.F.to=null; if(ST.F.recs){ const ok=new Set(recruiterList().map(x=>x.id)); ST.F.recs=new Set([...ST.F.recs].filter(x=>ok.has(x))); if(!ST.F.recs.size) ST.F.recs=null; }
-    if(!WORKDAY.size && ST.F.scope==='shift'){ ST.F.scope='all'; toast('No Monday–Friday activity found in this file, so “Business hours only” was switched off.','','7000'); }
+    ST.F.from=null; ST.F.to=null; ST.preset=0; if(ST.F.recs){ const ok=new Set(recruiterList().map(x=>x.id)); ST.F.recs=new Set([...ST.F.recs].filter(x=>ok.has(x))); if(!ST.F.recs.size) ST.F.recs=null; }
+    if(!WORKDAY.size && ST.F.scope==='shift'){ ST.F.scope='all'; toast('No activity on your working days in this data, so “Business hours” was switched off.','',7000); }
     persistSoon();
-    toast('Loaded '+fmtInt(r.added)+' calls from '+name+(r.skipped?' ('+fmtInt(r.skipped)+' duplicates skipped)':'')+(r.bad?' · '+r.bad+' unreadable rows ignored':''),'ok');
-    return true;
+    if(!quiet) toast(r.dropped?'“'+name+'” was already loaded – nothing new added.':'Added '+fmtInt(r.added)+' calls from '+r.name+(r.skipped?' ('+fmtInt(r.skipped)+' duplicates merged)':''),'ok');
+    return r;
   }catch(e){ console.error(e); toast('Could not read “'+name+'”: '+e.message,'err'); return false; }
   finally{ hideLoading(); }
 }
-async function loadFiles(files){ for(const f of files){ const buf=await f.arrayBuffer(); await loadBuffer(buf,f.name,'upload',{}); } render(); }
+async function loadFiles(files){
+  files=[...files].sort((a,b)=>a.name.localeCompare(b.name));
+  let added=0, skipped=0, ok=0, dup=0, bad=0;
+  for(let i=0;i<files.length;i++){ const f=files[i];
+    const r=await loadBuffer(await f.arrayBuffer(),f.name,'upload',{},files.length>1);
+    if(!r){ bad++; continue; } if(r.dropped) dup++; else ok++; added+=r.added; skipped+=r.skipped; }
+  if(files.length>1) toast('Merged '+files.length+' files: '+fmtInt(added)+' new calls'+(skipped?', '+fmtInt(skipped)+' duplicates skipped':'')+(dup?' ('+dup+' file'+(dup>1?'s were':' was')+' already loaded)':'')+(bad?' · '+bad+' could not be read':'')+'.',bad?'err':'ok',7000);
+  render();
+}
 
 /* ---------- sync (File System Access API) ---------- */
 const SYNC={supported:typeof window!=='undefined'&&'showOpenFilePicker' in window,entries:new Map(),auto:false,interval:5,timer:null,db:null};
@@ -1739,13 +1868,14 @@ const SADV=[['tzShift','Hours to add to the file’s times to get ET','0 = the e
 function openSettings(){
   const fld=f=>'<label>'+f[1]+'<input type="number" step="any" data-cfg="'+f[0]+'" value="'+CFG[f[0]]+'">'+(f[2]?'<small>'+f[2]+'</small>':'')+'</label>';
   let h='<div class="mbox" role="dialog" aria-modal="true" aria-label="Settings"><h3>Settings</h3><p class="sub">Every page recalculates when you save. Saved in this browser.</p><div class="form">';
-  for(const f of SMAIN){ if(f.length===1) h+='<h5>'+f[0]+'</h5>'; else h+=fld(f); }
+  for(const f of SMAIN){ if(f.length===1){ h+='<h5>'+f[0]+'</h5>'; if(f[0].startsWith('Working day')) h+='<div class="days" role="group" aria-label="Working days"><span>Working days</span>'+DOW.map((d,i)=>'<label class="dchk"><input type="checkbox" data-wday="'+i+'" '+(isWorkDow(i)?'checked':'')+'><span>'+d+'</span></label>').join('')+'</div>'; } else h+=fld(f); }
   h+='<details class="adv"><summary>Advanced</summary><div class="form">'+SADV.map(fld).join('')+'</div></details></div><div class="mact"><button class="btn" data-act="cfgreset">Reset to defaults</button><button class="btn" data-act="cfgcancel">Cancel</button><button class="btn pri" data-act="cfgsave">Save settings</button></div></div>';
   $('#settingsModal').innerHTML=h; $('#settingsModal').classList.add('on');
 }
 function saveSettings(){
   const p={}; $$('[data-cfg]').forEach(i=>{ const v=parseFloat(i.value); if(isFinite(v)) p[i.dataset.cfg]=v; });
   if(p.shiftEnd<=p.shiftStart){ toast('Shift end must be after shift start.','err'); return; }
+  let mask=0; $$('[data-wday]').forEach(i=>{ if(i.checked) mask|=1<<(+i.dataset.wday); }); if(!mask){ toast('Pick at least one working day.','err'); return; } p.workDays=mask;
   setCfg(p); savePrefs(); $('#settingsModal').classList.remove('on'); render(); toast('Settings saved.','ok');
 }
 
@@ -1754,6 +1884,8 @@ document.addEventListener('click',e=>{
   const t=e.target; const g=s=>t.closest(s);
   let el;
   if((el=g('[data-tab]'))){ setTab(el.dataset.tab); return; }
+  if((el=g('[data-dsort]'))){ const [id,j,num]=el.dataset.dsort.split('|'); const c=ST.dsort[id]; ST.dsort[id]={j:+j,d:c&&c.j===+j?-c.d:(num==='1'?-1:1)}; render(); return; }
+  if((el=g('[data-coachpick]'))){ ST.coach=+el.dataset.coachpick; ST.recSearch=''; const dd=$('#recDD'); if(dd) dd.classList.remove('on'); render(); window.scrollTo(0,0); return; }
   if((el=g('[data-view]'))){ const [id,m]=el.dataset.view.split('|'); ST.view[id]=m; render(); return; }
   if((el=g('[data-tables]'))){ ST.tables=el.dataset.tables==='1'; ST.view={}; savePrefs(); render(); return; }
   if((el=g('[data-copy]'))){ copyData(el.dataset.copy,el); return; }
@@ -1766,10 +1898,10 @@ document.addEventListener('click',e=>{
   if(g('#scopeBtn')){ ST.F.scope=ST.F.scope==='shift'?'all':'shift'; savePrefs(); render(); return; }
   if((el=g('[data-preset]'))){ const n=+el.dataset.preset; ST.preset=n; if(!n){ ST.F.from=ST.F.to=null; } else { const wd=[...WORKDAY].sort((a,b)=>a-b); if(wd.length){ ST.F.to=wd[wd.length-1]; ST.F.from=wd[Math.max(0,wd.length-n)]; } } render(); return; }
   if(g('#recBtn')){ const dd=$('#recDD'); const on=!dd.classList.contains('on'); if(on) fillRecDD(); dd.classList.toggle('on',on); return; }
-  if((el=g('[data-recall]'))){ const all=el.dataset.recall==='1'; ST.F.recs=all?null:new Set(); ST.keepRecOpen=true; const rl=recruiterList(); $('#recBtn').textContent=(all?'All '+rl.length:'0 of '+rl.length)+' recruiters ▾'; renderDeferred(); return; }
+  if((el=g('[data-recall]'))){ const all=el.dataset.recall==='1'; ST.F.recs=all?null:new Set(); ST.keepRecOpen=true; const rl=recruiterList(); $('#recBtn').textContent=recBtnLabel(); renderDeferred(); return; }
   if(g('#dataBtn')){ openDrawer(true); return; }
   if(g('#drawerX')||t.id==='scrim'){ openDrawer(false); return; }
-  if((el=g('[data-rmsrc]'))){ const s=SOURCES.find(x=>x.id===+el.dataset.rmsrc); if(!s) return; if(confirm('Remove “'+s.name+'” and its data?')){ removeSource(s.id); persistSoon(); render(); } return; }
+  if((el=g('[data-rmsrc]'))){ const s=SOURCES.find(x=>x.id===+el.dataset.rmsrc); if(!s) return; if(confirm('Remove “'+s.name+'”? Calls that also appear in your other files are kept.')){ const n0=DB.n, mv=removeSource(s.id); persistSoon(); render(); toast('Removed '+s.name+': '+fmtInt(n0-DB.n)+' calls dropped'+(mv?', '+fmtInt(mv)+' kept from your other files':'')+'.','ok'); } return; }
   if((el=g('[data-syncone]'))){ const en=SYNC.entries.get(el.dataset.syncone); if(en) syncOne(en,{gesture:true,force:false}).then(r=>{ if(r==='unchanged') toast('“'+en.name+'” has not changed since the last sync.'); render(); }).catch(err=>toast('Sync failed: '+err.message,'err')); return; }
   if((el=g('[data-rmsync]'))){ if(confirm('Stop syncing “'+el.dataset.rmsync+'” and remove its data from this dashboard? (Your original file is not touched.)')){ removeSync(el.dataset.rmsync); toast('Synced file removed.'); } return; }
   if((el=g('[data-settings]'))){ openSettings(); return; }
@@ -1785,12 +1917,13 @@ document.addEventListener('click',e=>{
   if(!g('.dd')&&!g('#recBtn')){ const dd=$('#recDD'); if(dd) dd.classList.remove('on'); }
   if(t.id==='settingsModal') t.classList.remove('on');
 });
+document.addEventListener('toggle',e=>{ const d=e.target; if(!d.dataset||d.dataset.moretab==null) return; ST.moreOpen[d.dataset.moretab]=d.open; const s=d.querySelector('summary span'); if(s) s.textContent=(d.open?'Hide':'Show')+' more detail'; savePrefs(); },true);
 let _rd=null; function renderDeferred(){ clearTimeout(_rd); _rd=setTimeout(render,180); }
 document.addEventListener('change',e=>{
   const t=e.target;
   if(t.id==='fileIn'){ const fs=[...t.files]; t.value=''; if(fs.length) loadFiles(fs); return; }
   if(t.id==='dFrom'||t.id==='dTo'){ const v=t.value?isoDay(t.value):null; if(t.id==='dFrom') ST.F.from=v; else ST.F.to=v; if(ST.F.from!=null&&ST.F.to!=null&&ST.F.from>ST.F.to){ const x=ST.F.from; ST.F.from=ST.F.to; ST.F.to=x; } ST.preset=-1; render(); return; }
-  if(t.dataset&&t.dataset.rec!=null){ const rl=recruiterList(); const set=ST.F.recs?new Set(ST.F.recs):new Set(rl.map(r=>r.id)); if(t.checked) set.add(+t.dataset.rec); else set.delete(+t.dataset.rec); ST.F.recs=set.size===rl.length?null:set; ST.keepRecOpen=true; $('#recBtn').textContent=(ST.F.recs?set.size+' of '+rl.length:'All '+rl.length)+' recruiters ▾'; renderDeferred(); return; }
+  if(t.dataset&&t.dataset.rec!=null){ const rl=recruiterList(); const set=ST.F.recs?new Set(ST.F.recs):new Set(rl.map(r=>r.id)); if(t.checked) set.add(+t.dataset.rec); else set.delete(+t.dataset.rec); ST.F.recs=set.size===rl.length?null:set; ST.keepRecOpen=true; $('#recBtn').textContent=recBtnLabel(); renderDeferred(); return; }
   if(t.dataset&&t.dataset.minloc!=null){ ST.minLoc=Math.max(1,parseInt(t.value)||CFG.minSample); render(); return; }
   if(t.dataset&&t.dataset.profday!=null){ ST.profDay=t.value===''?null:+t.value; render(); return; }
   if(t.dataset&&t.dataset.coachsel!=null){ ST.coach=+t.value; render(); return; }
@@ -1814,7 +1947,7 @@ window.addEventListener('drop',e=>{ const fs=[...(e.dataTransfer&&e.dataTransfer
 
 /* ---------- boot ---------- */
 document.title='Business Insights by JK · v'+APP_VERSION;
-$('#brandVer').textContent='v'+APP_VERSION+' · call analytics';
+$('#brandVer').textContent='v'+APP_VERSION;
 loadPrefs(); render(); restorePersist().then(()=>{ render(); return syncInit(); });
 
 </script>

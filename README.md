@@ -14,6 +14,8 @@ Open it in a browser, drop in the export, done. No server, no install, no accoun
 - **Copy to Excel**: every card and table has a **Copy** button that places the data on your clipboard as cells, ready to paste into Excel or Google Sheets. Large tables also export to CSV.
 - **Period comparison**: pick *Last 5 days* or *Last 20 days* and the headline numbers show the change against the previous period of the same length.
 - **Coaching profile per recruiter**: score breakdown, best hours to call, weekday pick-up, call length versus the team, and a day-by-day history.
+- **Merge many exports**: add several call logs at once; overlapping calls are counted once.
+- **Sort any table**: click a column heading, in every table and in the table view of every chart.
 - **Remembers your data**: loaded files are kept in the browser (IndexedDB), so a refresh does not lose anything.
 - **Live file sync** (Chrome and Edge on desktop): link an export on your computer and the dashboard re-reads it on a schedule.
 
@@ -31,7 +33,7 @@ Open it in a browser, drop in the export, done. No server, no install, no accoun
 
 1. Download `index.html`.
 2. Open it in Chrome, Edge, Firefox or Safari.
-3. Drop your RingCentral export onto the page, or click **Choose file(s)**.
+3. Drop one or more RingCentral exports onto the page, or click **Add files**.
 
 ### Option 2: host it with GitHub Pages
 
@@ -59,13 +61,13 @@ Export the call log to Excel (`.xlsx`) or CSV. The sheet needs these columns (na
 | `Call Direction` | Outbound, Inbound, Internal |
 | `Session Id` *(optional)* | Groups inbound legs and removes duplicates |
 
-If the workbook also has a **Filters** sheet listing users, the dashboard uses it to spot people on the roster who made no calls. You can load several files at once; overlapping calls are de-duplicated.
+If the workbook also has a **Filters** sheet listing users, the dashboard uses it to spot people on the roster who made no calls. You can load several files at once (for example six weekly exports). A call that appears in more than one file – same time, recruiter, numbers, length and result – is counted once, and files with identical names are kept side by side.
 
 ## Settings
 
 Click **Settings** to match your team's working day. Everything recalculates on save.
 
-- Shift start and end, break times and break length (Eastern Time)
+- Working days, shift start and end, break times and break length (Eastern Time)
 - Daily targets for calls and talk minutes
 - What counts as an idle gap, an absent day, a real conversation, an instant hang-up, and more (under **Advanced**)
 
